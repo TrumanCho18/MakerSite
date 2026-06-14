@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources – My Games</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="sky.js" defer></script>
+</head>
+<body>
+
+  <div class="sky">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+  </div>
+
+  <header>
+    <a href="index.html" class="logo">BeTru Media</a>
+    <nav>
+      <a href="index.html">Games</a>
+      <a href="resources.html" class="active">Resources</a>
+      <a href="madebytru.html">Made by Tru</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="resources-hero">
+    <h1>Resources</h1>
+    <p>Want to learn how to create? Check out these links.</p>
+  </div>
+
+  <!-- Search bar -->
+  <div class="search-bar-wrap">
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input id="search-input" type="text" placeholder="Search resources…" autocomplete="off" />
+      <button id="search-clear" class="search-clear" aria-label="Clear search">✕</button>
+    </div>
+  </div>
+
+  <!-- Type filters -->
+  <div class="filter-bar">
+    <span class="filter-label">Type:</span>
+    <button class="filter-pill active" data-filter="all">All</button>
+    <button class="filter-pill" data-filter="youtube">▶ YouTube</button>
+    <button class="filter-pill" data-filter="tool">🔧 Tool</button>
+    <button class="filter-pill" data-filter="shop">🛍️ Shop</button>
+  </div>
+
+  <!-- Difficulty filters -->
+  <div class="filter-bar">
+    <span class="filter-label">Level:</span>
+    <button class="diff-pill active" data-diff="all">All Levels</button>
+    <button class="diff-pill" data-diff="beginner">🟢 Beginner</button>
+    <button class="diff-pill" data-diff="intermediate">🟡 Intermediate</button>
+    <button class="diff-pill" data-diff="advanced">🔴 Advanced</button>
+  </div>
+
+  <!-- Subtabs -->
+  <div class="subtab-bar">
+    <button class="subtab active" data-tab="making-games">🎮 Making Games</button>
+    <button class="subtab" data-tab="art">🎨 Art &amp; Animation</button>
+    <button class="subtab" data-tab="sell">🛍️ Sell Your Work</button>
+  </div>
+
+  <main class="resources-main">
+
+    <!-- ── Making Games ── -->
+    <section class="resource-section" id="making-games">
+      <div class="resource-grid">
+
+        <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="beginner"
+           href="https://www.youtube.com/watch?v=D-nW4jvzRr8" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="https://img.youtube.com/vi/D-nW4jvzRr8/hqdefault.jpg" alt="Beginners Guide To Scratch thumbnail" />
+            <span class="play-badge">▶</span>
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">YouTube · ZonxScratch</span>
+              <span class="diff-badge beginner">🟢 Beginner</span>
+            </div>
+            <h3>Beginners Guide To Scratch</h3>
+            <p>A simple walkthrough of the Scratch editor — sprites, blocks, and your very first project.</p>
+          </div>
+        </a>
+
+        <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="intermediate"
+           href="https://www.youtube.com/watch?v=FYZ1bfB1nho" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="https://img.youtube.com/vi/FYZ1bfB1nho/hqdefault.jpg" alt="Geometry Dash in Scratch thumbnail" />
+            <span class="play-badge">▶</span>
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">YouTube · griffpatch</span>
+              <span class="diff-badge intermediate">🟡 Intermediate</span>
+            </div>
+            <h3>How to Make a Scratch Game</h3>
+            <p>griffpatch recreates Geometry Dash in Scratch — a masterclass in game mechanics and design.</p>
+          </div>
+        </a>
+
+        <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="advanced"
+           href="https://www.youtube.com/watch?v=IlKaB1etrik&list=PLPV2KyIb3jR5QFsefuO2RlAgWEz6EvVi6" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="https://img.youtube.com/vi/IlKaB1etrik/hqdefault.jpg" alt="How to make a Video Game in Unity thumbnail" />
+            <span class="play-badge">▶</span>
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">YouTube Playlist · Brackeys</span>
+              <span class="diff-badge advanced">🔴 Advanced</span>
+            </div>
+            <h3>How to Make a Video Game in Unity</h3>
+            <p>Brackeys' legendary beginner series — build a complete game in Unity from the ground up.</p>
+          </div>
+        </a>
+
+        <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="advanced"
+           href="https://www.youtube.com/watch?v=nwlvT-L9vFg&list=PLhIbBGhnxj5KPck1IYmll4PRIRZgVrJix" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="https://img.youtube.com/vi/nwlvT-L9vFg/hqdefault.jpg" alt="How To Make A Classic Arcade Game in GameMaker thumbnail" />
+            <span class="play-badge">▶</span>
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">YouTube Playlist · GameMaker</span>
+              <span class="diff-badge advanced">🔴 Advanced</span>
+            </div>
+            <h3>Make a Classic Arcade Game in GameMaker</h3>
+            <p>Official GameMaker series walking you through building a classic arcade game step by step.</p>
+          </div>
+        </a>
+
+        <a class="resource-tile" data-type="tool" data-tab="making-games" data-difficulty="advanced"
+           href="https://unity.com/" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="Assets/Unity-Emblem.png" alt="Unity" />
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">Tool · unity.com</span>
+              <span class="diff-badge advanced">🔴 Advanced</span>
+            </div>
+            <h3>Unity</h3>
+            <p>One of the most popular professional game engines in the world — great next step after Scratch.</p>
+          </div>
+        </a>
+
+        <a class="resource-tile" data-type="tool" data-tab="making-games" data-difficulty="advanced"
+           href="https://gamemaker.io/en/download" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="Assets/GameMaker.jpg" alt="GameMaker" />
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">Tool · gamemaker.io</span>
+              <span class="diff-badge advanced">🔴 Advanced</span>
+            </div>
+            <h3>GameMaker</h3>
+            <p>A powerful 2D game engine used by indie developers worldwide — free to download and try.</p>
+          </div>
+        </a>
+
+        <a class="resource-tile" data-type="tool" data-tab="making-games" data-difficulty="beginner"
+           href="https://turbowarp.org/editor" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="Assets/turbowarp-banner.png.png" alt="TurboWarp" />
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">Tool · turbowarp.org</span>
+              <span class="diff-badge beginner">🟢 Beginner</span>
+            </div>
+            <h3>TurboWarp Editor</h3>
+            <p>A faster, more powerful version of Scratch with better performance for complex projects.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ── Art & Animation ── -->
+    <section class="resource-section" id="art">
+      <div class="resource-grid">
+
+        <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="beginner"
+           href="https://www.youtube.com/watch?v=tFsETEP01k8" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="https://img.youtube.com/vi/tFsETEP01k8/hqdefault.jpg" alt="Aseprite Tutorial For Beginners thumbnail" />
+            <span class="play-badge">▶</span>
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">YouTube · Saultoons</span>
+              <span class="diff-badge beginner">🟢 Beginner</span>
+            </div>
+            <h3>Aseprite Tutorial for Beginners</h3>
+            <p>Learn the basics of Aseprite to create pixel art sprites and game assets from scratch.</p>
+          </div>
+        </a>
+
+        <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="intermediate"
+           href="https://www.youtube.com/watch?v=B0enS9BJne4" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="https://img.youtube.com/vi/B0enS9BJne4/hqdefault.jpg" alt="Aseprite Animation Tutorial thumbnail" />
+            <span class="play-badge">▶</span>
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">YouTube · Saultoons</span>
+              <span class="diff-badge intermediate">🟡 Intermediate</span>
+            </div>
+            <h3>Aseprite Animation Tutorial</h3>
+            <p>How to animate pixel art characters and effects in Aseprite for use in your games.</p>
+          </div>
+        </a>
+
+        <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="beginner"
+           href="https://www.youtube.com/watch?v=gJKaMT2V-AA" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="https://img.youtube.com/vi/gJKaMT2V-AA/hqdefault.jpg" alt="Procreate for Beginners thumbnail" />
+            <span class="play-badge">▶</span>
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">YouTube · RetroSupply Co.</span>
+              <span class="diff-badge beginner">🟢 Beginner</span>
+            </div>
+            <h3>Procreate for Beginners</h3>
+            <p>The only Procreate guide you'll need in 2026 — covers every essential tool and workflow.</p>
+          </div>
+        </a>
+
+        <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="intermediate"
+           href="https://www.youtube.com/watch?v=4rkeTKoAKYE" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="https://img.youtube.com/vi/4rkeTKoAKYE/hqdefault.jpg" alt="How to Animate in Procreate thumbnail" />
+            <span class="play-badge">▶</span>
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">YouTube · Envato Tuts+</span>
+              <span class="diff-badge intermediate">🟡 Intermediate</span>
+            </div>
+            <h3>How to Animate in Procreate</h3>
+            <p>A step-by-step Procreate animation tutorial — bring your characters and artwork to life.</p>
+          </div>
+        </a>
+
+        <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="beginner"
+           href="https://www.youtube.com/watch?v=QwtFYWczrXY" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="https://img.youtube.com/vi/QwtFYWczrXY/hqdefault.jpg" alt="Learn Procreate thumbnail" />
+            <span class="play-badge">▶</span>
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">YouTube · Brooke Glaser</span>
+              <span class="diff-badge beginner">🟢 Beginner</span>
+            </div>
+            <h3>Learn Procreate Fast</h3>
+            <p>A beginner's guide to Procreate for digital illustration, concept art, and character design.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ── Sell Your Work ── -->
+    <section class="resource-section" id="sell">
+      <div class="resource-grid resource-grid--two">
+
+        <a class="resource-tile" data-type="shop" data-tab="sell" data-difficulty="beginner"
+           href="https://www.stickermule.com/" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="Assets/stickermule.png" alt="Sticker Mule" />
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">Shop · stickermule.com</span>
+              <span class="diff-badge beginner">🟢 Beginner</span>
+            </div>
+            <h3>Sticker Mule</h3>
+            <p>Print and sell custom stickers, labels, and merch — a great way to share your game's brand with fans.</p>
+          </div>
+        </a>
+
+        <a class="resource-tile" data-type="shop" data-tab="sell" data-difficulty="beginner"
+           href="https://printify.com/" target="_blank" rel="noopener">
+          <div class="tile-thumb">
+            <img src="Assets/printify.png.webp" alt="Printify" />
+          </div>
+          <div class="tile-info">
+            <div class="tile-meta">
+              <span class="tile-tag">Shop · printify.com</span>
+              <span class="diff-badge beginner">🟢 Beginner</span>
+            </div>
+            <h3>Printify</h3>
+            <p>A print-on-demand platform to create and sell custom merch for your games with no upfront cost.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Empty state -->
+    <div id="no-results" class="no-results" style="display:none">
+      <span class="no-results-icon">🔍</span>
+      <p>No resources match your search.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.truman-cho.com/" target="_blank" rel="noopener">truman-cho.com</a>
+      <a href="https://x.com/RandomUser1081" target="_blank" rel="noopener">X</a>
+      <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 BeTru Media</div>
+  </footer>
+
+  <script>
+    const subtabs     = document.querySelectorAll('.subtab');
+    const sections    = document.querySelectorAll('.resource-section');
+    const tiles       = document.querySelectorAll('.resource-tile');
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const diffPills   = document.querySelectorAll('.diff-pill');
+    const searchInput = document.getElementById('search-input');
+    const searchClear = document.getElementById('search-clear');
+    const noResults   = document.getElementById('no-results');
+
+    let activeTab    = 'making-games';
+    let activeFilter = 'all';
+    let activeDiff   = 'all';
+    let searchQuery  = '';
+
+    function render() {
+      const isSearching = searchQuery.length > 0;
+
+      document.querySelector('.subtab-bar').style.opacity      = isSearching ? '0.4' : '1';
+      document.querySelector('.subtab-bar').style.pointerEvents = isSearching ? 'none' : '';
+      searchClear.style.display = searchQuery ? '' : 'none';
+
+      let anyVisible = false;
+
+      tiles.forEach(tile => {
+        const tabMatch    = isSearching || tile.dataset.tab === activeTab;
+        const filterMatch = activeFilter === 'all' || tile.dataset.type === activeFilter;
+        const diffMatch   = activeDiff   === 'all' || tile.dataset.difficulty === activeDiff;
+        const searchMatch = !isSearching || tile.innerText.toLowerCase().includes(searchQuery.toLowerCase());
+
+        const visible = tabMatch && filterMatch && diffMatch && searchMatch;
+        tile.style.display = visible ? '' : 'none';
+        if (visible) anyVisible = true;
+      });
+
+      sections.forEach(section => {
+        const hasTiles = [...section.querySelectorAll('.resource-tile')].some(t => t.style.display !== 'none');
+        section.style.display = hasTiles ? '' : 'none';
+      });
+
+      noResults.style.display = anyVisible ? 'none' : '';
+    }
+
+    subtabs.forEach(btn => btn.addEventListener('click', () => {
+      activeTab = btn.dataset.tab;
+      subtabs.forEach(b => b.classList.toggle('active', b.dataset.tab === activeTab));
+      render();
+    }));
+
+    filterPills.forEach(pill => pill.addEventListener('click', () => {
+      activeFilter = pill.dataset.filter;
+      filterPills.forEach(p => p.classList.toggle('active', p.dataset.filter === activeFilter));
+      render();
+    }));
+
+    diffPills.forEach(pill => pill.addEventListener('click', () => {
+      activeDiff = pill.dataset.diff;
+      diffPills.forEach(p => p.classList.toggle('active', p.dataset.diff === activeDiff));
+      render();
+    }));
+
+    searchInput.addEventListener('input', () => {
+      searchQuery = searchInput.value.trim();
+      render();
+    });
+
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      searchInput.focus();
+      render();
+    });
+
+    render();
+  </script>
+
+</body>
+</html>

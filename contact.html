@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — BeTru Media</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="sky.js" defer></script>
+</head>
+<body>
+
+  <div class="sky">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+  </div>
+
+  <header>
+    <a href="index.html" class="logo">BeTru Media</a>
+    <nav>
+      <a href="index.html">Games</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <div class="resources-hero">
+    <h1>Say hi 👋</h1>
+    <p>Got a question, collab idea, or just want to talk games? Drop a message.</p>
+  </div>
+
+  <main>
+    <div class="contact-wrap">
+
+      <!-- Success message (hidden until form submits) -->
+      <div id="form-success" class="form-success" style="display:none">
+        <span class="form-success-icon">✅</span>
+        <h3>Message sent!</h3>
+        <p>Thanks for reaching out — I'll get back to you soon.</p>
+        <button class="contact-btn" id="form-reset" style="margin-top:1.25rem">Send another →</button>
+      </div>
+
+      <!-- Contact form -->
+      <form id="contact-form" class="contact-form">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+        </div>
+
+        <button type="submit" class="contact-btn" id="submit-btn">Send it →</button>
+        <p id="form-error" class="form-error" style="display:none">Something went wrong — please try again.</p>
+
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.truman-cho.com/" target="_blank" rel="noopener">truman-cho.com</a>
+      <a href="https://x.com/RandomUser1081" target="_blank" rel="noopener">X</a>
+      <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 BeTru Media</div>
+  </footer>
+
+  <script>
+    // ─────────────────────────────────────────────────────────────────
+    // TO ACTIVATE: replace YOUR_FORM_ID below with the ID from Formspree.
+    //
+    // Steps (takes ~2 minutes):
+    //   1. Go to https://formspree.io and sign up (free)
+    //   2. Click "New Form", name it "Contact", set email to Trumanlewischo@gmail.com
+    //   3. Copy the form ID from the endpoint shown (e.g. "xyzabcde")
+    //   4. Paste it below in place of YOUR_FORM_ID
+    // ─────────────────────────────────────────────────────────────────
+    const FORMSPREE_ID = 'mykalynl';
+
+    const form       = document.getElementById('contact-form');
+    const success    = document.getElementById('form-success');
+    const submitBtn  = document.getElementById('submit-btn');
+    const errorMsg   = document.getElementById('form-error');
+    const resetBtn   = document.getElementById('form-reset');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorMsg.style.display = 'none';
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+
+      try {
+        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form),
+        });
+
+        if (res.ok) {
+          form.style.display    = 'none';
+          success.style.display = '';
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        errorMsg.style.display = '';
+        submitBtn.textContent  = 'Send it →';
+        submitBtn.disabled     = false;
+      }
+    });
+
+    resetBtn.addEventListener('click', () => {
+      form.reset();
+      form.style.display    = '';
+      success.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
