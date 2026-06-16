@@ -1439,19 +1439,33 @@ footer {
 .loop-strip {
   width: 100%;
   margin: 0;
+  padding: 0;
   line-height: 0;
+  font-size: 0;
+  overflow: hidden;
 }
 
 .loop-strip img {
   width: 100%;
+  height: auto;
   display: block;
+  margin: 0;
+  padding: 0;
 }
 
 /* ── Hero handwritten logo ── */
+.hero {
+  padding: 0.75rem 1.5rem 1rem;
+}
+
 .hero-logo {
   max-width: 420px;
   width: 80%;
   display: block;
   margin: 0 auto 0.5rem;
   filter: brightness(0) invert(1);
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
 }
