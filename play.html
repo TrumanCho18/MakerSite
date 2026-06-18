@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Play — Be Tru Maker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="sky.js" defer></script>
+</head>
+<body>
+
+  <div class="sky">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+  </div>
+
+  <header>
+    <a href="index.html" class="logo">Be Tru Maker</a>
+    <nav>
+      <a href="play.html" class="active">Play</a>
+      <div class="nav-dropdown"><span class="nav-drop-toggle">Learn</span><div class="nav-drop-menu"><a href="resources.html">Resources</a><a href="workshops.html">Workshops</a></div></div>
+      <a href="make.html">Make</a>
+      <a href="inthewild.html">In the Wild</a>
+      <a href="about.html">About</a>
+      
+      
+    </nav>
+  </header>
+
+  <div class="resources-hero sky-text">
+    <h1>Let's Play!</h1>
+    <p>Micro-games made by Tru. Pick one and play.</p>
+  </div>
+
+  <main>
+    <div class="games-grid">
+
+      <div class="game-card" data-title="Wild West" data-src="WildWest.html">
+        <div class="card-header">
+          <div class="card-dot"></div>
+          <h2>Wild West</h2>
+          <span class="expand-hint">Click to play</span>
+        </div>
+        <div class="embed-wrapper">
+          <iframe class="game-embed" src="WildWest.html" allowfullscreen></iframe>
+          <div class="embed-shield"></div>
+        </div>
+      </div>
+
+      <div class="game-card" data-title="Hot Dog Run" data-src="HotDogRun.html">
+        <div class="card-header">
+          <div class="card-dot"></div>
+          <h2>Hot Dog Run</h2>
+          <span class="expand-hint">Click to play</span>
+        </div>
+        <div class="embed-wrapper">
+          <iframe class="game-embed" src="HotDogRun.html" allowfullscreen></iframe>
+          <div class="embed-shield"></div>
+        </div>
+      </div>
+
+      <div class="game-card" data-title="Rise" data-src="Rise.html">
+        <div class="card-header">
+          <div class="card-dot"></div>
+          <h2>Rise</h2>
+          <span class="expand-hint">Click to play</span>
+        </div>
+        <div class="embed-wrapper">
+          <iframe class="game-embed" src="Rise.html" allowfullscreen></iframe>
+          <div class="embed-shield"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Tell Tru Survey -->
+  <section class="tell-tru sky-text">
+    <div class="tell-tru-inner">
+      <div class="thank-you-icon">🎮</div>
+      <h2 class="thank-you-heading">I NEED U!</h2>
+      <p class="tell-tru-sub">Your thoughts and feedback really help so much. Will you help me make better games? To say thank you, I'll send you some stickers!</p>
+
+      <form name="tell-tru" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="tell-tru-form">
+        <input type="hidden" name="form-name" value="tell-tru" />
+        <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="kid-name">Your name</label>
+            <input type="text" id="kid-name" name="kid-name" placeholder="First name is fine" required />
+          </div>
+          <div class="form-group">
+            <label for="kid-grade">What grade are you in?</label>
+            <select id="kid-grade" name="kid-grade" required>
+              <option value="" disabled selected>Pick one</option>
+              <option>Kindergarten</option>
+              <option>1st grade</option>
+              <option>2nd grade</option>
+              <option>3rd grade</option>
+              <option>4th grade</option>
+              <option>5th grade</option>
+              <option>6th grade</option>
+              <option>7th grade</option>
+              <option>8th grade</option>
+              <option>9th grade</option>
+              <option>10th grade</option>
+              <option>11th grade</option>
+              <option>12th grade</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="game-played">Which game did you play?</label>
+            <select id="game-played" name="game-played" required>
+              <option value="" disabled selected>Pick one</option>
+              <option value="Wild West">Wild West</option>
+              <option value="Hot Dog Run">Hot Dog Run</option>
+              <option value="Rise">Rise</option>
+              <option value="More than one">More than one!</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="most-into">What are you most into?</label>
+            <select id="most-into" name="most-into">
+              <option value="" disabled selected>Pick one</option>
+              <option>Games</option>
+              <option>Art</option>
+              <option>Making stuff / merch</option>
+              <option>All of it!</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>How fun was it?</label>
+          <div class="rating-row">
+            <label class="rating-opt"><input type="radio" name="rating" value="1" required /><span>😐 Meh</span></label>
+            <label class="rating-opt"><input type="radio" name="rating" value="2" /><span>🙂 Pretty fun</span></label>
+            <label class="rating-opt"><input type="radio" name="rating" value="3" /><span>🔥 So good</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="how-found">How did you find BeTru Maker?</label>
+          <select id="how-found" name="how-found">
+            <option value="" disabled selected>Pick one</option>
+            <option>School visit from Tru</option>
+            <option>A friend told me</option>
+            <option>YouTube</option>
+            <option>Just found it</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>After playing, how inspired are you to make something of your own?</label>
+          <div class="rating-scale">
+            <span class="scale-label">Not at all</span>
+            <div class="scale-options">
+              <label class="scale-opt"><input type="radio" name="inspired" value="1" /><span>1</span></label>
+              <label class="scale-opt"><input type="radio" name="inspired" value="2" /><span>2</span></label>
+              <label class="scale-opt"><input type="radio" name="inspired" value="3" /><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="inspired" value="4" /><span>4</span></label>
+              <label class="scale-opt"><input type="radio" name="inspired" value="5" /><span>5</span></label>
+            </div>
+            <span class="scale-label">Very inspired</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>If you were to make something, what would it be?</label>
+          <div class="radio-list">
+            <label class="radio-opt"><input type="radio" name="make-what" value="Art or your own characters" /><span>Art or your own characters</span></label>
+            <label class="radio-opt"><input type="radio" name="make-what" value="Your own products (stickers, shirts, etc.)" /><span>Your own products (stickers, shirts, etc.)</span></label>
+            <label class="radio-opt"><input type="radio" name="make-what" value="A comic book or story" /><span>A comic book or story</span></label>
+            <label class="radio-opt"><input type="radio" name="make-what" value="A video game" /><span>A video game</span></label>
+            <label class="radio-opt"><input type="radio" name="make-what" value="Other" /><span>Other</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>What part of game making do you want to know more about?</label>
+          <div class="radio-list">
+            <label class="radio-opt"><input type="radio" name="learn-more" value="Coming up with an idea" /><span>Coming up with an idea</span></label>
+            <label class="radio-opt"><input type="radio" name="learn-more" value="Making artwork" /><span>Making artwork</span></label>
+            <label class="radio-opt"><input type="radio" name="learn-more" value="Programming" /><span>Programming</span></label>
+            <label class="radio-opt"><input type="radio" name="learn-more" value="Other" /><span>Other</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Are you going to try making something this summer?</label>
+          <div class="radio-list">
+            <label class="radio-opt"><input type="radio" name="try-this-summer" value="Yes, definitely" /><span>Yes, definitely!</span></label>
+            <label class="radio-opt"><input type="radio" name="try-this-summer" value="Maybe" /><span>Maybe</span></label>
+            <label class="radio-opt"><input type="radio" name="try-this-summer" value="I don't know yet" /><span>I don't know yet</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="anything-else">Anything else on your mind?</label>
+          <textarea id="anything-else" name="anything-else" rows="2" placeholder="Say whatever you want!"></textarea>
+        </div>
+
+        <div class="form-section-label" style="margin-top:1.5rem;">Where to send your stickers</div>
+
+        <div class="form-group">
+          <label for="mailing-address">Mailing address</label>
+          <textarea id="mailing-address" name="mailing-address" rows="3" placeholder="Name, street, city, state, zip"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="kid-email">Email — want to keep in touch?</label>
+          <input type="email" id="kid-email" name="kid-email" placeholder="your@email.com" />
+        </div>
+
+        <button type="submit" class="tell-tru-submit">Send it to Tru →</button>
+      </form>
+
+      <div class="tell-tru-thanks" id="tell-tru-thanks" style="display:none;">
+        <p class="thank-you-heading" style="font-family:'TLC',sans-serif;">THANK U SO MUCH!</p>
+        <p class="tell-tru-sub">You helped me become a better creator.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelector('.tell-tru-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(() => {
+        form.style.display = 'none';
+        document.getElementById('tell-tru-thanks').style.display = 'block';
+      }).catch(() => {
+        form.style.display = 'none';
+        document.getElementById('tell-tru-thanks').style.display = 'block';
+      });
+    });
+  </script>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.truman-cho.com/" target="_blank" rel="noopener">truman-cho.com</a>
+      <a href="https://x.com/RandomUser1081" target="_blank" rel="noopener">X</a>
+      <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
+      <a href="about.html#contact">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 BeTru Media</div>
+  </footer>
+
+  <!-- Modal overlay -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Game viewer">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="modal-title" class="modal-title"></span>
+        <button id="modal-close" class="modal-close" aria-label="Close">&#x2715;</button>
+      </div>
+      <iframe id="modal-iframe" class="modal-embed" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    const modal       = document.getElementById('modal');
+    const modalIframe = document.getElementById('modal-iframe');
+    const modalTitle  = document.getElementById('modal-title');
+    const closeBtn    = document.getElementById('modal-close');
+    const backdrop    = modal.querySelector('.modal-backdrop');
+
+    function openModal(src, title) {
+      modalIframe.src = src;
+      modalTitle.textContent = title;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => { modalIframe.src = ''; }, 300);
+    }
+
+    document.querySelectorAll('.game-card').forEach(card => {
+      const trigger = card.querySelector('.card-header');
+      const shield  = card.querySelector('.embed-shield');
+      function open() { openModal(card.dataset.src, card.dataset.title); }
+      trigger.addEventListener('click', open);
+      shield.addEventListener('click', open);
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+
+</body>
+</html>

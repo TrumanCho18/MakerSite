@@ -102,6 +102,11 @@ function tick() {
   root.style.setProperty('--cloud-fill', sky.cloud);
   root.style.setProperty('--star-opacity', sky.stars);
 
+  // Set text colour based on sky brightness (sky.mid is rgb() string)
+  const rgbMatch = sky.mid.match(/\d+/g).map(Number);
+  const luminance = (0.299 * rgbMatch[0] + 0.587 * rgbMatch[1] + 0.114 * rgbMatch[2]) / 255;
+  root.style.setProperty('--text-on-sky', luminance > 0.45 ? '#1a1a2e' : '#ffffff');
+
   // Dim clouds at night
   document.querySelectorAll('.cloud').forEach(c => {
     c.style.background = sky.cloud;
