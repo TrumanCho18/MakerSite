@@ -116,14 +116,28 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label for="game-played">Which game did you play?</label>
-            <select id="game-played" name="game-played" required>
-              <option value="" disabled selected>Pick one</option>
-              <option value="Wild West">Wild West</option>
-              <option value="Hot Dog Run">Hot Dog Run</option>
-              <option value="Rise">Rise</option>
-              <option value="More than one">More than one!</option>
-            </select>
+            <label>Which game did you play?</label>
+            <div class="game-pick">
+              <label class="game-pick-opt">
+                <input type="radio" name="game-played" value="Wild West" required />
+                <img src="Assets/workshop/image63.png" alt="Wild West" />
+                <span>Wild West</span>
+              </label>
+              <label class="game-pick-opt">
+                <input type="radio" name="game-played" value="Hot Dog Run" />
+                <img src="Assets/workshop/image56.png" alt="Hot Dog Run" />
+                <span>Hot Dog Run</span>
+              </label>
+              <label class="game-pick-opt">
+                <input type="radio" name="game-played" value="Rise" />
+                <img src="Assets/workshop/image2.png" alt="Rise" />
+                <span>Rise</span>
+              </label>
+              <label class="game-pick-opt">
+                <input type="radio" name="game-played" value="More than one" />
+                <span class="game-pick-all">All of them!</span>
+              </label>
+            </div>
           </div>
           <div class="form-group">
             <label for="most-into">What are you most into?</label>
