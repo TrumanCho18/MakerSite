@@ -1920,7 +1920,7 @@ input[type="date"] {
 }
 
 .hero-wordmark {
-  font-family: 'TLC', sans-serif;
+  font-family: 'TLC', sans-serif !important;
   font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: normal;
   color: #ffffff;
