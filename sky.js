@@ -120,3 +120,27 @@ document.addEventListener('DOMContentLoaded', () => {
   tick();
   setInterval(tick, 1000);
 });
+
+// ── Mobile nav toggle ────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('nav-toggle');
+  const nav    = document.getElementById('main-nav');
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+
+  // Close nav when a link is tapped
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => nav.classList.remove('open'));
+  });
+
+  // Learn dropdown tap support on mobile
+  nav.querySelectorAll('.nav-dropdown').forEach(dd => {
+    dd.querySelector('.nav-drop-toggle').addEventListener('click', () => {
+      dd.classList.toggle('open');
+    });
+  });
+});
