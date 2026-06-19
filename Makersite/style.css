@@ -826,6 +826,16 @@ main {
   border-radius: 1rem;
 }
 
+.make-feature-img--duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.make-feature-img--duo img {
+  aspect-ratio: 3 / 4;
+}
+
 .make-feature-label {
   font-size: 0.75rem;
   font-weight: 700;
