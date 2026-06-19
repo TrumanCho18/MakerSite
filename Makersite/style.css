@@ -865,12 +865,29 @@ main {
   order: 1;
 }
 
+.make-process-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+  height: 100%;
+}
+
 .make-process-label {
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--accent);
+}
+
+.make-process-desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
 }
 
 .make-process-imgs {
