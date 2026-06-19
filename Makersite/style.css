@@ -2622,7 +2622,7 @@ input[type="date"] {
 .game-pick-opt img {
   width: 80px;
   height: 80px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 12px;
   border: 3px solid transparent;
   transition: border-color 0.2s, transform 0.15s;
