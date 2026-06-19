@@ -2152,9 +2152,10 @@ footer {
 }
 
 .workshop-quote-photo {
-  width: 140px;
-  height: 140px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
+  object-position: center 20%;
   border-radius: 50%;
   flex-shrink: 0;
   border: 3px solid rgba(255,140,80,0.5);
@@ -2259,8 +2260,8 @@ footer {
   }
 
   .workshop-quote-photo {
-    width: 100px;
-    height: 100px;
+    width: 160px;
+    height: 160px;
     align-self: center;
   }
 
@@ -2378,4 +2379,63 @@ footer {
   .nav-dropdown.open .nav-drop-menu {
     display: flex;
   }
+}
+
+/* ── Workshop waiver ── */
+.ws-waiver {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ws-waiver-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+}
+
+.ws-waiver-text {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  max-height: 160px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding-right: 0.5rem;
+}
+
+.ws-waiver-text p {
+  margin: 0 0 0.5rem;
+}
+
+.ws-waiver-text ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.ws-waiver-text li {
+  margin-bottom: 0.4rem;
+}
+
+.ws-waiver-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+}
+
+.ws-waiver-check input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--accent);
+  cursor: pointer;
 }
