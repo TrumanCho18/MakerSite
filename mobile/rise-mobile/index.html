@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen">
+  <meta name="apple-mobile-web-app-title" content="Rise">
+  <meta name="theme-color" content="#8ecbf0">
+  <title>Rise</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: #8ecbf0;
+      overflow: hidden;
+      touch-action: none;
+    }
+
+    #game-frame {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+      z-index: 0;
+    }
+
+    /* ── Controls overlay ───────────────────────────────────────── */
+    #controls {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 24px 30px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .ctrl-btn {
+      width: 62px; height: 62px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      border: 2px solid rgba(255,255,255,0.45);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      transition: background 0.08s, transform 0.08s;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      pointer-events: auto;
+    }
+    .ctrl-btn:active,
+    .ctrl-btn.pressed {
+      background: rgba(255, 90, 90, 0.55);
+      border-color: #ff5a5a;
+      transform: scale(0.92);
+    }
+
+    /* dpad cross (left side) */
+    #dpad {
+      display: grid;
+      grid-template-columns: repeat(3, 56px);
+      grid-template-rows: repeat(3, 56px);
+      gap: 4px;
+    }
+    #dpad .ctrl-btn { width: 56px; height: 56px; font-size: 22px; }
+    #btn-up    { grid-column: 2; grid-row: 1; }
+    #btn-left  { grid-column: 1; grid-row: 2; }
+    #btn-right { grid-column: 3; grid-row: 2; }
+    #btn-down  { grid-column: 2; grid-row: 3; }
+
+    /* big RISE button (right side) */
+    #btn-space {
+      width: 108px; height: 108px;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+      letter-spacing: 0.5px;
+      flex-direction: column;
+      gap: 2px;
+      background: rgba(255, 90, 90, 0.30);
+      border-color: rgba(255, 90, 90, 0.6);
+    }
+    #btn-space .arrow { font-size: 26px; line-height: 1; }
+  </style>
+</head>
+<body>
+
+  <iframe id="game-frame" src="Rise.html" allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
+
+  <div id="controls">
+    <!-- d-pad: left/right to drift, up/down for menus -->
+    <div id="dpad">
+      <button class="ctrl-btn" id="btn-up"    data-key="ArrowUp"    data-code="ArrowUp">↑</button>
+      <button class="ctrl-btn" id="btn-left"  data-key="ArrowLeft"  data-code="ArrowLeft">←</button>
+      <button class="ctrl-btn" id="btn-right" data-key="ArrowRight" data-code="ArrowRight">→</button>
+      <button class="ctrl-btn" id="btn-down"  data-key="ArrowDown"  data-code="ArrowDown">↓</button>
+    </div>
+
+    <!-- big primary action: rise -->
+    <button class="ctrl-btn" id="btn-space" data-key=" " data-code="Space">
+      <span class="arrow">↑</span>RISE
+    </button>
+  </div>
+
+  <script>
+    const frame = document.getElementById('game-frame');
+
+    function keyCodeFor(code) {
+      const map = { ArrowUp: 38, ArrowDown: 40, ArrowLeft: 37, ArrowRight: 39, Space: 32 };
+      return map[code] || 0;
+    }
+
+    function dispatch(type, key, code) {
+      const win = frame.contentWindow;
+      if (!win) return;
+      const evt = new KeyboardEvent(type, {
+        key, code, keyCode: keyCodeFor(code),
+        bubbles: true, cancelable: true
+      });
+      win.document.dispatchEvent(evt);
+    }
+
+    // track which pointer → which button (multi-touch)
+    const activePointers = new Map();
+
+    function pressButton(btn) {
+      btn.classList.add('pressed');
+      dispatch('keydown', btn.dataset.key, btn.dataset.code);
+    }
+    function releaseButton(btn) {
+      btn.classList.remove('pressed');
+      dispatch('keyup', btn.dataset.key, btn.dataset.code);
+    }
+
+    document.querySelectorAll('.ctrl-btn').forEach(btn => {
+      btn.addEventListener('pointerdown', e => {
+        e.preventDefault();
+        btn.setPointerCapture(e.pointerId);
+        activePointers.set(e.pointerId, btn);
+        pressButton(btn);
+      });
+      btn.addEventListener('pointerup', e => {
+        e.preventDefault();
+        const b = activePointers.get(e.pointerId);
+        if (b) { releaseButton(b); activePointers.delete(e.pointerId); }
+      });
+      btn.addEventListener('pointercancel', e => {
+        const b = activePointers.get(e.pointerId);
+        if (b) { releaseButton(b); activePointers.delete(e.pointerId); }
+      });
+    });
+  </script>
+</body>
+</html>

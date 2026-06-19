@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen">
+  <meta name="apple-mobile-web-app-title" content="Wild West">
+  <meta name="theme-color" content="#caa472">
+  <title>Wild West</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: #caa472;
+      overflow: hidden;
+      touch-action: none;
+    }
+
+    #game-frame {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+      z-index: 0;
+    }
+
+    /* ── Controls overlay ───────────────────────────────────────── */
+    #controls {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 24px 30px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .ctrl-btn {
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      border: 2px solid rgba(255,255,255,0.45);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      transition: background 0.08s, transform 0.08s;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      pointer-events: auto;
+    }
+    .ctrl-btn:active,
+    .ctrl-btn.pressed {
+      background: rgba(120, 72, 20, 0.6);
+      border-color: #784814;
+      transform: scale(0.92);
+    }
+
+    /* up/down pad (left side) — move between lanes */
+    #updown {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    #updown .ctrl-btn { width: 70px; height: 70px; font-size: 28px; }
+
+    /* big FIRE button (right side) */
+    #btn-space {
+      width: 116px; height: 116px;
+      font-size: 20px;
+      font-weight: 700;
+      font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+      letter-spacing: 1px;
+      flex-direction: column;
+      gap: 2px;
+      background: rgba(160, 50, 30, 0.35);
+      border-color: rgba(200, 70, 40, 0.7);
+    }
+    #btn-space .icon { font-size: 30px; line-height: 1; }
+  </style>
+</head>
+<body>
+
+  <iframe id="game-frame" src="WildWest.html" allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
+
+  <div id="controls">
+    <!-- up/down: move between lanes -->
+    <div id="updown">
+      <button class="ctrl-btn" id="btn-up"   data-key="ArrowUp"   data-code="ArrowUp">↑</button>
+      <button class="ctrl-btn" id="btn-down" data-key="ArrowDown" data-code="ArrowDown">↓</button>
+    </div>
+
+    <!-- big primary action: shoot -->
+    <button class="ctrl-btn" id="btn-space" data-key=" " data-code="Space">
+      <span class="icon">🔫</span>FIRE
+    </button>
+  </div>
+
+  <script>
+    const frame = document.getElementById('game-frame');
+
+    function keyCodeFor(code) {
+      const map = { ArrowUp: 38, ArrowDown: 40, ArrowLeft: 37, ArrowRight: 39, Space: 32 };
+      return map[code] || 0;
+    }
+
+    function dispatch(type, key, code) {
+      const win = frame.contentWindow;
+      if (!win) return;
+      const evt = new KeyboardEvent(type, {
+        key, code, keyCode: keyCodeFor(code),
+        bubbles: true, cancelable: true
+      });
+      win.document.dispatchEvent(evt);
+    }
+
+    // track which pointer → which button (multi-touch)
+    const activePointers = new Map();
+
+    function pressButton(btn) {
+      btn.classList.add('pressed');
+      dispatch('keydown', btn.dataset.key, btn.dataset.code);
+    }
+    function releaseButton(btn) {
+      btn.classList.remove('pressed');
+      dispatch('keyup', btn.dataset.key, btn.dataset.code);
+    }
+
+    document.querySelectorAll('.ctrl-btn').forEach(btn => {
+      btn.addEventListener('pointerdown', e => {
+        e.preventDefault();
+        btn.setPointerCapture(e.pointerId);
+        activePointers.set(e.pointerId, btn);
+        pressButton(btn);
+      });
+      btn.addEventListener('pointerup', e => {
+        e.preventDefault();
+        const b = activePointers.get(e.pointerId);
+        if (b) { releaseButton(b); activePointers.delete(e.pointerId); }
+      });
+      btn.addEventListener('pointercancel', e => {
+        const b = activePointers.get(e.pointerId);
+        if (b) { releaseButton(b); activePointers.delete(e.pointerId); }
+      });
+    });
+  </script>
+</body>
+</html>

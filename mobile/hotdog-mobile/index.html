@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen">
+  <meta name="apple-mobile-web-app-title" content="HotDog Run">
+  <meta name="theme-color" content="#242424">
+  <title>HotDog Run</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: #242424;
+      overflow: hidden;
+      touch-action: none;
+    }
+
+    #game-frame {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+      z-index: 0;
+    }
+
+    /* ── Controls overlay ───────────────────────────────────────── */
+    #controls {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 180px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 0 20px 28px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 1;
+    }
+    #controls.visible { opacity: 1; }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      pointer-events: auto;
+    }
+
+    .ctrl-btn {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      transition: background 0.08s, transform 0.08s;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .ctrl-btn:active,
+    .ctrl-btn.pressed {
+      background: rgba(255, 217, 0, 0.45);
+      border-color: #ffd900;
+      transform: scale(0.92);
+    }
+
+    #btn-up { width: 72px; height: 72px; font-size: 28px; }
+
+    /* dpad column */
+    #dpad {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      pointer-events: auto;
+    }
+    #dpad-row {
+      display: flex;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <iframe id="game-frame" src="HotDogRun.html" allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
+
+  <div id="controls">
+    <!-- D-pad only (hotdog moves 4 directions, no jumping) -->
+    <div id="dpad">
+      <button class="ctrl-btn" id="btn-up"    data-key="ArrowUp"    data-code="ArrowUp">↑</button>
+      <div id="dpad-row">
+        <button class="ctrl-btn" id="btn-left"  data-key="ArrowLeft"  data-code="ArrowLeft">←</button>
+        <button class="ctrl-btn" id="btn-down"  data-key="ArrowDown"  data-code="ArrowDown">↓</button>
+        <button class="ctrl-btn" id="btn-right" data-key="ArrowRight" data-code="ArrowRight">→</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── Sound engine (Web Audio API) ────────────────────────────
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let ctx = null;
+
+    function getAudioContext() {
+      if (!ctx) ctx = new AudioContext();
+      if (ctx.state === 'suspended') ctx.resume();
+      return ctx;
+    }
+
+    function playTone({ type = 'square', freq = 440, freq2 = null, duration = 0.12, vol = 0.18, attack = 0.005, decay = 0.05 } = {}) {
+      try {
+        const ac = getAudioContext();
+        const osc = ac.createOscillator();
+        const gain = ac.createGain();
+        osc.connect(gain);
+        gain.connect(ac.destination);
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, ac.currentTime);
+        if (freq2) osc.frequency.linearRampToValueAtTime(freq2, ac.currentTime + duration);
+        gain.gain.setValueAtTime(0, ac.currentTime);
+        gain.gain.linearRampToValueAtTime(vol, ac.currentTime + attack);
+        gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + duration);
+        osc.start(ac.currentTime);
+        osc.stop(ac.currentTime + duration + 0.01);
+      } catch(e) {}
+    }
+
+    // ── Footstep sound (BurgerTime-style rhythmic walking) ──────
+    let stepInterval = null;
+    let stepPhase = 0;
+    const stepFreqs = [280, 220]; // alternating pitch like footsteps
+
+    function startFootsteps() {
+      if (stepInterval) return;
+      stepInterval = setInterval(() => {
+        playTone({ type: 'square', freq: stepFreqs[stepPhase % 2], duration: 0.07, vol: 0.13, attack: 0.002, decay: 0.06 });
+        stepPhase++;
+      }, 150);
+    }
+
+    function stopFootsteps() {
+      clearInterval(stepInterval);
+      stepInterval = null;
+    }
+
+    // ── Background music (looping chiptune) ─────────────────────
+    // BurgerTime-inspired upbeat arcade melody
+    const melody = [
+      [523,0.15],[587,0.15],[659,0.15],[784,0.3],
+      [740,0.15],[659,0.15],[587,0.15],[523,0.3],
+      [440,0.15],[494,0.15],[523,0.15],[659,0.3],
+      [587,0.15],[523,0.15],[494,0.15],[440,0.45],
+      [392,0.15],[440,0.15],[494,0.15],[523,0.3],
+      [587,0.15],[659,0.15],[784,0.15],[880,0.3],
+      [784,0.15],[659,0.15],[587,0.15],[523,0.3],
+      [494,0.15],[440,0.15],[392,0.15],[330,0.45],
+    ];
+
+    let musicPlaying = false;
+    let musicTimeoutId = null;
+
+    function playMelody(noteIndex = 0) {
+      if (!musicPlaying) return;
+      const ac = getAudioContext();
+      const [freq, dur] = melody[noteIndex % melody.length];
+      playTone({ type: 'square', freq, duration: dur * 0.85, vol: 0.12, attack: 0.01, decay: dur * 0.85 });
+      musicTimeoutId = setTimeout(() => playMelody(noteIndex + 1), dur * 1000);
+    }
+
+    function startMusic() {
+      if (musicPlaying) return;
+      musicPlaying = true;
+      playMelody(0);
+    }
+
+    function stopMusic() {
+      musicPlaying = false;
+      clearTimeout(musicTimeoutId);
+    }
+
+    // ── Key dispatch into the iframe ────────────────────────────
+    const frame = document.getElementById('game-frame');
+
+    function dispatch(type, key, code) {
+      const win = frame.contentWindow;
+      if (!win) return;
+      const evt = new KeyboardEvent(type, {
+        key, code, keyCode: keyCodeFor(code),
+        bubbles: true, cancelable: true
+      });
+      win.document.dispatchEvent(evt);
+    }
+
+    function keyCodeFor(code) {
+      const map = { ArrowUp: 38, ArrowDown: 40, ArrowLeft: 37, ArrowRight: 39, Space: 32 };
+      return map[code] || 0;
+    }
+
+    function soundFor(code) {
+      const map = { ArrowLeft: 'left', ArrowRight: 'right', ArrowUp: 'up', ArrowDown: 'down' };
+      return sounds[map[code]];
+    }
+
+    // track which pointer → which button (multi-touch)
+    const activePointers = new Map();
+
+    function pressButton(btn) {
+      const key = btn.dataset.key;
+      const code = btn.dataset.code;
+      btn.classList.add('pressed');
+      dispatch('keydown', key, code);
+      startFootsteps();
+    }
+
+    function releaseButton(btn) {
+      const key = btn.dataset.key;
+      const code = btn.dataset.code;
+      btn.classList.remove('pressed');
+      dispatch('keyup', key, code);
+      // stop footsteps only if no other button is still held
+      if (activePointers.size === 0) stopFootsteps();
+    }
+
+    document.querySelectorAll('.ctrl-btn').forEach(btn => {
+      btn.addEventListener('pointerdown', e => {
+        e.preventDefault();
+        btn.setPointerCapture(e.pointerId);
+        activePointers.set(e.pointerId, btn);
+        pressButton(btn);
+      });
+
+      btn.addEventListener('pointerup', e => {
+        e.preventDefault();
+        const b = activePointers.get(e.pointerId);
+        if (b) { releaseButton(b); activePointers.delete(e.pointerId); }
+      });
+
+      btn.addEventListener('pointercancel', e => {
+        const b = activePointers.get(e.pointerId);
+        if (b) { releaseButton(b); activePointers.delete(e.pointerId); }
+      });
+    });
+
+    // Unlock audio and start music on first tap anywhere
+    document.addEventListener('pointerdown', () => {
+      getAudioContext();
+      startMusic();
+    }, { once: true });
+  </script>
+</body>
+</html>
