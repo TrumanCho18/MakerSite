@@ -851,13 +851,14 @@ main {
 
 .make-process-row {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 220px 390px;
   gap: 2rem;
   align-items: center;
+  justify-content: center;
 }
 
 .make-process-row--flip {
-  grid-template-columns: 1fr 220px;
+  grid-template-columns: 390px 220px;
 }
 
 .make-process-row--flip .make-process-text {
@@ -901,13 +902,13 @@ main {
 
 .make-process-imgs {
   display: grid;
-  grid-template-columns: repeat(2, 160px);
+  grid-template-columns: repeat(2, 184px);
   gap: 0.75rem;
 }
 
 .make-process-imgs img {
-  width: 160px;
-  height: 160px;
+  width: 184px;
+  height: 184px;
   object-fit: cover;
   border-radius: 0.75rem;
   display: block;
