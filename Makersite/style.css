@@ -301,7 +301,7 @@ nav a.active {
 .nav-drop-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 4px);
+  top: 100%;
   left: 0;
   background: rgba(30, 28, 80, 0.92);
   backdrop-filter: blur(12px);
@@ -309,7 +309,19 @@ nav a.active {
   border-radius: 8px;
   min-width: 140px;
   padding: 0.35rem;
+  padding-top: 0.6rem;
+  margin-top: 4px;
   z-index: 200;
+}
+
+/* Invisible bridge fills the gap so hover doesn't break */
+.nav-drop-menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
 }
 
 .nav-dropdown:hover .nav-drop-menu,
