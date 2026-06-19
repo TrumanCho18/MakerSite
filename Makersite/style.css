@@ -2070,8 +2070,8 @@ input[type="date"] {
   margin-bottom: 1rem;
 }
 .thank-you-heading {
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(3rem, 10vw, 6rem);
+  font-family: 'TLC', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: normal;
   color: #fff;
   letter-spacing: 0.05em;
