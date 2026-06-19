@@ -2181,6 +2181,32 @@ footer {
   font-size: 0.95rem;
 }
 
+.ws-event-details {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ws-event-row {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
+}
+
+.ws-payment-note {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 0.5rem;
+  border-left: 3px solid rgba(255,200,100,0.4);
+}
+
 .workshop-form-placeholder {
   background: rgba(255,255,255,0.06);
   border: 1px dashed rgba(255,255,255,0.2);
