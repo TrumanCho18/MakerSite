@@ -851,14 +851,16 @@ main {
 
 .make-process-row {
   display: grid;
-  grid-template-columns: 220px 390px;
-  gap: 2rem;
+  grid-template-columns: 280px 380px;
+  gap: 1.5rem;
   align-items: center;
   justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .make-process-row--flip {
-  grid-template-columns: 390px 220px;
+  grid-template-columns: 380px 280px;
 }
 
 .make-process-row--flip .make-process-text {
