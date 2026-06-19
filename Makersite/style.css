@@ -851,7 +851,7 @@ main {
 
 .make-process-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 220px 1fr;
   gap: 2rem;
   align-items: center;
 }
@@ -862,6 +862,12 @@ main {
 
 .make-process-row--flip .make-process-imgs {
   order: 1;
+}
+
+@media (max-width: 600px) {
+  .make-process-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 .make-process-text {
