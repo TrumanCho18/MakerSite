@@ -901,13 +901,12 @@ main {
 
 .make-process-imgs {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 160px);
   gap: 0.75rem;
-  overflow: hidden;
 }
 
 .make-process-imgs img {
-  width: 100%;
+  width: 160px;
   height: 160px;
   object-fit: cover;
   border-radius: 0.75rem;
