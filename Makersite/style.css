@@ -927,6 +927,18 @@ main {
   }
 }
 
+.make-resources-body .resource-grid,
+.make-resources-body .resource-grid--two {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media (max-width: 900px) {
+  .make-resources-body .resource-grid,
+  .make-resources-body .resource-grid--two {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .make-resources-heading {
   padding-top: 3rem;
   border-top: 1px solid rgba(255,255,255,0.1);
