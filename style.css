@@ -346,7 +346,7 @@ nav a.active {
 }
 
 .hero h1 {
-  font-family: 'TLC', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: normal;
   letter-spacing: 0;
@@ -1926,7 +1926,7 @@ footer {
   margin-bottom: 1rem;
 }
 .thank-you-heading {
-  font-family: 'TLC', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(3rem, 10vw, 6rem);
   font-weight: normal;
   color: #fff;
