@@ -149,36 +149,35 @@
 
         <div class="form-group">
           <label for="inspired">After playing, how inspired are you to make something of your own?</label>
-          <select id="inspired" name="inspired">
-            <option value="" disabled selected>Pick one</option>
-            <option value="1">1 — Not at all</option>
-            <option value="2">2</option>
-            <option value="3">3 — Somewhat</option>
-            <option value="4">4</option>
-            <option value="5">5 — Very inspired</option>
-          </select>
+          <div class="slider-wrap">
+            <span class="slider-label">Not at all</span>
+            <input type="range" id="inspired" name="inspired" min="1" max="5" step="1" value="3" class="inspired-slider" />
+            <span class="slider-label">Very inspired</span>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="make-what">If you were to make something, what would it be?</label>
-          <select id="make-what" name="make-what">
-            <option value="" disabled selected>Pick one</option>
-            <option>Art or your own characters</option>
-            <option>Your own products (stickers, shirts, etc.)</option>
-            <option>A video game</option>
-            <option>Other</option>
-          </select>
-        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="make-what">If you were to make something, what would it be?</label>
+            <select id="make-what" name="make-what">
+              <option value="" disabled selected>Pick one</option>
+              <option>Art or your own characters</option>
+              <option>Your own products (stickers, shirts, etc.)</option>
+              <option>A video game</option>
+              <option>Other</option>
+            </select>
+          </div>
 
-        <div class="form-group">
-          <label for="learn-more">What part of game making do you want to know more about?</label>
-          <select id="learn-more" name="learn-more">
-            <option value="" disabled selected>Pick one</option>
-            <option>Coming up with an idea</option>
-            <option>Making artwork</option>
-            <option>Programming</option>
-            <option>Other</option>
-          </select>
+          <div class="form-group">
+            <label for="learn-more">What part of game making do you want to know more about?</label>
+            <select id="learn-more" name="learn-more">
+              <option value="" disabled selected>Pick one</option>
+              <option>Coming up with an idea</option>
+              <option>Making artwork</option>
+              <option>Programming</option>
+              <option>Other</option>
+            </select>
+          </div>
         </div>
 
 

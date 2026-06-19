@@ -2595,3 +2595,20 @@ input[type="date"] {
   accent-color: var(--accent);
   cursor: pointer;
 }
+
+.slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.slider-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  white-space: nowrap;
+}
+.inspired-slider {
+  flex: 1;
+  accent-color: var(--accent);
+  height: 4px;
+  cursor: pointer;
+}
