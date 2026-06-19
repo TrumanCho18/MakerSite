@@ -851,18 +851,13 @@ main {
 
 .make-process-row {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
 }
 
-.make-process-row--flip {
-  grid-template-columns: 2fr 1fr;
-}
-
-.make-process-row--flip .make-process-label {
+.make-process-row--flip .make-process-text {
   order: 2;
-  text-align: right;
 }
 
 .make-process-row--flip .make-process-imgs {
