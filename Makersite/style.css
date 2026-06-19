@@ -755,55 +755,38 @@ main {
   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0 1.5rem 2.5rem;
-}
-
-.subtab-heading {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: rgba(255,255,255,0.5);
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.subtab-pills {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.subtab-dot {
-  color: rgba(255,255,255,0.3);
-  font-size: 1rem;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 1.5rem 2rem;
+  flex-wrap: wrap;
 }
 
 .subtab {
   font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  padding: 0;
-  border: none;
-  background: none;
-  color: rgba(255,255,255,0.45);
+  padding: 0.55rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
   cursor: pointer;
-  transition: color 0.2s;
-  text-transform: lowercase;
-  letter-spacing: 0.02em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
 }
 
 .subtab:hover {
-  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .subtab.active {
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.6);
   color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  box-shadow: 0 0 16px rgba(255,255,255,0.15);
 }
 
 /* ── Resource tiles ── */
