@@ -84,9 +84,8 @@
       <h2 class="thank-you-heading">I NEED U!</h2>
       <p class="tell-tru-sub">Your thoughts and feedback really help so much. Will you help me make better games? To say thank you, I'll send you some stickers!</p>
 
-      <form name="tell-tru" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="tell-tru-form">
+      <form id="tell-tru-form" class="tell-tru-form">
         <input type="hidden" name="form-name" value="tell-tru" />
-        <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
         <div class="form-row">
           <div class="form-group">
@@ -230,20 +229,23 @@
   </section>
 
   <script>
-    document.querySelector('.tell-tru-form').addEventListener('submit', function(e) {
+    document.getElementById('tell-tru-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const form = this;
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
-      }).then(() => {
+      try {
+        const res = await fetch('https://formspree.io/f/mykalynl', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('tell-tru-thanks').style.display = 'block';
+        }
+      } catch {
         form.style.display = 'none';
         document.getElementById('tell-tru-thanks').style.display = 'block';
-      }).catch(() => {
-        form.style.display = 'none';
-        document.getElementById('tell-tru-thanks').style.display = 'block';
-      });
+      }
     });
   </script>
 
