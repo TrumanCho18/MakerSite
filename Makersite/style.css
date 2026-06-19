@@ -1954,6 +1954,8 @@ input[type="date"] {
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 1.25rem;
   padding: 2.5rem 2rem;
+  max-width: 85%;
+  margin: 0 auto;
 }
 .tell-tru-heading {
   font-size: clamp(1.6rem, 4vw, 2.2rem);
