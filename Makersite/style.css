@@ -856,6 +856,10 @@ main {
   align-items: center;
 }
 
+.make-process-row--flip {
+  grid-template-columns: 1fr 220px;
+}
+
 .make-process-row--flip .make-process-text {
   order: 2;
 }
