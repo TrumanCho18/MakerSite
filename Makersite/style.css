@@ -2306,12 +2306,12 @@ input[type="date"] {
 }
 
 .workshop-quote-photo-wrap img {
-  width: 180%;
-  height: 180%;
+  width: 130%;
+  height: 130%;
   object-fit: cover;
   position: absolute;
-  top: -15%;
-  left: -45%;
+  top: -5%;
+  left: -25%;
 }
 
 .workshop-quote blockquote {
