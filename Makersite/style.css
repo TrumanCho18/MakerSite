@@ -1550,6 +1550,18 @@ input[type="date"] {
   margin: 1.75rem 0 0.75rem;
 }
 
+.resource-category-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  opacity: 0.9;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
 .section-subheading {
   font-size: 1rem;
   font-weight: 700;
