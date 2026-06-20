@@ -189,6 +189,8 @@
  </div>
  </a>
 
+ </div>
+
   <h2 class="resource-category-heading">GB Studio</h2>
   <div class="resource-grid">
 
@@ -733,7 +735,7 @@
  let anyVisible = false;
 
  tiles.forEach(tile => {
- const tabMatch = isSearching || tile.dataset.tab === activeTab;
+ const tabMatch = isSearching || activeFilter !== 'all' || tile.dataset.tab === activeTab;
  const filterMatch = activeFilter === 'all' || tile.dataset.type === activeFilter;
  const diffMatch = activeDiff === 'all' || tile.dataset.difficulty === activeDiff;
  const searchMatch = !isSearching || tile.innerText.toLowerCase().includes(searchQuery.toLowerCase());
