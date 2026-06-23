@@ -23,7 +23,7 @@
     }
     .survey-intro p {
       font-size: 1.05rem;
-      color: #555;
+      color: rgba(255,255,255,0.8);
       max-width: 480px;
       margin: 0 auto;
     }
@@ -31,10 +31,10 @@
       font-family: 'Poppins', sans-serif;
       font-size: 1rem;
       letter-spacing: 0.08em;
-      color: #888;
+      color: rgba(255,255,255,0.55);
       text-transform: uppercase;
       margin: 2rem 0 1rem;
-      border-bottom: 1px solid #e5e5e0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
       padding-bottom: 0.4rem;
     }
     .survey-form .form-group {
@@ -44,6 +44,7 @@
       display: block;
       font-weight: 600;
       margin-bottom: 0.5rem;
+      color: #fff;
     }
     .survey-form input[type="text"],
     .survey-form input[type="email"],
@@ -51,12 +52,22 @@
     .survey-form textarea {
       width: 100%;
       padding: 0.6rem 0.85rem;
-      border: 1.5px solid #ddd;
+      border: 1.5px solid rgba(255,255,255,0.3);
       border-radius: 0.5rem;
       font-size: 1rem;
       font-family: inherit;
-      background: #fff;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
       box-sizing: border-box;
+    }
+    .survey-form input[type="text"]::placeholder,
+    .survey-form input[type="email"]::placeholder,
+    .survey-form textarea::placeholder {
+      color: rgba(255,255,255,0.45);
+    }
+    .survey-form select option {
+      background: #3a3880;
+      color: #fff;
     }
     .survey-form textarea {
       resize: vertical;
@@ -82,6 +93,7 @@
       gap: 0.6rem;
       cursor: pointer;
       font-size: 0.98rem;
+      color: rgba(255,255,255,0.9);
     }
     .check-opt input,
     .radio-opt input {
@@ -96,7 +108,7 @@
       gap: 0.75rem;
     }
     .game-type-card {
-      border: 2px solid #e0e0d8;
+      border: 2px solid rgba(255,255,255,0.25);
       border-radius: 0.75rem;
       padding: 1rem;
       cursor: pointer;
@@ -104,13 +116,14 @@
       display: flex;
       flex-direction: column;
       gap: 0.3rem;
+      background: rgba(255,255,255,0.08);
     }
     .game-type-card input[type="checkbox"] {
       display: none;
     }
     .game-type-card.selected {
       border-color: #ff6b2b;
-      background: #fff7f3;
+      background: rgba(255,107,43,0.2);
     }
     .game-type-card .card-emoji {
       font-size: 1.6rem;
@@ -118,10 +131,11 @@
     .game-type-card .card-title {
       font-weight: 700;
       font-size: 0.95rem;
+      color: #fff;
     }
     .game-type-card .card-desc {
       font-size: 0.82rem;
-      color: #666;
+      color: rgba(255,255,255,0.65);
     }
     .rating-row {
       display: flex;
@@ -156,7 +170,7 @@
     }
     .survey-thanks p {
       font-size: 1.1rem;
-      color: #555;
+      color: rgba(255,255,255,0.85);
     }
   </style>
 </head>
@@ -208,6 +222,12 @@
           <label for="s-grade">What grade are you in?</label>
           <select id="s-grade" name="grade" required>
             <option value="" disabled selected>Pick one</option>
+            <option>Kindergarten</option>
+            <option>1st grade</option>
+            <option>2nd grade</option>
+            <option>3rd grade</option>
+            <option>4th grade</option>
+            <option>5th grade</option>
             <option>6th grade</option>
             <option>7th grade</option>
             <option>8th grade</option>
@@ -336,6 +356,15 @@
       <div class="form-group">
         <label for="s-goal">What's one thing you really want to learn or make?</label>
         <textarea id="s-goal" name="goal" rows="3" placeholder="No wrong answers."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Are you interested in joining a program in person, virtually, or either?</label>
+        <div class="check-list">
+          <label class="check-opt"><input type="checkbox" name="program-format" value="In person" /><span>In person</span></label>
+          <label class="check-opt"><input type="checkbox" name="program-format" value="Virtual" /><span>Virtual</span></label>
+          <label class="check-opt"><input type="checkbox" name="program-format" value="Either works" /><span>Either works</span></label>
+        </div>
       </div>
 
       <div class="form-group">
