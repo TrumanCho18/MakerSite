@@ -104,7 +104,7 @@
     }
     .game-type-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 0.75rem;
     }
     .game-type-card {
@@ -125,8 +125,12 @@
       border-color: #ff6b2b;
       background: rgba(255,107,43,0.2);
     }
-    .game-type-card .card-emoji {
-      font-size: 1.6rem;
+    .game-type-card .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 0.4rem;
+      margin-bottom: 0.3rem;
     }
     .game-type-card .card-title {
       font-weight: 700;
@@ -292,29 +296,35 @@
       <div class="form-group">
         <label>What kind of game do you want to make? <em style="font-weight:400;">(pick all that interest you)</em></label>
         <div class="game-type-grid" id="game-type-grid">
-          <div class="game-type-card" data-value="Mini game — character on iPad + pixel format">
-            <input type="checkbox" name="game-type" value="Mini game — character on iPad + pixel format" />
-            <span class="card-emoji">🎮</span>
-            <span class="card-title">Mini game</span>
-            <span class="card-desc">Design a character on iPad, turn it into a pixel-style game</span>
+          <div class="game-type-card" data-value="Mini Scratch game">
+            <input type="checkbox" name="game-type" value="Mini Scratch game" />
+            <img src="Assets/survey-scratch-game.png" alt="Mini Scratch game" class="card-img" />
+            <span class="card-title">Mini Scratch game</span>
+            <span class="card-desc">Design a character and build a mini game</span>
           </div>
-          <div class="game-type-card" data-value="GB Studio — Game Boy-style cartridge game">
-            <input type="checkbox" name="game-type" value="GB Studio — Game Boy-style cartridge game" />
-            <span class="card-emoji">🟩</span>
-            <span class="card-title">GB Studio game</span>
-            <span class="card-desc">A real Game Boy-style game — can go on an actual cartridge</span>
+          <div class="game-type-card" data-value="Retro Game Boy cartridge game">
+            <input type="checkbox" name="game-type" value="Retro Game Boy cartridge game" />
+            <img src="Assets/survey-cartridge.jpg" alt="Retro Game Boy cartridge" class="card-img" />
+            <span class="card-title">Retro Game Boy cartridge</span>
+            <span class="card-desc">A real game on an actual cartridge</span>
           </div>
-          <div class="game-type-card" data-value="Browser / itch.io game">
-            <input type="checkbox" name="game-type" value="Browser / itch.io game" />
-            <span class="card-emoji">🌐</span>
-            <span class="card-title">Browser game</span>
-            <span class="card-desc">Play it online and share the link — like on itch.io</span>
+          <div class="game-type-card" data-value="Story-based pixel art GB Studio game (itch.io)">
+            <input type="checkbox" name="game-type" value="Story-based pixel art GB Studio game (itch.io)" />
+            <img src="Assets/survey-gbstudio.png" alt="GB Studio pixel art game" class="card-img" />
+            <span class="card-title">Story pixel art game</span>
+            <span class="card-desc">GB Studio — post it on itch.io</span>
           </div>
-          <div class="game-type-card" data-value="Not sure yet">
-            <input type="checkbox" name="game-type" value="Not sure yet" />
-            <span class="card-emoji">🤷</span>
-            <span class="card-title">Not sure yet</span>
-            <span class="card-desc">Show me what's possible first</span>
+          <div class="game-type-card" data-value="Character development">
+            <input type="checkbox" name="game-type" value="Character development" />
+            <img src="Assets/survey-character-dev.jpg" alt="Character development" class="card-img" />
+            <span class="card-title">Character development</span>
+            <span class="card-desc">Sketch and develop your own original character</span>
+          </div>
+          <div class="game-type-card" data-value="Procreate + make products">
+            <input type="checkbox" name="game-type" value="Procreate + make products" />
+            <img src="Assets/survey-products.jpg" alt="Make products" class="card-img" />
+            <span class="card-title">Procreate + make products</span>
+            <span class="card-desc">Design in Procreate and turn it into real merch</span>
           </div>
         </div>
       </div>
