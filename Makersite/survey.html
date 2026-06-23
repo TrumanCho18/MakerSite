@@ -369,31 +369,36 @@
       </div>
 
       <div class="form-group">
-        <label>What sounds most exciting to you in this program? <em style="font-weight:400;">(pick all)</em></label>
+        <label>What excites you most about making? <em style="font-weight:400;">(pick all)</em></label>
         <div class="game-type-grid">
-          <div class="game-type-card" data-name="excited-about" data-value="Designing a character">
-            <input type="checkbox" name="excited-about" value="Designing a character" />
+          <div class="game-type-card" data-name="excited-about" data-value="Coming up with the idea / story">
+            <input type="checkbox" name="excited-about" value="Coming up with the idea / story" />
             <img src="Assets/makerloop/loop-1.png" alt="Create" class="card-img" />
-            <span class="card-title">Designing a character</span>
+            <span class="card-title">The idea / story</span>
           </div>
-          <div class="game-type-card" data-name="excited-about" data-value="Learning to code">
-            <input type="checkbox" name="excited-about" value="Learning to code" />
+          <div class="game-type-card" data-name="excited-about" data-value="Designing characters + art">
+            <input type="checkbox" name="excited-about" value="Designing characters + art" />
+            <img src="Assets/makerloop/loop-2.png" alt="Digitize" class="card-img" />
+            <span class="card-title">Characters + art</span>
+          </div>
+          <div class="game-type-card" data-name="excited-about" data-value="Coding / programming">
+            <input type="checkbox" name="excited-about" value="Coding / programming" />
             <img src="Assets/makerloop/loop-3.png" alt="Code" class="card-img" />
-            <span class="card-title">Learning to code</span>
+            <span class="card-title">Coding</span>
           </div>
           <div class="game-type-card" data-name="excited-about" data-value="Making a real game">
             <input type="checkbox" name="excited-about" value="Making a real game" />
             <img src="Assets/makerloop/loop-4.png" alt="Play" class="card-img" />
             <span class="card-title">Making a real game</span>
           </div>
-          <div class="game-type-card" data-name="excited-about" data-value="Making merch">
-            <input type="checkbox" name="excited-about" value="Making merch" />
+          <div class="game-type-card" data-name="excited-about" data-value="Making merch + products">
+            <input type="checkbox" name="excited-about" value="Making merch + products" />
             <img src="Assets/makerloop/loop-5.png" alt="Make" class="card-img" />
-            <span class="card-title">Making merch</span>
+            <span class="card-title">Merch + products</span>
           </div>
           <div class="game-type-card" data-name="excited-about" data-value="All of it">
             <input type="checkbox" name="excited-about" value="All of it" />
-            <img src="Assets/makerloop/loop-2.png" alt="All of it" class="card-img" />
+            <img src="Assets/makerloop/loop-1.png" alt="All of it" class="card-img" style="filter:hue-rotate(40deg);" />
             <span class="card-title">All of it</span>
           </div>
         </div>
@@ -427,17 +432,6 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="game-design-interest">What about game design interests you the most?</label>
-        <select id="game-design-interest" name="game-design-interest">
-          <option value="" disabled selected>Pick one</option>
-          <option value="Coming up with the idea">Coming up with the idea</option>
-          <option value="Making the art">Making the art</option>
-          <option value="Coding">Coding</option>
-          <option value="All of it">All of it</option>
-        </select>
-      </div>
-
       <div class="form-section-label">One more thing</div>
 
       <div class="form-group">
@@ -457,6 +451,24 @@
       <div class="form-group">
         <label for="s-notes">Anything Tru should know about you?</label>
         <textarea id="s-notes" name="notes" rows="2" placeholder="Totally optional."></textarea>
+      </div>
+
+      <div class="form-section-label">For parents</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="parent-name">Parent / guardian name</label>
+          <input type="text" id="parent-name" name="parent-name" placeholder="First and last name" />
+        </div>
+        <div class="form-group">
+          <label for="parent-email">Parent email</label>
+          <input type="email" id="parent-email" name="parent-email" placeholder="email@example.com" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="parent-notes">Anything you'd like Tru to know about your kid?</label>
+        <textarea id="parent-notes" name="parent-notes" rows="3" placeholder="Learning style, goals, questions, anything — totally optional."></textarea>
       </div>
 
       <button type="submit" class="survey-submit">Send it to Tru →</button>
