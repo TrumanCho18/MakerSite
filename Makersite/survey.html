@@ -258,6 +258,9 @@
           <label class="radio-opt"><input type="radio" name="game-exp" value="Tried once" /><span>Tried once (Scratch, Roblox Studio, etc.)</span></label>
           <label class="radio-opt"><input type="radio" name="game-exp" value="Yes, made a few" /><span>Yes, I've made a few</span></label>
         </div>
+        <div id="game-exp-detail" style="display:none; margin-top:0.75rem;">
+          <textarea name="game-exp-detail" rows="2" placeholder="Tell us about it — what did you make?"></textarea>
+        </div>
       </div>
 
       <div class="form-group">
@@ -265,7 +268,22 @@
         <div class="radio-list">
           <label class="radio-opt"><input type="radio" name="code-exp" value="Never" required /><span>No, never</span></label>
           <label class="radio-opt"><input type="radio" name="code-exp" value="A little (Scratch, block coding)" /><span>A little — Scratch, block coding</span></label>
-          <label class="radio-opt"><input type="radio" name="code-exp" value="Some real code" /><span>Yes — some real code (Python, JavaScript, etc.)</span></label>
+          <label class="radio-opt"><input type="radio" name="code-exp" value="Some real code" /><span>Yes — some real code</span></label>
+        </div>
+        <div id="code-exp-detail" style="display:none; margin-top:0.75rem;">
+          <select name="code-languages" multiple size="6" style="height:auto;">
+            <option value="Scratch">Scratch</option>
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="HTML/CSS">HTML / CSS</option>
+            <option value="GDScript (Godot)">GDScript (Godot)</option>
+            <option value="Lua (Roblox)">Lua (Roblox Studio)</option>
+            <option value="C#">C# (Unity)</option>
+            <option value="Swift">Swift</option>
+            <option value="Java">Java</option>
+            <option value="Other">Other</option>
+          </select>
+          <p style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin-top:0.4rem;">Hold Ctrl / Cmd to pick more than one.</p>
         </div>
       </div>
 
@@ -393,6 +411,22 @@
   </footer>
 
   <script>
+    // Show textarea when "Yes, made a few" is selected
+    document.querySelectorAll('input[name="game-exp"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        document.getElementById('game-exp-detail').style.display =
+          radio.value === 'Yes, made a few' ? 'block' : 'none';
+      });
+    });
+
+    // Show language dropdown when "Some real code" is selected
+    document.querySelectorAll('input[name="code-exp"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        document.getElementById('code-exp-detail').style.display =
+          radio.value === 'Some real code' ? 'block' : 'none';
+      });
+    });
+
     // Game type card toggle
     document.querySelectorAll('.game-type-card').forEach(card => {
       card.addEventListener('click', () => {
