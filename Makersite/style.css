@@ -2815,6 +2815,10 @@ input[type="date"] {
 .game-pick-opt span {
   font-size: 0.75rem;
   color: rgba(255,255,255,0.7);
+  white-space: nowrap;
+}
+.game-pick-opt {
+  min-width: 80px;
 }
 .game-pick-all {
   display: flex;
