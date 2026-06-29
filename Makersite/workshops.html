@@ -144,148 +144,65 @@
  </div>
  </div>
 
- <!-- Signup form -->
+ <!-- Waitlist -->
  <div class="workshop-section">
- <h2 class="workshop-section-title">Register for the June 29 Workshop</h2>
+ <h2 class="workshop-section-title">June 29 Workshop</h2>
 
  <div class="ws-event-details">
- <div class="ws-event-row"> <strong>June 29 – July 3, 2026</strong> &nbsp;·&nbsp; Monday to Friday</div>
- <div class="ws-event-row"> <strong>10am – 12pm</strong> daily</div>
- <div class="ws-event-row"> <strong>$75</strong> for the full week &nbsp;·&nbsp; All supplies included</div>
- <div class="ws-event-row"> Bring an iPad with Procreate and a laptop</div>
+ <div class="ws-event-row"><strong>June 29 – July 3, 2026</strong> &nbsp;·&nbsp; Monday to Friday</div>
+ <div class="ws-event-row"><strong>10am – 12pm</strong> daily</div>
+ <div class="ws-event-row"><strong>$75</strong> for the full week &nbsp;·&nbsp; All supplies included</div>
  </div>
 
- <div id="workshop-success" class="form-success" style="display:none">
- <span class="form-success-icon"></span>
- <h3>You're registered!</h3>
- <p>Tru will follow up with payment details and anything you need before June 29.</p>
+ <div class="ws-full-banner">
+   <span class="ws-full-badge">This session is full</span>
+   <p>Join the waitlist and be the first to know when the next one opens.</p>
  </div>
 
- <form id="workshop-form" class="contact-form">
-
- <div class="form-section-label">Parent / Guardian</div>
- <div class="form-row">
- <div class="form-group">
- <label for="ws-parent">Your name</label>
- <input type="text" id="ws-parent" name="parent-name" placeholder="First and last name" required />
- </div>
- <div class="form-group">
- <label for="ws-email">Email</label>
- <input type="email" id="ws-email" name="email" placeholder="your@email.com" required />
- </div>
- </div>
- <div class="form-group">
- <label for="ws-phone">Phone number</label>
- <input type="tel" id="ws-phone" name="phone" placeholder="For day-of contact" required />
+ <div id="waitlist-success" style="display:none; text-align:center; padding:2rem 0;">
+   <p style="font-size:1.1rem; font-weight:600;">You're on the list!</p>
+   <p style="opacity:0.75;">We'll reach out as soon as the next session opens up.</p>
  </div>
 
- <div class="form-section-label" style="margin-top:1.5rem;">Your child</div>
- <div class="form-row">
- <div class="form-group">
- <label for="ws-child">Child's name</label>
- <input type="text" id="ws-child" name="child-name" placeholder="First and last name" required />
- </div>
- <div class="form-group">
- <label for="ws-grade">Going into what grade?</label>
- <select id="ws-grade" name="grade" required>
- <option value="" disabled selected>Pick one</option>
- <option>4th grade</option>
- <option>5th grade</option>
- <option>6th grade</option>
- <option>Other</option>
- </select>
- </div>
- </div>
- <div class="form-group">
- <label for="ws-tshirt">T-shirt size (for Day 5 custom product)</label>
- <select id="ws-tshirt" name="tshirt-size" required>
- <option value="" disabled selected>Pick one</option>
- <optgroup label="Youth">
- <option value="Youth S">Youth S</option>
- <option value="Youth M">Youth M</option>
- <option value="Youth L">Youth L</option>
- <option value="Youth XL">Youth XL</option>
- </optgroup>
- <optgroup label="Adult">
- <option value="Adult S">Adult S</option>
- <option value="Adult M">Adult M</option>
- <option value="Adult L">Adult L</option>
- <option value="Adult XL">Adult XL</option>
- </optgroup>
- </select>
- </div>
-
- <div class="form-section-label" style="margin-top:1.5rem;">A little more</div>
- <div class="form-group">
- <label for="ws-heard">How did you hear about this workshop?</label>
- <select id="ws-heard" name="how-heard">
- <option value="" disabled selected>Pick one</option>
- <option>School visit from Tru</option>
- <option>A friend or parent</option>
- <option>Instagram</option>
- <option>betrumaker.com</option>
- <option>Other</option>
- </select>
- </div>
- <div class="form-group">
- <label for="ws-message">Anything we should know? (allergies, questions, notes)</label>
- <textarea id="ws-message" name="notes" rows="3" placeholder="Optional"></textarea>
- </div>
-
- <p class="ws-payment-note"> Payment of $75 will be requested after registration to confirm your spot.</p>
-
- <div class="ws-waiver">
- <h3 class="ws-waiver-title">Waiver &amp; Release</h3>
- <div class="ws-waiver-text">
- <p>By registering, I acknowledge and agree to the following:</p>
- <ul>
- <li>I give permission for my child to participate in the BeTru Maker Workshop (June 29 – July 3, 2026).</li>
- <li>I understand this is a hands-on creative workshop involving digital tools (iPad, laptop) and physical materials.</li>
- <li>I understand this is not a formal class or curriculum — it is designed to inspire curiosity and give kids a real taste of the creative process, not to teach coding or design from scratch.</li>
- <li>I release BeTru Maker and its instructors from liability for minor accidents or injuries that may occur during normal workshop activities.</li>
- <li>I give permission for photos or videos of my child taken during the workshop to be used on betrumaker.com and social media.</li>
- <li>I understand that payment of $75 is required to hold my child's spot and is non-refundable within 7 days of the start date.</li>
- </ul>
- </div>
- <label class="ws-waiver-check">
- <input type="checkbox" name="waiver" id="ws-waiver" required />
- <span>I have read and agree to the waiver above</span>
- </label>
- </div>
-
- <button type="submit" class="contact-btn" id="ws-submit">Register now →</button>
- <p id="ws-error" class="form-error" style="display:none">Something went wrong — please try again.</p>
+ <form id="waitlist-form" class="contact-form" style="max-width:480px;">
+   <div class="form-row">
+     <div class="form-group">
+       <label for="wl-name">Your name</label>
+       <input type="text" id="wl-name" name="name" placeholder="First and last name" required />
+     </div>
+     <div class="form-group">
+       <label for="wl-email">Email</label>
+       <input type="email" id="wl-email" name="email" placeholder="your@email.com" required />
+     </div>
+   </div>
+   <input type="hidden" name="form-type" value="workshop-waitlist" />
+   <button type="submit" class="contact-btn" id="wl-submit">Join the waitlist →</button>
  </form>
  </div>
 
  </main>
 
  <script>
- const wsForm = document.getElementById('workshop-form');
- const wsSuccess = document.getElementById('workshop-success');
- const wsSubmit = document.getElementById('ws-submit');
- const wsError = document.getElementById('ws-error');
-
- wsForm.addEventListener('submit', async (e) => {
- e.preventDefault();
- wsError.style.display = 'none';
- wsSubmit.textContent = 'Sending…';
- wsSubmit.disabled = true;
- try {
- const res = await fetch('https://formspree.io/f/mykalynl', {
- method: 'POST',
- headers: { 'Accept': 'application/json' },
- body: new FormData(wsForm),
- });
- if (res.ok) {
- wsForm.style.display = 'none';
- wsSuccess.style.display = '';
- } else { throw new Error(); }
- } catch {
- wsError.style.display = '';
- wsSubmit.textContent = 'Send it →';
- wsSubmit.disabled = false;
- }
+ document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
+   e.preventDefault();
+   const form = e.target;
+   const btn = document.getElementById('wl-submit');
+   btn.textContent = 'Sending…';
+   btn.disabled = true;
+   try {
+     const res = await fetch('https://formspree.io/f/mykalynl', {
+       method: 'POST',
+       headers: { 'Accept': 'application/json' },
+       body: new FormData(form),
+     });
+     if (res.ok) {
+       form.style.display = 'none';
+       document.getElementById('waitlist-success').style.display = '';
+     } else { throw new Error(); }
+   } catch {
+     btn.textContent = 'Join the waitlist →';
+     btn.disabled = false;
+   }
  });
  </script>
 
