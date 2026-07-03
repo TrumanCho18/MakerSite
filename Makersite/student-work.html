@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Work — Be Tru Maker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="sky.js" defer></script>
+</head>
+<body>
+
+  <div class="sky">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+  </div>
+
+  <header>
+    <a href="index.html" class="logo">Be Tru Maker</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav id="main-nav">
+      <a href="play.html">Play</a>
+      <div class="nav-dropdown">
+        <span class="nav-drop-toggle">Learn</span>
+        <div class="nav-drop-menu">
+          <a href="resources.html">Resources</a>
+          <a href="workshops.html">Workshops</a>
+          <a href="student-work.html" class="active">Student Work</a>
+        </div>
+      </div>
+      <a href="make.html">Make</a>
+      <a href="inthewild.html">In the Wild</a>
+      <a href="about.html">About</a>
+      <a href="booking.html" class="nav-book">Book an Event</a>
+    </nav>
+  </header>
+
+  <div class="resources-hero sky-text">
+    <h1>Student Work 🎮</h1>
+    <p>Games made by real students in BeTru Maker workshops. Click any game to play it.</p>
+  </div>
+
+  <main>
+
+    <!-- ── Workshop filter pills ── -->
+    <div class="sw-filter-bar" id="sw-filter-bar">
+      <button class="sw-pill active" data-workshop="all">All Workshops</button>
+      <!-- Pills are added automatically as workshops are defined below -->
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         HOW TO ADD A STUDENT GAME:
+
+         1. Put the student's .html game file in StudentGames/
+            e.g. StudentGames/knollwood-alexgame.html
+
+         2. Copy one <div class="game-card"> block below and fill in:
+              data-title  = game title shown in the modal header
+              data-src    = path to the HTML file
+              data-workshop = workshop name used for filtering
+              <h2>        = game title shown on the card
+              .sw-meta    = student name & school shown below the card
+
+         3. If this is a new workshop, add a filter pill:
+              <button class="sw-pill" data-workshop="Workshop Name">Workshop Name</button>
+    ═══════════════════════════════════════════════════════════════ -->
+
+    <div class="games-grid" id="games-grid">
+
+      <div class="game-card sw-card" data-title="Julian's Wild West" data-src="StudentGames/JuliansWildWest.html" data-workshop="Summer 2026 Pilot Workshop">
+        <div class="card-header">
+          <div class="card-dot"></div>
+          <h2>Julian's Wild West</h2>
+          <span class="expand-hint">Click to play</span>
+        </div>
+        <div class="embed-wrapper">
+          <iframe class="game-embed" src="StudentGames/JuliansWildWest.html" allowfullscreen></iframe>
+          <div class="embed-shield"></div>
+        </div>
+        <div class="sw-meta">
+          <span class="sw-author">By Julian</span>
+          <span class="sw-school">Summer 2026 Pilot Workshop</span>
+        </div>
+      </div>
+
+      <div class="game-card sw-card" data-title="Manu's Wild West" data-src="StudentGames/ManusWildWest.html" data-workshop="Summer 2026 Pilot Workshop">
+        <div class="card-header">
+          <div class="card-dot"></div>
+          <h2>Manu's Wild West</h2>
+          <span class="expand-hint">Click to play</span>
+        </div>
+        <div class="embed-wrapper">
+          <iframe class="game-embed" src="StudentGames/ManusWildWest.html" allowfullscreen></iframe>
+          <div class="embed-shield"></div>
+        </div>
+        <div class="sw-meta">
+          <span class="sw-author">By Manu</span>
+          <span class="sw-school">Summer 2026 Pilot Workshop</span>
+        </div>
+      </div>
+
+      <div class="game-card sw-card" data-title="Griffin's Rise" data-src="StudentGames/GriffinsRise.html" data-workshop="Summer 2026 Pilot Workshop">
+        <div class="card-header">
+          <div class="card-dot"></div>
+          <h2>Griffin's Rise</h2>
+          <span class="expand-hint">Click to play</span>
+        </div>
+        <div class="embed-wrapper">
+          <iframe class="game-embed" src="StudentGames/GriffinsRise.html" allowfullscreen></iframe>
+          <div class="embed-shield"></div>
+        </div>
+        <div class="sw-meta">
+          <span class="sw-author">By Griffin</span>
+          <span class="sw-school">Summer 2026 Pilot Workshop</span>
+        </div>
+      </div>
+
+      <div class="game-card sw-card" data-title="Kavi's Wild West" data-src="StudentGames/KavisWildWest.html" data-workshop="Summer 2026 Pilot Workshop">
+        <div class="card-header">
+          <div class="card-dot"></div>
+          <h2>Kavi's Wild West</h2>
+          <span class="expand-hint">Click to play</span>
+        </div>
+        <div class="embed-wrapper">
+          <iframe class="game-embed" src="StudentGames/KavisWildWest.html" allowfullscreen></iframe>
+          <div class="embed-shield"></div>
+        </div>
+        <div class="sw-meta">
+          <span class="sw-author">By Kavi</span>
+          <span class="sw-school">Summer 2026 Pilot Workshop</span>
+        </div>
+      </div>
+
+      <div class="game-card sw-card" data-title="Beckham's Hot Dog Run" data-src="StudentGames/BeckhamsHotdogRun.html" data-workshop="Summer 2026 Pilot Workshop">
+        <div class="card-header">
+          <div class="card-dot"></div>
+          <h2>Beckham's Hot Dog Run</h2>
+          <span class="expand-hint">Click to play</span>
+        </div>
+        <div class="embed-wrapper">
+          <iframe class="game-embed" src="StudentGames/BeckhamsHotdogRun.html" allowfullscreen></iframe>
+          <div class="embed-shield"></div>
+        </div>
+        <div class="sw-meta">
+          <span class="sw-author">By Beckham</span>
+          <span class="sw-school">Summer 2026 Pilot Workshop</span>
+        </div>
+      </div>
+
+      <!-- ── TO ADD MORE: copy a card block above, update data-title, data-src, data-workshop, and sw-meta ── -->
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.truman-cho.com/" target="_blank" rel="noopener">truman-cho.com</a>
+      <a href="https://x.com/RandomUser1081" target="_blank" rel="noopener">X</a>
+      <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 BeTru Media</div>
+  </footer>
+
+  <!-- Modal overlay -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Game viewer">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="modal-title" class="modal-title"></span>
+        <button id="modal-close" class="modal-close" aria-label="Close">&#x2715;</button>
+      </div>
+      <iframe id="modal-iframe" class="modal-embed" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    // ── Modal ────────────────────────────────────────────────────────
+    const modal       = document.getElementById('modal');
+    const modalIframe = document.getElementById('modal-iframe');
+    const modalTitle  = document.getElementById('modal-title');
+    const closeBtn    = document.getElementById('modal-close');
+    const backdrop    = modal.querySelector('.modal-backdrop');
+
+    function openModal(src, title) {
+      modalIframe.src = src;
+      modalTitle.textContent = title;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => { modalIframe.src = ''; }, 300);
+    }
+
+    function bindCards() {
+      document.querySelectorAll('.sw-card').forEach(card => {
+        const trigger = card.querySelector('.card-header');
+        const shield  = card.querySelector('.embed-shield');
+        function open() { openModal(card.dataset.src, card.dataset.title); }
+        trigger.addEventListener('click', open);
+        shield.addEventListener('click', open);
+      });
+    }
+    bindCards();
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // ── Workshop filter pills ────────────────────────────────────────
+    // Auto-generates pills from unique data-workshop values on cards
+    const filterBar = document.getElementById('sw-filter-bar');
+    const allCards  = document.querySelectorAll('.sw-card');
+
+    const workshops = [...new Set([...allCards].map(c => c.dataset.workshop).filter(Boolean))];
+    workshops.forEach(ws => {
+      const btn = document.createElement('button');
+      btn.className = 'sw-pill';
+      btn.dataset.workshop = ws;
+      btn.textContent = ws;
+      filterBar.appendChild(btn);
+    });
+
+    filterBar.addEventListener('click', e => {
+      const pill = e.target.closest('.sw-pill');
+      if (!pill) return;
+      filterBar.querySelectorAll('.sw-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const selected = pill.dataset.workshop;
+      allCards.forEach(card => {
+        card.style.display = (selected === 'all' || card.dataset.workshop === selected) ? '' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

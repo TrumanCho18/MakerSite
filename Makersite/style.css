@@ -1149,6 +1149,76 @@ footer {
   font-size: 0.75rem;
 }
 
+/* ── Student Work page ── */
+.sw-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 1rem 1.5rem 0.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sw-pill {
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-border);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.sw-pill:hover { background: rgba(255,255,255,0.22); }
+
+.sw-pill.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1a1a2e;
+}
+
+.sw-card .sw-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.9rem 0.7rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-meta .sw-author { font-weight: 600; color: var(--text); }
+
+.sw-placeholder {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3.5rem 2rem;
+  background: var(--card-bg);
+  border: 1.5px dashed var(--card-border);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(8px);
+  text-align: center;
+  color: var(--muted);
+}
+
+.sw-placeholder-icon { font-size: 2.5rem; }
+.sw-placeholder h3 { color: var(--text); font-size: 1.1rem; }
+.sw-placeholder p  { max-width: 36ch; font-size: 0.88rem; line-height: 1.5; }
+.sw-placeholder code {
+  background: rgba(255,255,255,0.12);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
+
 /* ── Made by Tru ── */
 .mbt-grid {
   display: grid;
