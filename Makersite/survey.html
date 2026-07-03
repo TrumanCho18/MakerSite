@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maker Survey — BeTru Maker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="sky.js" defer></script>
+  <style>
+    .survey-section {
+      max-width: 680px;
+      margin: 3rem auto;
+      padding: 0 1.5rem 4rem;
+    }
+    .survey-intro {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .survey-intro h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .survey-intro p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .survey-form .form-section-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      margin: 2rem 0 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 0.4rem;
+    }
+    .survey-form .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .survey-form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    .survey-form input[type="text"],
+    .survey-form input[type="email"],
+    .survey-form select,
+    .survey-form textarea {
+      width: 100%;
+      padding: 0.6rem 0.85rem;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-family: inherit;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      box-sizing: border-box;
+    }
+    .survey-form input[type="text"]::placeholder,
+    .survey-form input[type="email"]::placeholder,
+    .survey-form textarea::placeholder {
+      color: rgba(255,255,255,0.45);
+    }
+    .survey-form select option {
+      background: #3a3880;
+      color: #fff;
+    }
+    .survey-form textarea {
+      resize: vertical;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 520px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+    .check-list,
+    .radio-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .check-opt,
+    .radio-opt {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      font-size: 0.98rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .check-opt input,
+    .radio-opt input {
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: #ff6b2b;
+      flex-shrink: 0;
+    }
+    .game-type-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.75rem;
+    }
+    .game-type-card {
+      border: 2px solid rgba(255,255,255,0.25);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      background: rgba(255,255,255,0.08);
+    }
+    .game-type-card input[type="checkbox"] {
+      display: none;
+    }
+    .game-type-card.selected {
+      border-color: #ff6b2b;
+      background: rgba(255,107,43,0.2);
+    }
+    .game-type-card .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+    .game-type-card .card-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+    .game-type-card .card-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .rating-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .rating-opt {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+    }
+    .rating-opt input { accent-color: #ff6b2b; }
+    .survey-submit {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.6rem 1.75rem;
+      background: #ff6b2b;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: background 0.15s;
+    }
+    .survey-submit:hover { background: #e55a1a; }
+    .survey-thanks {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .survey-thanks p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sky">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+  </div>
+
+  <header>
+    <a href="index.html" class="logo">BETRU MAKER</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav id="main-nav">
+      <a href="play.html">Play</a>
+      <a href="make.html">Make</a>
+      <div class="nav-dropdown">
+        <span class="nav-drop-toggle active">Learn</span>
+        <div class="nav-drop-menu">
+          <a href="resources.html">Resources</a>
+          <a href="workshops.html">Workshops</a>
+          <a href="survey.html" class="active">Survey</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="booking.html" class="nav-book">Book an Event</a>
+    </nav>
+  </header>
+
+  <section class="survey-section">
+    <div class="survey-intro">
+      <h1>MAKER SURVEY</h1>
+      <p>Before we start, help Tru understand where you're at so the program is actually useful for you.</p>
+    </div>
+
+    <form id="survey-form" class="survey-form">
+
+      <div class="form-section-label">About you</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="s-name">Your first name</label>
+          <input type="text" id="s-name" name="name" placeholder="First name" required />
+        </div>
+        <div class="form-group">
+          <label for="s-grade">What grade are you in?</label>
+          <select id="s-grade" name="grade" required>
+            <option value="" disabled selected>Pick one</option>
+            <option>Kindergarten</option>
+            <option>1st grade</option>
+            <option>2nd grade</option>
+            <option>3rd grade</option>
+            <option>4th grade</option>
+            <option>5th grade</option>
+            <option>6th grade</option>
+            <option>7th grade</option>
+            <option>8th grade</option>
+            <option>9th grade</option>
+            <option>10th grade</option>
+            <option>11th grade</option>
+            <option>12th grade</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="s-email">Email <em style="font-weight:400; font-size:0.88rem;">(yours or a parent's is fine)</em></label>
+        <input type="email" id="s-email" name="email" placeholder="email@example.com" />
+      </div>
+
+      <div class="form-section-label">Your experience</div>
+
+      <div class="form-group">
+        <label>Do you draw or make art?</label>
+        <div class="radio-list">
+          <label class="radio-opt"><input type="radio" name="art-exp" value="Never really" required /><span>Not really, but I'm interested!</span></label>
+          <label class="radio-opt"><input type="radio" name="art-exp" value="Sometimes, on paper" /><span>Sometimes — on paper</span></label>
+          <label class="radio-opt"><input type="radio" name="art-exp" value="All the time, on paper" /><span>All the time — on paper</span></label>
+          <label class="radio-opt"><input type="radio" name="art-exp" value="Yes, digitally too" /><span>Yes, digitally too (iPad, tablet, etc.)</span></label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Have you ever made a game?</label>
+        <div class="radio-list">
+          <label class="radio-opt"><input type="radio" name="game-exp" value="Never" required /><span>No, but I want to learn</span></label>
+          <label class="radio-opt"><input type="radio" name="game-exp" value="Tried once" /><span>Tried once (Scratch, Roblox Studio, etc.)</span></label>
+          <label class="radio-opt"><input type="radio" name="game-exp" value="Yes, made a few" /><span>Yes, I've made a few</span></label>
+        </div>
+        <div id="game-exp-detail" style="display:none; margin-top:0.75rem;">
+          <textarea name="game-exp-detail" rows="2" placeholder="Tell us about it — what did you make?"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Have you ever coded?</label>
+        <div class="radio-list">
+          <label class="radio-opt"><input type="radio" name="code-exp" value="Never" required /><span>No, but I'm curious</span></label>
+          <label class="radio-opt"><input type="radio" name="code-exp" value="A little (Scratch, block coding)" /><span>A little — Scratch, block coding</span></label>
+          <label class="radio-opt"><input type="radio" name="code-exp" value="Some real code" /><span>Yes — some real code</span></label>
+        </div>
+        <div id="code-exp-detail" style="display:none; margin-top:0.75rem;">
+          <select name="code-languages" multiple size="6" style="height:auto;">
+            <option value="Scratch">Scratch</option>
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="HTML/CSS">HTML / CSS</option>
+            <option value="GDScript (Godot)">GDScript (Godot)</option>
+            <option value="Lua (Roblox)">Lua (Roblox Studio)</option>
+            <option value="C#">C# (Unity)</option>
+            <option value="Swift">Swift</option>
+            <option value="Java">Java</option>
+            <option value="Other">Other</option>
+          </select>
+          <p style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin-top:0.4rem;">Hold Ctrl / Cmd to pick more than one.</p>
+        </div>
+      </div>
+
+      <div class="form-section-label">What do you want to make?</div>
+
+      <div class="form-group">
+        <label>What kind of game do you want to make? <em style="font-weight:400;">(pick all that interest you)</em></label>
+        <div class="game-type-grid" id="game-type-grid">
+          <div class="game-type-card" data-value="Mini Scratch game">
+            <input type="checkbox" name="game-type" value="Mini Scratch game" />
+            <img src="Assets/survey-scratch-game.png" alt="Mini Scratch game" class="card-img" />
+            <span class="card-title"><a href="play.html" target="_blank" rel="noopener" style="color:#fff;">Mini Scratch game</a></span>
+            <span class="card-desc">Design a character and build a mini game. This is a perfect starter class.</span>
+          </div>
+          <div class="game-type-card" data-value="Retro Game Boy cartridge game">
+            <input type="checkbox" name="game-type" value="Retro Game Boy cartridge game" />
+            <img src="Assets/survey-cartridge.jpg" alt="Retro Game Boy cartridge" class="card-img" />
+            <span class="card-title"><a href="https://idk1801.itch.io/mountrock" target="_blank" rel="noopener" style="color:#fff;">Retro Game Boy cartridge</a></span>
+            <span class="card-desc">A real game on an actual cartridge</span>
+          </div>
+          <div class="game-type-card" data-value="Story-based pixel art GB Studio game (itch.io)">
+            <input type="checkbox" name="game-type" value="Story-based pixel art GB Studio game (itch.io)" />
+            <a href="https://www.youtube.com/watch?v=S-4ASV5tQos" target="_blank" rel="noopener" style="display:block; position:relative;">
+              <img src="Assets/survey-archaea.png" alt="Archaea — GB Studio game" class="card-img" />
+              <span style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.7);color:#fff;font-size:0.65rem;padding:2px 6px;border-radius:4px;">▶ Watch</span>
+            </a>
+            <span class="card-title"><a href="https://www.youtube.com/watch?v=S-4ASV5tQos" target="_blank" rel="noopener" style="color:#fff;">Story pixel art game</a></span>
+            <span class="card-desc">A longer, deeper storytelling game. This one takes months.</span>
+          </div>
+          <div class="game-type-card" data-value="Character development">
+            <input type="checkbox" name="game-type" value="Character development" />
+            <img src="Assets/survey-character-dev.jpg" alt="Character development" class="card-img" />
+            <span class="card-title">Character development</span>
+            <span class="card-desc">Sketch and develop your own original character</span>
+          </div>
+          <div class="game-type-card" data-value="Procreate + make products">
+            <input type="checkbox" name="game-type" value="Procreate + make products" />
+            <img src="Assets/survey-products.jpg" alt="Make products" class="card-img" />
+            <span class="card-title">Procreate + make products</span>
+            <span class="card-desc">Design in Procreate and turn it into real merch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Have you played any of Tru's games before?</label>
+        <div class="game-pick" style="flex-wrap:nowrap; overflow-x:auto;">
+          <label class="game-pick-opt">
+            <input type="checkbox" name="played-tru" value="Wild West" />
+            <img src="Assets/tlc-cowboy.png" alt="Wild West" />
+            <span>Wild West</span>
+          </label>
+          <label class="game-pick-opt">
+            <input type="checkbox" name="played-tru" value="Hot Dog Run" />
+            <img src="Assets/hotdog.png" alt="Hot Dog Run" />
+            <span>Hot Dog Run</span>
+          </label>
+          <label class="game-pick-opt">
+            <input type="checkbox" name="played-tru" value="Rise" />
+            <img src="Assets/tlc-balloon-boy-1.png" alt="Rise" />
+            <span>Rise</span>
+          </label>
+          <label class="game-pick-opt">
+            <input type="checkbox" name="played-tru" value="Something on itch.io" />
+            <img src="Assets/itch-logo.png" alt="itch.io" />
+            <span>itch.io</span>
+          </label>
+          <label class="game-pick-opt">
+            <input type="checkbox" name="played-tru" value="None yet" />
+            <img src="Assets/tlc-stars.png" alt="Not yet" />
+            <span>Not yet</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-section-label">Your setup</div>
+
+      <div class="form-row" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div class="form-group" style="background:rgba(255,255,255,0.08); border:1.5px solid rgba(255,255,255,0.15); border-radius:0.75rem; padding:1rem;">
+          <label>iPad?</label>
+          <div class="radio-list">
+            <label class="radio-opt"><input type="radio" name="has-ipad" value="Yes" required /><span>Yes</span></label>
+            <label class="radio-opt"><input type="radio" name="has-ipad" value="No" /><span>No</span></label>
+          </div>
+        </div>
+        <div class="form-group" style="background:rgba(255,255,255,0.08); border:1.5px solid rgba(255,255,255,0.15); border-radius:0.75rem; padding:1rem;">
+          <label>Procreate?</label>
+          <div class="radio-list">
+            <label class="radio-opt"><input type="radio" name="has-procreate" value="Yes" required /><span>Yes</span></label>
+            <label class="radio-opt"><input type="radio" name="has-procreate" value="No" /><span>No</span></label>
+            <label class="radio-opt"><input type="radio" name="has-procreate" value="Not sure" /><span>Not sure</span></label>
+          </div>
+        </div>
+        <div class="form-group" style="background:rgba(255,255,255,0.08); border:1.5px solid rgba(255,255,255,0.15); border-radius:0.75rem; padding:1rem;">
+          <label>Laptop?</label>
+          <div class="radio-list">
+            <label class="radio-opt"><input type="radio" name="has-laptop" value="Yes" required /><span>Yes</span></label>
+            <label class="radio-opt"><input type="radio" name="has-laptop" value="No" /><span>No</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section-label">One more thing</div>
+
+
+      <div class="form-group">
+        <label>Are you interested in joining a program in person, virtually, or either?</label>
+        <div class="check-list">
+          <label class="check-opt"><input type="checkbox" name="program-format" value="In person" /><span>In person</span></label>
+          <label class="check-opt"><input type="checkbox" name="program-format" value="Virtual" /><span>Virtual</span></label>
+          <label class="check-opt"><input type="checkbox" name="program-format" value="Either works" /><span>Either works</span></label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="s-notes">Anything Tru should know about you?</label>
+        <textarea id="s-notes" name="notes" rows="2" placeholder="Totally optional."></textarea>
+      </div>
+
+      <div class="form-section-label">For parents</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="parent-name">Parent / guardian name</label>
+          <input type="text" id="parent-name" name="parent-name" placeholder="First and last name" />
+        </div>
+        <div class="form-group">
+          <label for="parent-email">Parent email</label>
+          <input type="email" id="parent-email" name="parent-email" placeholder="email@example.com" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="parent-notes">Anything you'd like Tru to know about your kid?</label>
+        <textarea id="parent-notes" name="parent-notes" rows="3" placeholder="Learning style, goals, questions, anything — totally optional."></textarea>
+      </div>
+
+      <button type="submit" class="survey-submit">Send it to Tru →</button>
+    </form>
+
+    <div class="survey-thanks" id="survey-thanks" style="display:none;">
+      <p class="survey-intro" style="font-family:'Poppins',sans-serif;font-size:2rem;">YOU'RE IN!</p>
+      <p>Tru will use this to build the best program for you. See you soon.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.truman-cho.com/" target="_blank" rel="noopener">truman-cho.com</a>
+      <a href="https://x.com/RandomUser1081" target="_blank" rel="noopener">X</a>
+      <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
+      <a href="about.html#contact">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 BeTru Media</div>
+  </footer>
+
+  <script>
+    // Show textarea when "Yes, made a few" is selected
+    document.querySelectorAll('input[name="game-exp"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        document.getElementById('game-exp-detail').style.display =
+          radio.value === 'Yes, made a few' ? 'block' : 'none';
+      });
+    });
+
+    // Show language dropdown when "Some real code" is selected
+    document.querySelectorAll('input[name="code-exp"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        document.getElementById('code-exp-detail').style.display =
+          radio.value === 'Some real code' ? 'block' : 'none';
+      });
+    });
+
+    // Game type card toggle
+    document.querySelectorAll('.game-type-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const cb = card.querySelector('input[type="checkbox"]');
+        cb.checked = !cb.checked;
+        card.classList.toggle('selected', cb.checked);
+      });
+    });
+
+    // Nav toggle
+    document.getElementById('nav-toggle').addEventListener('click', function () {
+      document.getElementById('main-nav').classList.toggle('open');
+    });
+
+    // Form submit
+    document.getElementById('survey-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const form = this;
+      try {
+        const res = await fetch('https://formspree.io/f/mykalynl', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('survey-thanks').style.display = 'block';
+        }
+      } catch {
+        form.style.display = 'none';
+        document.getElementById('survey-thanks').style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>

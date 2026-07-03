@@ -1,253 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book an Event — BeTru Media</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="sky.js" defer></script>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Book an Event — BeTru Media</title>
+ <link rel="stylesheet" href="style.css" />
+ <script src="sky.js" defer></script>
 </head>
 <body>
 
-  <div class="sky">
-    <div class="cloud cloud-1"></div>
-    <div class="cloud cloud-2"></div>
-    <div class="cloud cloud-3"></div>
-    <div class="cloud cloud-4"></div>
-    <div class="cloud cloud-5"></div>
-  </div>
+ <div class="sky">
+ <div class="cloud cloud-1"></div>
+ <div class="cloud cloud-2"></div>
+ <div class="cloud cloud-3"></div>
+ <div class="cloud cloud-4"></div>
+ <div class="cloud cloud-5"></div>
+ </div>
 
-  <header>
-    <a href="index.html" class="logo">Be Tru Maker</a>
-    <nav>
-      <a href="play.html">Play</a>
-      <div class="nav-dropdown">
-        <span class="nav-drop-toggle">Learn</span>
-        <div class="nav-drop-menu">
-          <a href="resources.html">Resources</a>
-          <a href="workshops.html">Workshops</a>
-          <a href="student-work.html">Student Work</a>
-        </div>
-      </div>
-      <a href="make.html">Make</a>
-      <a href="inthewild.html">In the Wild</a>
-      <a href="about.html">About</a>
-      <a href="booking.html" class="active nav-book">Book an Event</a>
-    </nav>
-  </header>
+ <header>
+ <a href="index.html" class="logo">BETRU MAKER</a>
+ <nav>
+ <a href="play.html">Play</a>
+ <div class="nav-dropdown">
+ <span class="nav-drop-toggle">Learn</span>
+ <div class="nav-drop-menu">
+ <a href="resources.html">Resources</a>
+ <a href="workshops.html">Workshops</a>
+ <a href="student-work.html">Student Work</a>
+ </div>
+ </div>
+ <a href="make.html">Make</a>
+ <a href="inthewild.html">In the Wild</a>
+ <a href="about.html">About</a>
+ <a href="booking.html" class="active nav-book">Book an Event</a>
+ </nav>
+ </header>
 
-  <div class="resources-hero sky-text">
-    <h1>Book an Event 📅</h1>
-    <p>Bring a game-making workshop to your school, library, or community. Fill out the form and I'll get back to you within a few days.</p>
-  </div>
+ <div class="resources-hero sky-text">
+ <h1>Book an Event</h1>
+ <p>Bring a game-making workshop to your school, library, or community. Fill out the form and I'll get back to you within a few days.</p>
+ </div>
 
-  <main>
-    <div class="booking-wrap">
+ <main>
+ <div class="booking-wrap">
 
-      <!-- Success state -->
-      <div id="booking-success" class="form-success" style="display:none">
-        <span class="form-success-icon">🎉</span>
-        <h3>Request received!</h3>
-        <p>Thanks for reaching out — I'll review your booking request and get back to you within 2–3 days.</p>
-        <button class="contact-btn" id="booking-reset" style="margin-top:1.25rem">Submit another →</button>
-      </div>
+ <div class="booking-intro">
+ <p>Choose from 2 formats:</p>
+ <p><strong>Maker Demo / Presentation — duration 60 min</strong><br />I come in, show kids how I make games and products, let them play-test, and leave them inspired to start something of their own. Works well as a library program, school assembly, or after-school visit. No prep needed on your end.</p>
+ <p><strong>Maker Workshop — duration 1 week / 2 hr per day</strong><br />Kids go through my full process: sketch a character, digitise it in Procreate, drop it into a real game, and finish the week with something printed they can take home — a shirt, tote, or sticker sheet. Small groups only, so every kid gets real attention. Fill out the form below and I'll follow up with availability and pricing.</p>
+ </div>
 
-      <form id="booking-form" class="booking-form" novalidate>
+ <!-- Success state -->
+ <div id="booking-success" class="form-success" style="display:none">
+ <span class="form-success-icon"></span>
+ <h3>Request received!</h3>
+ <p>Thanks for reaching out — I'll review your booking request and get back to you within 2–3 days.</p>
+ <button class="contact-btn" id="booking-reset" style="margin-top:1.25rem">Submit another →</button>
+ </div>
 
-        <!-- ── Section 1: Who are you? ── -->
-        <div class="booking-section">
-          <div class="booking-section-label">
-            <span class="booking-section-num">1</span>
-            <h2>Your Info</h2>
-          </div>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="name">Your Name <span class="req">*</span></label>
-              <input type="text" id="name" name="name" placeholder="Full name" required />
-            </div>
-            <div class="form-group">
-              <label for="role">Your Role <span class="req">*</span></label>
-              <input type="text" id="role" name="role" placeholder="e.g. Teacher, Librarian, Parent" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email <span class="req">*</span></label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required />
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone <span class="optional">(optional)</span></label>
-              <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" />
-            </div>
-          </div>
-        </div>
+ <form id="booking-form" class="booking-form" novalidate>
 
-        <!-- ── Section 2: Where & Who ── -->
-        <div class="booking-section">
-          <div class="booking-section-label">
-            <span class="booking-section-num">2</span>
-            <h2>Institution &amp; Audience</h2>
-          </div>
-          <div class="form-grid">
-            <div class="form-group form-group--full">
-              <label for="institution">Institution / Organization <span class="req">*</span></label>
-              <input type="text" id="institution" name="institution" placeholder="e.g. Knollwood Elementary School" required />
-            </div>
-            <div class="form-group form-group--full">
-              <label for="address">Location / Address <span class="optional">(optional)</span></label>
-              <input type="text" id="address" name="address" placeholder="Street, City, State" />
-            </div>
-            <div class="form-group">
-              <label for="participants">Number of Participants <span class="req">*</span></label>
-              <input type="number" id="participants" name="participants" placeholder="e.g. 25" min="1" required />
-            </div>
-            <div class="form-group">
-              <label for="age-range">Age / Grade Range <span class="req">*</span></label>
-              <select id="age-range" name="age-range" required>
-                <option value="" disabled selected>Select a range</option>
-                <option value="K-2 (Ages 5-8)">K–2 (Ages 5–8)</option>
-                <option value="3-5 (Ages 8-11)">3–5 (Ages 8–11)</option>
-                <option value="6-8 (Ages 11-14)">6–8 (Ages 11–14)</option>
-                <option value="9-12 (Ages 14-18)">9–12 (Ages 14–18)</option>
-                <option value="Mixed ages">Mixed ages</option>
-                <option value="Adults">Adults</option>
-              </select>
-            </div>
-          </div>
-        </div>
+ <!-- Section 1: Who are you? -->
+ <div class="booking-section">
+ <div class="booking-section-label">
+ <span class="booking-section-num">1</span>
+ <h2>Your Info</h2>
+ </div>
+ <div class="form-grid">
+ <div class="form-group">
+ <label for="name">Your Name <span class="req">*</span></label>
+ <input type="text" id="name" name="name" placeholder="Full name" required />
+ </div>
+ <div class="form-group">
+ <label for="role">Your Role <span class="req">*</span></label>
+ <input type="text" id="role" name="role" placeholder="e.g. Teacher, Librarian, Parent" required />
+ </div>
+ <div class="form-group">
+ <label for="email">Email <span class="req">*</span></label>
+ <input type="email" id="email" name="email" placeholder="your@email.com" required />
+ </div>
+ <div class="form-group">
+ <label for="phone">Phone <span class="optional">(optional)</span></label>
+ <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" />
+ </div>
+ </div>
+ </div>
 
-        <!-- ── Section 3: Event Details ── -->
-        <div class="booking-section">
-          <div class="booking-section-label">
-            <span class="booking-section-num">3</span>
-            <h2>Event Details</h2>
-          </div>
-          <div class="form-grid">
-            <div class="form-group form-group--full">
-              <label for="event-type">Type of Event <span class="req">*</span></label>
-              <select id="event-type" name="event-type" required>
-                <option value="" disabled selected>Select a type</option>
-                <option value="School Workshop">School Workshop</option>
-                <option value="Library Program">Library Program</option>
-                <option value="After-School Program">After-School Program</option>
-                <option value="Summer Camp">Summer Camp</option>
-                <option value="Community Event">Community Event</option>
-                <option value="Birthday Party">Birthday Party</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="date">Preferred Date <span class="req">*</span></label>
-              <input type="date" id="date" name="date" required />
-            </div>
-            <div class="form-group">
-              <label for="backup-date">Backup Date <span class="optional">(optional)</span></label>
-              <input type="date" id="backup-date" name="backup-date" />
-            </div>
-            <div class="form-group">
-              <label for="duration">Event Duration <span class="optional">(optional)</span></label>
-              <select id="duration" name="duration">
-                <option value="" disabled selected>How long?</option>
-                <option value="30 minutes">30 minutes</option>
-                <option value="45 minutes">45 minutes</option>
-                <option value="1 hour">1 hour</option>
-                <option value="1.5 hours">1.5 hours</option>
-                <option value="2 hours">2 hours</option>
-                <option value="Half day">Half day</option>
-                <option value="Full day">Full day</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="heard">How did you hear about me? <span class="optional">(optional)</span></label>
-              <select id="heard" name="heard">
-                <option value="" disabled selected>Select one</option>
-                <option value="Word of mouth">Word of mouth</option>
-                <option value="Social media">Social media</option>
-                <option value="YouTube">YouTube</option>
-                <option value="Website">Website</option>
-                <option value="Previous event">Previous event</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-          </div>
-        </div>
+ <!-- Section 2: Where & Who -->
+ <div class="booking-section">
+ <div class="booking-section-label">
+ <span class="booking-section-num">2</span>
+ <h2>Institution &amp; Audience</h2>
+ </div>
+ <div class="form-grid">
+ <div class="form-group form-group--full">
+ <label for="institution">Institution / Organization <span class="req">*</span></label>
+ <input type="text" id="institution" name="institution" placeholder="e.g. Knollwood Elementary School" required />
+ </div>
+ <div class="form-group form-group--full">
+ <label for="address">Location / Address <span class="optional">(optional)</span></label>
+ <input type="text" id="address" name="address" placeholder="Street, City, State" />
+ </div>
+ <div class="form-group">
+ <label for="participants">Number of Participants <span class="req">*</span></label>
+ <input type="number" id="participants" name="participants" placeholder="e.g. 25" min="1" required />
+ </div>
+ <div class="form-group">
+ <label for="age-range">Age / Grade Range <span class="req">*</span></label>
+ <select id="age-range" name="age-range" required>
+ <option value="" disabled selected>Select a range</option>
+ <option value="K-2 (Ages 5-8)">K–2 (Ages 5–8)</option>
+ <option value="3-5 (Ages 8-11)">3–5 (Ages 8–11)</option>
+ <option value="6-8 (Ages 11-14)">6–8 (Ages 11–14)</option>
+ <option value="9-12 (Ages 14-18)">9–12 (Ages 14–18)</option>
+ <option value="Mixed ages">Mixed ages</option>
+ <option value="Adults">Adults</option>
+ </select>
+ </div>
+ </div>
+ </div>
 
-        <!-- ── Section 4: Notes ── -->
-        <div class="booking-section">
-          <div class="booking-section-label">
-            <span class="booking-section-num">4</span>
-            <h2>Anything Else?</h2>
-          </div>
-          <div class="form-group">
-            <label for="notes">Notes / Questions <span class="optional">(optional)</span></label>
-            <textarea id="notes" name="notes" rows="5" placeholder="Any special requests, questions, or things I should know about the group…"></textarea>
-          </div>
-        </div>
+ <!-- Section 3: Event Details -->
+ <div class="booking-section">
+ <div class="booking-section-label">
+ <span class="booking-section-num">3</span>
+ <h2>Event Details</h2>
+ </div>
+ <div class="form-grid">
+ <div class="form-group form-group--full">
+ <label for="event-type">Type of Event <span class="req">*</span></label>
+ <select id="event-type" name="event-type" required>
+ <option value="" disabled selected>Select a type</option>
+ <option value="School Workshop">School Workshop</option>
+ <option value="Library Program">Library Program</option>
+ <option value="After-School Program">After-School Program</option>
+ <option value="Summer Camp">Summer Camp</option>
+ <option value="Community Event">Community Event</option>
+ <option value="Birthday Party">Birthday Party</option>
+ <option value="Other">Other</option>
+ </select>
+ </div>
+ <div class="form-group">
+ <label for="date">Preferred Date <span class="req">*</span></label>
+ <input type="date" id="date" name="date" required />
+ </div>
+ <div class="form-group">
+ <label for="backup-date">Backup Date <span class="optional">(optional)</span></label>
+ <input type="date" id="backup-date" name="backup-date" />
+ </div>
+ <div class="form-group">
+ <label for="duration">Event Duration <span class="optional">(optional)</span></label>
+ <select id="duration" name="duration">
+ <option value="" disabled selected>How long?</option>
+ <option value="30 minutes">30 minutes</option>
+ <option value="45 minutes">45 minutes</option>
+ <option value="1 hour">1 hour</option>
+ <option value="1.5 hours">1.5 hours</option>
+ <option value="2 hours">2 hours</option>
+ <option value="Half day">Half day</option>
+ <option value="Full day">Full day</option>
+ </select>
+ </div>
+ <div class="form-group">
+ <label for="heard">How did you hear about me? <span class="optional">(optional)</span></label>
+ <select id="heard" name="heard">
+ <option value="" disabled selected>Select one</option>
+ <option value="Word of mouth">Word of mouth</option>
+ <option value="Social media">Social media</option>
+ <option value="YouTube">YouTube</option>
+ <option value="Website">Website</option>
+ <option value="Previous event">Previous event</option>
+ <option value="Other">Other</option>
+ </select>
+ </div>
+ </div>
+ </div>
 
-        <div class="booking-submit-row">
-          <button type="submit" class="contact-btn" id="submit-btn">Send Booking Request →</button>
-          <p id="form-error" class="form-error" style="display:none">Something went wrong — please try again.</p>
-        </div>
+ <!-- Section 4: Notes -->
+ <div class="booking-section">
+ <div class="booking-section-label">
+ <span class="booking-section-num">4</span>
+ <h2>Anything Else?</h2>
+ </div>
+ <div class="form-group">
+ <label for="notes">Notes / Questions <span class="optional">(optional)</span></label>
+ <textarea id="notes" name="notes" rows="5" placeholder="Any special requests, questions, or things I should know about the group…"></textarea>
+ </div>
+ </div>
 
-      </form>
-    </div>
-  </main>
+ <div class="booking-submit-row">
+ <button type="submit" class="contact-btn" id="submit-btn">Send Booking Request →</button>
+ <p id="form-error" class="form-error" style="display:none">Something went wrong — please try again.</p>
+ </div>
 
-  <footer>
-    <div class="footer-links">
-      <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.truman-cho.com/" target="_blank" rel="noopener">truman-cho.com</a>
-      <a href="https://x.com/RandomUser1081" target="_blank" rel="noopener">X</a>
-      <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">&copy; 2026 BeTru Media</div>
-  </footer>
+ </form>
+ </div>
+ </main>
 
-  <script>
-    const FORMSPREE_ID = 'mykalynl';
+ <footer>
+ <div class="footer-links">
+ <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">Instagram</a>
+ <a href="https://www.truman-cho.com/" target="_blank" rel="noopener">truman-cho.com</a>
+ <a href="https://x.com/RandomUser1081" target="_blank" rel="noopener">X</a>
+ <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
+ <a href="contact.html">Contact</a>
+ </div>
+ <div class="footer-copy">&copy; 2026 BeTru Media</div>
+ </footer>
 
-    const form      = document.getElementById('booking-form');
-    const success   = document.getElementById('booking-success');
-    const submitBtn = document.getElementById('submit-btn');
-    const errorMsg  = document.getElementById('form-error');
-    const resetBtn  = document.getElementById('booking-reset');
+ <script>
+ const FORMSPREE_ID = 'mykalynl';
 
-    // Set date input min to today
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('date').min = today;
-    document.getElementById('backup-date').min = today;
+ const form = document.getElementById('booking-form');
+ const success = document.getElementById('booking-success');
+ const submitBtn = document.getElementById('submit-btn');
+ const errorMsg = document.getElementById('form-error');
+ const resetBtn = document.getElementById('booking-reset');
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      errorMsg.style.display  = 'none';
-      submitBtn.textContent   = 'Sending…';
-      submitBtn.disabled      = true;
+ // Set date input min to today
+ const today = new Date().toISOString().split('T')[0];
+ document.getElementById('date').min = today;
+ document.getElementById('backup-date').min = today;
 
-      try {
-        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method:  'POST',
-          headers: { 'Accept': 'application/json' },
-          body:    new FormData(form),
-        });
+ form.addEventListener('submit', async (e) => {
+ e.preventDefault();
+ errorMsg.style.display = 'none';
+ submitBtn.textContent = 'Sending…';
+ submitBtn.disabled = true;
 
-        if (res.ok) {
-          form.style.display    = 'none';
-          success.style.display = '';
-        } else {
-          throw new Error();
-        }
-      } catch {
-        errorMsg.style.display = '';
-        submitBtn.textContent  = 'Send Booking Request →';
-        submitBtn.disabled     = false;
-      }
-    });
+ try {
+ const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+ method: 'POST',
+ headers: { 'Accept': 'application/json' },
+ body: new FormData(form),
+ });
 
-    resetBtn.addEventListener('click', () => {
-      form.reset();
-      form.style.display    = '';
-      success.style.display = 'none';
-    });
-  </script>
+ if (res.ok) {
+ form.style.display = 'none';
+ success.style.display = '';
+ } else {
+ throw new Error();
+ }
+ } catch {
+ errorMsg.style.display = '';
+ submitBtn.textContent = 'Send Booking Request →';
+ submitBtn.disabled = false;
+ }
+ });
+
+ resetBtn.addEventListener('click', () => {
+ form.reset();
+ form.style.display = '';
+ success.style.display = 'none';
+ });
+ </script>
 
 </body>
 </html>

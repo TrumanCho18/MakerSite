@@ -1,182 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hey Knollwood Kids 👋</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ── Knollwood page overrides ── */
-    .kw-page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 3rem 1.25rem 4rem;
-      position: relative;
-      z-index: 1;
-    }
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Hey Knollwood Kids </title>
+ <link rel="stylesheet" href="style.css" />
+ <style>
+ /* Knollwood page overrides */
+ .kw-page {
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: flex-start;
+ padding: 3rem 1.25rem 4rem;
+ position: relative;
+ z-index: 1;
+ }
 
-    .kw-card {
-      background: rgba(255, 255, 255, 0.13);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 20px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 2.5rem 2rem;
-      max-width: 680px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
-      box-shadow: 0 12px 40px rgba(60, 55, 150, 0.35);
-    }
+ .kw-card {
+ background: rgba(255, 255, 255, 0.13);
+ border: 1px solid rgba(255, 255, 255, 0.3);
+ border-radius: 20px;
+ backdrop-filter: blur(12px);
+ -webkit-backdrop-filter: blur(12px);
+ padding: 2.5rem 2rem;
+ max-width: 680px;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ gap: 1.75rem;
+ box-shadow: 0 12px 40px rgba(60, 55, 150, 0.35);
+ }
 
-    .kw-header {
-      text-align: center;
-    }
+ .kw-header {
+ text-align: center;
+ }
 
-    .kw-header h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.9rem, 5vw, 2.75rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #fff;
-      text-shadow: 0 2px 20px rgba(60, 55, 150, 0.5);
-      margin-bottom: 0.6rem;
-      line-height: 1.15;
-    }
+ .kw-header h1 {
+ font-family: 'Space Grotesk', sans-serif;
+ font-size: clamp(1.9rem, 5vw, 2.75rem);
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ color: #fff;
+ text-shadow: 0 2px 20px rgba(60, 55, 150, 0.5);
+ margin-bottom: 0.6rem;
+ line-height: 1.15;
+ }
 
-    .kw-header p {
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 1rem;
-      line-height: 1.55;
-    }
+ .kw-header p {
+ color: rgba(255, 255, 255, 0.78);
+ font-size: 1rem;
+ line-height: 1.55;
+ }
 
-    /* ── Video ── */
-    .kw-video {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%; /* 16:9 */
-      border-radius: 12px;
-      overflow: hidden;
-      background: #05050f;
-      box-shadow: 0 6px 24px rgba(40, 38, 120, 0.45);
-    }
+ /* Video */
+ .kw-video {
+ position: relative;
+ width: 100%;
+ padding-top: 56.25%; /* 16:9 */
+ border-radius: 12px;
+ overflow: hidden;
+ background: #05050f;
+ box-shadow: 0 6px 24px rgba(40, 38, 120, 0.45);
+ }
 
-    .kw-video iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+ .kw-video iframe {
+ position: absolute;
+ inset: 0;
+ width: 100%;
+ height: 100%;
+ border: none;
+ }
 
-    /* ── Form section ── */
-    .kw-form-section {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
+ /* Form section */
+ .kw-form-section {
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+ gap: 1.1rem;
+ }
 
-    .kw-form-section p {
-      color: rgba(255, 255, 255, 0.85);
-      font-size: 1rem;
-      line-height: 1.5;
-    }
+ .kw-form-section p {
+ color: rgba(255, 255, 255, 0.85);
+ font-size: 1rem;
+ line-height: 1.5;
+ }
 
-    .kw-btn {
-      display: inline-block;
-      background: #ffc575;
-      color: #2a2050;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 0.9rem 2rem;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      box-shadow: 0 4px 18px rgba(255, 197, 117, 0.4);
-      align-self: center;
-    }
+ .kw-btn {
+ display: inline-block;
+ background: #ffc575;
+ color: #2a2050;
+ font-family: 'Space Grotesk', sans-serif;
+ font-weight: 700;
+ font-size: 1rem;
+ padding: 0.9rem 2rem;
+ border-radius: 10px;
+ text-decoration: none;
+ transition: background 0.2s, transform 0.15s;
+ box-shadow: 0 4px 18px rgba(255, 197, 117, 0.4);
+ align-self: center;
+ }
 
-    .kw-btn:hover {
-      background: #ffd49a;
-      transform: translateY(-2px);
-    }
+ .kw-btn:hover {
+ background: #ffd49a;
+ transform: translateY(-2px);
+ }
 
-    /* ── Minimal branding strip ── */
-    .kw-brand {
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.35);
-      text-align: center;
-    }
+ /* Minimal branding strip */
+ .kw-brand {
+ margin-top: 2rem;
+ font-size: 0.8rem;
+ color: rgba(255, 255, 255, 0.35);
+ text-align: center;
+ }
 
-    .kw-brand a {
-      color: rgba(255, 255, 255, 0.5);
-      text-decoration: none;
-    }
+ .kw-brand a {
+ color: rgba(255, 255, 255, 0.5);
+ text-decoration: none;
+ }
 
-    .kw-brand a:hover { color: #fff; }
+ .kw-brand a:hover { color: #fff; }
 
-    /* ── Mobile tightening ── */
-    @media (max-width: 480px) {
-      .kw-card { padding: 1.75rem 1.25rem; gap: 1.4rem; }
-    }
-  </style>
+ /* Mobile tightening */
+ @media (max-width: 480px) {
+ .kw-card { padding: 1.75rem 1.25rem; gap: 1.4rem; }
+ }
+ </style>
 </head>
 <body>
 
-  <!-- Sky background (matches rest of site) -->
-  <div class="sky">
-    <div class="cloud cloud-1"></div>
-    <div class="cloud cloud-2"></div>
-    <div class="cloud cloud-3"></div>
-    <div class="cloud cloud-4"></div>
-    <div class="cloud cloud-5"></div>
-  </div>
+ <!-- Sky background (matches rest of site) -->
+ <div class="sky">
+ <div class="cloud cloud-1"></div>
+ <div class="cloud cloud-2"></div>
+ <div class="cloud cloud-3"></div>
+ <div class="cloud cloud-4"></div>
+ <div class="cloud cloud-5"></div>
+ </div>
 
-  <div class="kw-page">
-    <div class="kw-card">
+ <div class="kw-page">
+ <div class="kw-card">
 
-      <!-- Header -->
-      <div class="kw-header">
-        <h1>Hey Knollwood kids 👋</h1>
-        <p>Thanks for playing my games. Here's a quick message from me.</p>
-      </div>
+ <!-- Header -->
+ <div class="kw-header">
+ <h1>Hey Knollwood kids </h1>
+ <p>Thanks for playing my games. Here's a quick message from me.</p>
+ </div>
 
-      <!-- Video — autoplay OFF, kids press play -->
-      <div class="kw-video">
-        <iframe
-          src="https://www.youtube.com/embed/R3kgSWl_1qs"
-          title="Message from Truman"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
+ <!-- Video — autoplay OFF, kids press play -->
+ <div class="kw-video">
+ <iframe
+ src="https://www.youtube.com/embed/R3kgSWl_1qs"
+ title="Message from Truman"
+ allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+ allowfullscreen>
+ </iframe>
+ </div>
 
-      <!-- Form CTA -->
-      <div class="kw-form-section">
-        <p>One more quick form — tell Tru what you'd want to make. Takes 60 seconds.</p>
-        <a
-          class="kw-btn"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSevjUKWOJblQurq9IE9pERmKFd9GBvIF71JWeH17rGulB2XxQ/viewform"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Fill out the form →
-        </a>
-      </div>
+ <!-- Form CTA -->
+ <div class="kw-form-section">
+ <p>One more quick form — tell Tru what you'd want to make. Takes 60 seconds.</p>
+ <a
+ class="kw-btn"
+ href="https://docs.google.com/forms/d/e/1FAIpQLSevjUKWOJblQurq9IE9pERmKFd9GBvIF71JWeH17rGulB2XxQ/viewform"
+ target="_blank"
+ rel="noopener noreferrer"
+ >
+ Fill out the form →
+ </a>
+ </div>
 
-    </div>
+ </div>
 
-    <div class="kw-brand">
-      <a href="index.html">tru-media.netlify.app</a>
-    </div>
-  </div>
+ <div class="kw-brand">
+ <a href="index.html">tru-media.netlify.app</a>
+ </div>
+ </div>
 
 </body>
 </html>

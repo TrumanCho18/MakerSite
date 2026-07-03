@@ -1,374 +1,857 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resources – My Games</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="sky.js" defer></script>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Resources – My Games</title>
+ <link rel="stylesheet" href="style.css" />
+ <script src="sky.js" defer></script>
 </head>
 <body>
 
-  <div class="sky">
-    <div class="cloud cloud-1"></div>
-    <div class="cloud cloud-2"></div>
-    <div class="cloud cloud-3"></div>
-    <div class="cloud cloud-4"></div>
-    <div class="cloud cloud-5"></div>
-  </div>
+ <div class="sky">
+ <div class="cloud cloud-1"></div>
+ <div class="cloud cloud-2"></div>
+ <div class="cloud cloud-3"></div>
+ <div class="cloud cloud-4"></div>
+ <div class="cloud cloud-5"></div>
+ </div>
 
-  <header>
-    <a href="index.html" class="logo">Be Tru Maker</a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav id="main-nav">
-      <a href="play.html">Play</a>
-      <div class="nav-dropdown"><span class="nav-drop-toggle active">Learn</span><div class="nav-drop-menu"><a href="resources.html" class="active">Resources</a><a href="workshops.html">Workshops</a><a href="student-work.html">Student Work</a></div></div>
-      <a href="make.html">Make</a>
-      <a href="inthewild.html">In the Wild</a>
-      <a href="about.html">About</a>
-      <a href="booking.html" class="nav-book">Book an Event</a>
-      
-      
-    </nav>
-  </header>
+ <header>
+ <a href="index.html" class="logo">BETRU MAKER</a>
+ <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav id="main-nav">
+ <a href="play.html">Play</a>
+ <div class="nav-dropdown"><span class="nav-drop-toggle active">Learn</span><div class="nav-drop-menu"><a href="resources.html" class="active">Resources</a><a href="workshops.html">Workshops</a><a href="survey.html">Survey</a><a href="student-work.html">Student Work</a></div></div>
+ <a href="make.html">Make</a>
+ <a href="inthewild.html">In the Wild</a>
+ <a href="about.html">About</a>
+ <a href="booking.html" class="nav-book">Book an Event</a>
+ 
+ 
+ </nav>
+ </header>
 
-  <div class="resources-hero sky-text">
-    <h1>Resources</h1>
-    <p>Want to learn how to create? Check out these links.</p>
-  </div>
+ <div class="resources-hero sky-text">
+ <h1>Resources</h1>
+ <p>Want to learn how to create? Check out these links.</p>
+ </div>
 
-  <!-- Search bar -->
-  <div class="search-bar-wrap">
-    <div class="search-bar">
-      <span class="search-icon">🔍</span>
-      <input id="search-input" type="text" placeholder="Search resources…" autocomplete="off" />
-      <button id="search-clear" class="search-clear" aria-label="Clear search">✕</button>
-    </div>
-  </div>
+ <!-- Search bar -->
+ <div class="search-bar-wrap">
+ <div class="search-bar">
+ <span class="search-icon"></span>
+ <input id="search-input" type="text" placeholder="Search resources…" autocomplete="off" />
+ <button id="search-clear" class="search-clear" aria-label="Clear search"></button>
+ </div>
+ </div>
 
-  <!-- Type filters -->
-  <div class="filter-bar">
-    <span class="filter-label">Type:</span>
-    <button class="filter-pill active" data-filter="all">All</button>
-    <button class="filter-pill" data-filter="youtube">▶ YouTube</button>
-    <button class="filter-pill" data-filter="tool">🔧 Tool</button>
-    <button class="filter-pill" data-filter="shop">🛍️ Shop</button>
-  </div>
+ <!-- Type filters -->
+ <div class="filter-bar">
+ <span class="filter-label">Type:</span>
+ <button class="filter-pill active" data-filter="all">All</button>
+ <button class="filter-pill" data-filter="youtube"> YouTube</button>
+ <button class="filter-pill" data-filter="tool"> Tool</button>
+ <button class="filter-pill" data-filter="shop"> Shop</button>
+ </div>
 
-  <!-- Difficulty filters -->
-  <div class="filter-bar">
-    <span class="filter-label">Level:</span>
-    <button class="diff-pill active" data-diff="all">All Levels</button>
-    <button class="diff-pill" data-diff="beginner">🟢 Beginner</button>
-    <button class="diff-pill" data-diff="intermediate">🟡 Intermediate</button>
-    <button class="diff-pill" data-diff="advanced">🔴 Advanced</button>
-  </div>
+ <!-- Difficulty filters -->
+ <div class="filter-bar">
+ <span class="filter-label">Level:</span>
+ <button class="diff-pill active" data-diff="all">All Levels</button>
+ <button class="diff-pill" data-diff="beginner"> Beginner</button>
+ <button class="diff-pill" data-diff="intermediate"> Intermediate</button>
+ <button class="diff-pill" data-diff="advanced"> Advanced</button>
+ </div>
 
-  <!-- Subtabs -->
-  <div class="subtab-bar">
-    <button class="subtab active" data-tab="making-games">🎮 Making Games</button>
-    <button class="subtab" data-tab="art">🎨 Art &amp; Animation</button>
-  </div>
+ <!-- Subtabs -->
+ <div class="subtab-bar">
+   <button class="subtab active" data-tab="making-games">Making Games</button>
+   <button class="subtab" data-tab="art">Art &amp; Animation</button>
+   <button class="subtab" data-tab="lets-make">Let's Make It!</button>
+ </div>
 
-  <main class="resources-main">
+ <main class="resources-main">
 
-    <!-- ── Making Games ── -->
-    <section class="resource-section" id="making-games">
-      <div class="resource-grid">
+ <!-- Making Games -->
+ <section class="resource-section" id="making-games">
+   <h2 class="resource-category-heading">YouTube Tutorials</h2>
+ <div class="resource-grid">
 
-        <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="beginner"
-           href="https://www.youtube.com/watch?v=D-nW4jvzRr8" target="_blank" rel="noopener">
-          <div class="tile-thumb">
-            <img src="https://img.youtube.com/vi/D-nW4jvzRr8/hqdefault.jpg" alt="Beginners Guide To Scratch thumbnail" />
-            <span class="play-badge">▶</span>
-          </div>
-          <div class="tile-info">
-            <div class="tile-meta">
-              <span class="tile-tag">YouTube · ZonxScratch</span>
-              <span class="diff-badge beginner">🟢 Beginner</span>
-            </div>
-            <h3>Beginners Guide To Scratch</h3>
-            <p>A simple walkthrough of the Scratch editor — sprites, blocks, and your very first project.</p>
-          </div>
-        </a>
+ <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="beginner"
+ href="https://www.youtube.com/watch?v=D-nW4jvzRr8" target="_blank" rel="noopener">
+ <div class="tile-thumb">
+ <img src="https://img.youtube.com/vi/D-nW4jvzRr8/hqdefault.jpg" alt="Beginners Guide To Scratch thumbnail" />
+ <span class="play-badge"></span>
+ </div>
+ <div class="tile-info">
+ <div class="tile-meta">
+ <span class="tile-tag">YouTube · ZonxScratch</span>
+ <span class="diff-badge beginner"> Beginner</span>
+ </div>
+ <h3>Beginners Guide To Scratch</h3>
+ <p>A simple walkthrough of the Scratch editor — sprites, blocks, and your very first project.</p>
+ </div>
+ </a>
 
-        <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="intermediate"
-           href="https://www.youtube.com/watch?v=FYZ1bfB1nho" target="_blank" rel="noopener">
-          <div class="tile-thumb">
-            <img src="https://img.youtube.com/vi/FYZ1bfB1nho/hqdefault.jpg" alt="Geometry Dash in Scratch thumbnail" />
-            <span class="play-badge">▶</span>
-          </div>
-          <div class="tile-info">
-            <div class="tile-meta">
-              <span class="tile-tag">YouTube · griffpatch</span>
-              <span class="diff-badge intermediate">🟡 Intermediate</span>
-            </div>
-            <h3>How to Make a Scratch Game</h3>
-            <p>griffpatch recreates Geometry Dash in Scratch — a masterclass in game mechanics and design.</p>
-          </div>
-        </a>
+ <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="intermediate"
+ href="https://www.youtube.com/watch?v=FYZ1bfB1nho" target="_blank" rel="noopener">
+ <div class="tile-thumb">
+ <img src="https://img.youtube.com/vi/FYZ1bfB1nho/hqdefault.jpg" alt="Geometry Dash in Scratch thumbnail" />
+ <span class="play-badge"></span>
+ </div>
+ <div class="tile-info">
+ <div class="tile-meta">
+ <span class="tile-tag">YouTube · griffpatch</span>
+ <span class="diff-badge intermediate"> Intermediate</span>
+ </div>
+ <h3>How to Make a Scratch Game</h3>
+ <p>griffpatch recreates Geometry Dash in Scratch — a masterclass in game mechanics and design.</p>
+ </div>
+ </a>
 
-        <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="advanced"
-           href="https://www.youtube.com/watch?v=IlKaB1etrik&list=PLPV2KyIb3jR5QFsefuO2RlAgWEz6EvVi6" target="_blank" rel="noopener">
-          <div class="tile-thumb">
-            <img src="https://img.youtube.com/vi/IlKaB1etrik/hqdefault.jpg" alt="How to make a Video Game in Unity thumbnail" />
-            <span class="play-badge">▶</span>
-          </div>
-          <div class="tile-info">
-            <div class="tile-meta">
-              <span class="tile-tag">YouTube Playlist · Brackeys</span>
-              <span class="diff-badge advanced">🔴 Advanced</span>
-            </div>
-            <h3>How to Make a Video Game in Unity</h3>
-            <p>Brackeys' legendary beginner series — build a complete game in Unity from the ground up.</p>
-          </div>
-        </a>
+ <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="advanced"
+ href="https://www.youtube.com/watch?v=IlKaB1etrik&list=PLPV2KyIb3jR5QFsefuO2RlAgWEz6EvVi6" target="_blank" rel="noopener">
+ <div class="tile-thumb">
+ <img src="https://img.youtube.com/vi/IlKaB1etrik/hqdefault.jpg" alt="How to make a Video Game in Unity thumbnail" />
+ <span class="play-badge"></span>
+ </div>
+ <div class="tile-info">
+ <div class="tile-meta">
+ <span class="tile-tag">YouTube Playlist · Brackeys</span>
+ <span class="diff-badge advanced"> Advanced</span>
+ </div>
+ <h3>How to Make a Video Game in Unity</h3>
+ <p>Brackeys' legendary beginner series — build a complete game in Unity from the ground up.</p>
+ </div>
+ </a>
 
-        <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="advanced"
-           href="https://www.youtube.com/watch?v=nwlvT-L9vFg&list=PLhIbBGhnxj5KPck1IYmll4PRIRZgVrJix" target="_blank" rel="noopener">
-          <div class="tile-thumb">
-            <img src="https://img.youtube.com/vi/nwlvT-L9vFg/hqdefault.jpg" alt="How To Make A Classic Arcade Game in GameMaker thumbnail" />
-            <span class="play-badge">▶</span>
-          </div>
-          <div class="tile-info">
-            <div class="tile-meta">
-              <span class="tile-tag">YouTube Playlist · GameMaker</span>
-              <span class="diff-badge advanced">🔴 Advanced</span>
-            </div>
-            <h3>Make a Classic Arcade Game in GameMaker</h3>
-            <p>Official GameMaker series walking you through building a classic arcade game step by step.</p>
-          </div>
-        </a>
+ <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="advanced"
+ href="https://www.youtube.com/watch?v=nwlvT-L9vFg&list=PLhIbBGhnxj5KPck1IYmll4PRIRZgVrJix" target="_blank" rel="noopener">
+ <div class="tile-thumb">
+ <img src="https://img.youtube.com/vi/nwlvT-L9vFg/hqdefault.jpg" alt="How To Make A Classic Arcade Game in GameMaker thumbnail" />
+ <span class="play-badge"></span>
+ </div>
+ <div class="tile-info">
+ <div class="tile-meta">
+ <span class="tile-tag">YouTube Playlist · GameMaker</span>
+ <span class="diff-badge advanced"> Advanced</span>
+ </div>
+ <h3>Make a Classic Arcade Game in GameMaker</h3>
+ <p>Official GameMaker series walking you through building a classic arcade game step by step.</p>
+ </div>
+ </a>
 
-        <a class="resource-tile" data-type="tool" data-tab="making-games" data-difficulty="advanced"
-           href="https://unity.com/" target="_blank" rel="noopener">
-          <div class="tile-thumb">
-            <img src="Assets/Unity-Emblem.png" alt="Unity" />
-          </div>
-          <div class="tile-info">
-            <div class="tile-meta">
-              <span class="tile-tag">Tool · unity.com</span>
-              <span class="diff-badge advanced">🔴 Advanced</span>
-            </div>
-            <h3>Unity</h3>
-            <p>One of the most popular professional game engines in the world — great next step after Scratch.</p>
-          </div>
-        </a>
+ </div>
+   <h2 class="resource-category-heading">Tools</h2>
+   <div class="resource-grid">
+ <a class="resource-tile" data-type="tool" data-tab="making-games" data-difficulty="advanced"
+ href="https://unity.com/" target="_blank" rel="noopener">
+ <div class="tile-thumb">
+ <img src="Assets/Unity-Emblem.png" alt="Unity" />
+ </div>
+ <div class="tile-info">
+ <div class="tile-meta">
+ <span class="tile-tag">Tool · unity.com</span>
+ <span class="diff-badge advanced"> Advanced</span>
+ </div>
+ <h3>Unity</h3>
+ <p>One of the most popular professional game engines in the world — great next step after Scratch.</p>
+ </div>
+ </a>
 
-        <a class="resource-tile" data-type="tool" data-tab="making-games" data-difficulty="advanced"
-           href="https://gamemaker.io/en/download" target="_blank" rel="noopener">
-          <div class="tile-thumb">
-            <img src="Assets/GameMaker.jpg" alt="GameMaker" />
-          </div>
-          <div class="tile-info">
-            <div class="tile-meta">
-              <span class="tile-tag">Tool · gamemaker.io</span>
-              <span class="diff-badge advanced">🔴 Advanced</span>
-            </div>
-            <h3>GameMaker</h3>
-            <p>A powerful 2D game engine used by indie developers worldwide — free to download and try.</p>
-          </div>
-        </a>
+ <a class="resource-tile" data-type="tool" data-tab="making-games" data-difficulty="advanced"
+ href="https://gamemaker.io/en/download" target="_blank" rel="noopener">
+ <div class="tile-thumb">
+ <img src="Assets/GameMaker.jpg" alt="GameMaker" />
+ </div>
+ <div class="tile-info">
+ <div class="tile-meta">
+ <span class="tile-tag">Tool · gamemaker.io</span>
+ <span class="diff-badge advanced"> Advanced</span>
+ </div>
+ <h3>GameMaker</h3>
+ <p>A powerful 2D game engine used by indie developers worldwide — free to download and try.</p>
+ </div>
+ </a>
 
-        <a class="resource-tile" data-type="tool" data-tab="making-games" data-difficulty="beginner"
-           href="https://turbowarp.org/editor" target="_blank" rel="noopener">
-          <div class="tile-thumb">
-            <img src="Assets/turbowarp-banner.png.png" alt="TurboWarp" />
-          </div>
-          <div class="tile-info">
-            <div class="tile-meta">
-              <span class="tile-tag">Tool · turbowarp.org</span>
-              <span class="diff-badge beginner">🟢 Beginner</span>
-            </div>
-            <h3>TurboWarp Editor</h3>
-            <p>A faster, more powerful version of Scratch with better performance for complex projects.</p>
-          </div>
-        </a>
+ <a class="resource-tile" data-type="tool" data-tab="making-games" data-difficulty="beginner"
+ href="https://turbowarp.org/editor" target="_blank" rel="noopener">
+ <div class="tile-thumb">
+ <img src="Assets/turbowarp-banner.png.png" alt="TurboWarp" />
+ </div>
+ <div class="tile-info">
+ <div class="tile-meta">
+ <span class="tile-tag">Tool · turbowarp.org</span>
+ <span class="diff-badge beginner"> Beginner</span>
+ </div>
+ <h3>TurboWarp Editor</h3>
+ <p>A faster, more powerful version of Scratch with better performance for complex projects.</p>
+ </div>
+ </a>
 
+ </div>
+
+  <h2 class="resource-category-heading">GB Studio</h2>
+  <div class="resource-grid">
+
+    <a class="resource-tile" data-type="tool" data-tab="making-games" data-difficulty="intermediate"
+    href="https://www.gbstudio.dev/" target="_blank" rel="noopener">
+      <div class="tile-thumb">
+        <img src="Assets/www.gbstudio.dev-logo.png" alt="GB Studio" />
       </div>
-    </section>
-
-    <!-- ── Art & Animation ── -->
-    <section class="resource-section" id="art">
-      <div class="resource-grid">
-
-        <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="beginner"
-           href="https://www.youtube.com/watch?v=tFsETEP01k8" target="_blank" rel="noopener">
-          <div class="tile-thumb">
-            <img src="https://img.youtube.com/vi/tFsETEP01k8/hqdefault.jpg" alt="Aseprite Tutorial For Beginners thumbnail" />
-            <span class="play-badge">▶</span>
-          </div>
-          <div class="tile-info">
-            <div class="tile-meta">
-              <span class="tile-tag">YouTube · Saultoons</span>
-              <span class="diff-badge beginner">🟢 Beginner</span>
-            </div>
-            <h3>Aseprite Tutorial for Beginners</h3>
-            <p>Learn the basics of Aseprite to create pixel art sprites and game assets from scratch.</p>
-          </div>
-        </a>
-
-        <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="intermediate"
-           href="https://www.youtube.com/watch?v=B0enS9BJne4" target="_blank" rel="noopener">
-          <div class="tile-thumb">
-            <img src="https://img.youtube.com/vi/B0enS9BJne4/hqdefault.jpg" alt="Aseprite Animation Tutorial thumbnail" />
-            <span class="play-badge">▶</span>
-          </div>
-          <div class="tile-info">
-            <div class="tile-meta">
-              <span class="tile-tag">YouTube · Saultoons</span>
-              <span class="diff-badge intermediate">🟡 Intermediate</span>
-            </div>
-            <h3>Aseprite Animation Tutorial</h3>
-            <p>How to animate pixel art characters and effects in Aseprite for use in your games.</p>
-          </div>
-        </a>
-
-        <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="beginner"
-           href="https://www.youtube.com/watch?v=gJKaMT2V-AA" target="_blank" rel="noopener">
-          <div class="tile-thumb">
-            <img src="https://img.youtube.com/vi/gJKaMT2V-AA/hqdefault.jpg" alt="Procreate for Beginners thumbnail" />
-            <span class="play-badge">▶</span>
-          </div>
-          <div class="tile-info">
-            <div class="tile-meta">
-              <span class="tile-tag">YouTube · RetroSupply Co.</span>
-              <span class="diff-badge beginner">🟢 Beginner</span>
-            </div>
-            <h3>Procreate for Beginners</h3>
-            <p>The only Procreate guide you'll need in 2026 — covers every essential tool and workflow.</p>
-          </div>
-        </a>
-
-        <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="intermediate"
-           href="https://www.youtube.com/watch?v=4rkeTKoAKYE" target="_blank" rel="noopener">
-          <div class="tile-thumb">
-            <img src="https://img.youtube.com/vi/4rkeTKoAKYE/hqdefault.jpg" alt="How to Animate in Procreate thumbnail" />
-            <span class="play-badge">▶</span>
-          </div>
-          <div class="tile-info">
-            <div class="tile-meta">
-              <span class="tile-tag">YouTube · Envato Tuts+</span>
-              <span class="diff-badge intermediate">🟡 Intermediate</span>
-            </div>
-            <h3>How to Animate in Procreate</h3>
-            <p>A step-by-step Procreate animation tutorial — bring your characters and artwork to life.</p>
-          </div>
-        </a>
-
-        <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="beginner"
-           href="https://www.youtube.com/watch?v=QwtFYWczrXY" target="_blank" rel="noopener">
-          <div class="tile-thumb">
-            <img src="https://img.youtube.com/vi/QwtFYWczrXY/hqdefault.jpg" alt="Learn Procreate thumbnail" />
-            <span class="play-badge">▶</span>
-          </div>
-          <div class="tile-info">
-            <div class="tile-meta">
-              <span class="tile-tag">YouTube · Brooke Glaser</span>
-              <span class="diff-badge beginner">🟢 Beginner</span>
-            </div>
-            <h3>Learn Procreate Fast</h3>
-            <p>A beginner's guide to Procreate for digital illustration, concept art, and character design.</p>
-          </div>
-        </a>
-
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">Tool · gbstudio.dev</span><span class="diff-badge intermediate">Intermediate</span></div>
+        <h3>GB Studio</h3>
+        <p>Free drag-and-drop game maker for creating real Game Boy Color games. No coding required to get started.</p>
       </div>
-    </section>
+    </a>
+
+    <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="intermediate"
+    href="https://www.youtube.com/watch?v=OKFI1moE5Kk" target="_blank" rel="noopener">
+      <div class="tile-thumb">
+        <img src="https://img.youtube.com/vi/OKFI1moE5Kk/hqdefault.jpg" alt="How to make a GameBoy game in 2024 - GB Studio 4.0" />
+        <span class="play-badge"></span>
+      </div>
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">YouTube · GB Studio 4.0</span><span class="diff-badge intermediate">Intermediate</span></div>
+        <h3>How to Make a Game Boy Game — GB Studio 4.0</h3>
+        <p>Full walkthrough of GB Studio 4.0 — from setup to a playable Game Boy Color game. Made in 2024.</p>
+      </div>
+    </a>
+
+    <a class="resource-tile" data-type="youtube" data-tab="making-games" data-difficulty="intermediate"
+    href="https://www.youtube.com/watch?v=iiJLRNQgjNk" target="_blank" rel="noopener">
+      <div class="tile-thumb">
+        <img src="https://img.youtube.com/vi/iiJLRNQgjNk/hqdefault.jpg" alt="Make a GameBoy Game With GBStudio" />
+        <span class="play-badge"></span>
+      </div>
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">YouTube · GB Studio</span><span class="diff-badge intermediate">Intermediate</span></div>
+        <h3>Make a Game Boy Game With GB Studio</h3>
+        <p>A clear walkthrough of GB Studio — sprites, scenes, and getting a game running. Made in 2024.</p>
+      </div>
+    </a>
+
+  </div>
+
+ </div>
+ </section>
+
+ <!-- Art & Animation -->
+ <section class="resource-section" id="art">
+   <h2 class="resource-category-heading">Aseprite</h2>
+   <div class="resource-grid">
+
+ <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="beginner"
+ href="https://www.youtube.com/watch?v=tFsETEP01k8" target="_blank" rel="noopener">
+ <div class="tile-thumb">
+ <img src="https://img.youtube.com/vi/tFsETEP01k8/hqdefault.jpg" alt="Aseprite Tutorial For Beginners thumbnail" />
+ <span class="play-badge"></span>
+ </div>
+ <div class="tile-info">
+ <div class="tile-meta">
+ <span class="tile-tag">YouTube · Saultoons</span>
+ <span class="diff-badge beginner"> Beginner</span>
+ </div>
+ <h3>Aseprite Tutorial for Beginners</h3>
+ <p>Learn the basics of Aseprite to create pixel art sprites and game assets from scratch.</p>
+ </div>
+ </a>
+
+ <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="intermediate"
+ href="https://www.youtube.com/watch?v=B0enS9BJne4" target="_blank" rel="noopener">
+ <div class="tile-thumb">
+ <img src="https://img.youtube.com/vi/B0enS9BJne4/hqdefault.jpg" alt="Aseprite Animation Tutorial thumbnail" />
+ <span class="play-badge"></span>
+ </div>
+ <div class="tile-info">
+ <div class="tile-meta">
+ <span class="tile-tag">YouTube · Saultoons</span>
+ <span class="diff-badge intermediate"> Intermediate</span>
+ </div>
+ <h3>Aseprite Animation Tutorial</h3>
+ <p>How to animate pixel art characters and effects in Aseprite for use in your games.</p>
+ </div>
+ </a>
+
+   </div>
+   <h2 class="resource-category-heading">Procreate</h2>
+   <div class="resource-grid">
+
+ <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="beginner"
+ href="https://www.youtube.com/watch?v=gJKaMT2V-AA" target="_blank" rel="noopener">
+ <div class="tile-thumb">
+ <img src="https://img.youtube.com/vi/gJKaMT2V-AA/hqdefault.jpg" alt="Procreate for Beginners thumbnail" />
+ <span class="play-badge"></span>
+ </div>
+ <div class="tile-info">
+ <div class="tile-meta">
+ <span class="tile-tag">YouTube · RetroSupply Co.</span>
+ <span class="diff-badge beginner"> Beginner</span>
+ </div>
+ <h3>Procreate for Beginners</h3>
+ <p>The only Procreate guide you'll need in 2026 — covers every essential tool and workflow.</p>
+ </div>
+ </a>
+
+ <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="intermediate"
+ href="https://www.youtube.com/watch?v=4rkeTKoAKYE" target="_blank" rel="noopener">
+ <div class="tile-thumb">
+ <img src="https://img.youtube.com/vi/4rkeTKoAKYE/hqdefault.jpg" alt="How to Animate in Procreate thumbnail" />
+ <span class="play-badge"></span>
+ </div>
+ <div class="tile-info">
+ <div class="tile-meta">
+ <span class="tile-tag">YouTube · Envato Tuts+</span>
+ <span class="diff-badge intermediate"> Intermediate</span>
+ </div>
+ <h3>How to Animate in Procreate</h3>
+ <p>A step-by-step Procreate animation tutorial — bring your characters and artwork to life.</p>
+ </div>
+ </a>
+
+ <a class="resource-tile" data-type="youtube" data-tab="art" data-difficulty="beginner"
+ href="https://www.youtube.com/watch?v=QwtFYWczrXY" target="_blank" rel="noopener">
+ <div class="tile-thumb">
+ <img src="https://img.youtube.com/vi/QwtFYWczrXY/hqdefault.jpg" alt="Learn Procreate thumbnail" />
+ <span class="play-badge"></span>
+ </div>
+ <div class="tile-info">
+ <div class="tile-meta">
+ <span class="tile-tag">YouTube · Brooke Glaser</span>
+ <span class="diff-badge beginner"> Beginner</span>
+ </div>
+ <h3>Learn Procreate Fast</h3>
+ <p>A beginner's guide to Procreate for digital illustration, concept art, and character design.</p>
+ </div>
+ </a>
+
+ </div>
+ </section>
 
 
-    <!-- Empty state -->
-    <div id="no-results" class="no-results" style="display:none">
-      <span class="no-results-icon">🔍</span>
-      <p>No resources match your search.</p>
-    </div>
+ <!-- Let's Make It! -->
+ <section class="resource-section" id="lets-make">
 
-  </main>
+   <h2 class="resource-category-heading">Stickers</h2>
+   <div class="resource-grid resource-grid--two">
 
-  <footer>
-    <div class="footer-links">
-      <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.truman-cho.com/" target="_blank" rel="noopener">truman-cho.com</a>
-      <a href="https://x.com/RandomUser1081" target="_blank" rel="noopener">X</a>
-      <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
-      <a href="about.html#contact">Contact</a>
-    </div>
-    <div class="footer-copy">&copy; 2026 BeTru Media</div>
-  </footer>
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.stickermule.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/stickermule.png" alt="Sticker Mule" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Stickers · stickermule.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Sticker Mule</h3>
+         <p>The most popular sticker printer — great quality, fast shipping, and easy to use. Good for die-cut stickers and labels.</p>
+       </div>
+     </a>
 
-  <script>
-    const subtabs     = document.querySelectorAll('.subtab');
-    const sections    = document.querySelectorAll('.resource-section');
-    const tiles       = document.querySelectorAll('.resource-tile');
-    const filterPills = document.querySelectorAll('.filter-pill');
-    const diffPills   = document.querySelectorAll('.diff-pill');
-    const searchInput = document.getElementById('search-input');
-    const searchClear = document.getElementById('search-clear');
-    const noResults   = document.getElementById('no-results');
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.stickerapp.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/stickerapp-logo.png" alt="StickerApp" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Stickers · stickerapp.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>StickerApp</h3>
+         <p>More finish options than Sticker Mule (holographic, clear, glitter) and better pricing on small runs.</p>
+       </div>
+     </a>
 
-    let activeTab    = 'making-games';
-    let activeFilter = 'all';
-    let activeDiff   = 'all';
-    let searchQuery  = '';
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.stickeryou.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/Stickeryou-logo.webp" alt="StickerYou" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Stickers · stickeryou.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>StickerYou</h3>
+         <p>Great for custom sticker sheets, kiss-cut pages, and iron-on transfers.</p>
+       </div>
+     </a>
 
-    function render() {
-      const isSearching = searchQuery.length > 0;
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.amazon.com/JOYEZA-Premium-Printable-Waterproof-Resistant/dp/B088QWPMH7/" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/joyzea-stickersheets.jpg" alt="Joyeza Sticker Sheets" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Stickers · Amazon</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Joyeza Sticker Sheets</h3>
+         <p>Premium printable sticker paper — waterproof and smudge resistant. Print your own designs at home.</p>
+       </div>
+     </a>
 
-      document.querySelector('.subtab-bar').style.opacity      = isSearching ? '0.4' : '1';
-      document.querySelector('.subtab-bar').style.pointerEvents = isSearching ? 'none' : '';
-      searchClear.style.display = searchQuery ? '' : 'none';
+   </div>
 
-      let anyVisible = false;
+   <h2 class="resource-category-heading">DTF &amp; UV DTF Transfers</h2>
+   <div class="resource-grid resource-grid--two">
 
-      tiles.forEach(tile => {
-        const tabMatch    = isSearching || tile.dataset.tab === activeTab;
-        const filterMatch = activeFilter === 'all' || tile.dataset.type === activeFilter;
-        const diffMatch   = activeDiff   === 'all' || tile.dataset.difficulty === activeDiff;
-        const searchMatch = !isSearching || tile.innerText.toLowerCase().includes(searchQuery.toLowerCase());
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://liondtf.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/liondtf-logo.jpeg" alt="Lion DTF" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">DTF · liondtf.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Lion DTF</h3>
+         <p>Upload your artwork and get DTF transfers shipped to you — just press onto a blank and you're done.</p>
+       </div>
+     </a>
 
-        const visible = tabMatch && filterMatch && diffMatch && searchMatch;
-        tile.style.display = visible ? '' : 'none';
-        if (visible) anyVisible = true;
-      });
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://dtfnortheast.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/northeastdtf-logo.jpeg" alt="DTF Northeast" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">DTF · dtfnortheast.com · East Coast</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>DTF Northeast</h3>
+         <p>East Coast based — fast turnaround and great quality for small runs.</p>
+       </div>
+     </a>
 
-      sections.forEach(section => {
-        const hasTiles = [...section.querySelectorAll('.resource-tile')].some(t => t.style.display !== 'none');
-        section.style.display = hasTiles ? '' : 'none';
-      });
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://ninjatransfers.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/Ninja_Transfers_logo_8a83bc55-c632-40a4-91e4-fc9fe4029f85.avif" alt="Ninja Transfers" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">DTF · ninjatransfers.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Ninja Transfers</h3>
+         <p>Known for fast 24–48 hr turnaround, vibrant colors, and easy gang sheet ordering to save money.</p>
+       </div>
+     </a>
 
-      noResults.style.display = anyVisible ? 'none' : '';
-    }
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://printholix.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/printholix-logo.avif" alt="Printholix" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">DTF · printholix.com · Midwest</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Printholix</h3>
+         <p>Springfield, IL based — voted "Best of the Best" by customers. Great if you're in the middle of the country.</p>
+       </div>
+     </a>
 
-    subtabs.forEach(btn => btn.addEventListener('click', () => {
-      activeTab = btn.dataset.tab;
-      subtabs.forEach(b => b.classList.toggle('active', b.dataset.tab === activeTab));
-      render();
-    }));
+   </div>
 
-    filterPills.forEach(pill => pill.addEventListener('click', () => {
-      activeFilter = pill.dataset.filter;
-      filterPills.forEach(p => p.classList.toggle('active', p.dataset.filter === activeFilter));
-      render();
-    }));
+   <h2 class="resource-category-heading">Blanks — Shirts, Hats &amp; Totes</h2>
+   <div class="resource-grid resource-grid--two">
 
-    diffPills.forEach(pill => pill.addEventListener('click', () => {
-      activeDiff = pill.dataset.diff;
-      diffPills.forEach(p => p.classList.toggle('active', p.dataset.diff === activeDiff));
-      render();
-    }));
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.jiffyshirts.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/jiffyshirts-logo.png" alt="Jiffy Shirts" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Blanks · jiffyshirts.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Jiffy Shirts</h3>
+         <p>Affordable blank tees, hoodies, and hats shipped fast. No minimum order.</p>
+       </div>
+     </a>
 
-    searchInput.addEventListener('input', () => {
-      searchQuery = searchInput.value.trim();
-      render();
-    });
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://totebagfactory.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/totebagfactory-logo_SVG.svg" alt="Tote Bag Factory" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Blanks · totebagfactory.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Tote Bag Factory</h3>
+         <p>Huge selection of blank totes, drawstring bags, and accessories at wholesale prices.</p>
+       </div>
+     </a>
 
-    searchClear.addEventListener('click', () => {
-      searchInput.value = '';
-      searchQuery = '';
-      searchInput.focus();
-      render();
-    });
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.everfulwholesale.com/categories/bags" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/everful-logo.svg" alt="Everful Wholesale" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Blanks · everfulwholesale.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Everful Wholesale</h3>
+         <p>Wholesale bags and totes at low minimums — canvas, non-woven, and cooler bags.</p>
+       </div>
+     </a>
 
-    render();
-  </script>
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.customink.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/customink-logo.svg" alt="Custom Ink" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Blanks · customink.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Custom Ink</h3>
+         <p>Quality blank and custom shirts — easy design tool, reliable printing, wide range of styles.</p>
+       </div>
+     </a>
+
+   </div>
+
+   <h2 class="resource-category-heading">Print on Demand</h2>
+   <div class="resource-grid resource-grid--two">
+
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://printify.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb tile-thumb-placeholder"></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">POD · printify.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Printify</h3>
+         <p>The one I use. Upload your design and get it printed on shirts, hoodies, mugs, and more. Ships direct to your customer.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.printful.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb tile-thumb-placeholder"></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">POD · printful.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Printful</h3>
+         <p>Premium quality POD — they do their own printing so quality is very consistent. Slightly higher prices but worth it.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.gelato.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb tile-thumb-placeholder"></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">POD · gelato.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Gelato</h3>
+         <p>Best for fast delivery — they print locally wherever your customer is, which means less shipping time and cost.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.vistaprint.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb tile-thumb-placeholder"></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">POD · vistaprint.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Vistaprint</h3>
+         <p>Great for business cards, stickers, and small runs of branded merch. Easy to use with lots of product options.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.fedex.com/en-us/office.html" target="_blank" rel="noopener">
+       <div class="tile-thumb tile-thumb-placeholder"></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Print · fedex.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>FedEx Office</h3>
+         <p>Need something printed today? FedEx Office is the fastest local option — stickers, posters, transfers, and more.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="intermediate"
+        href="https://www.customcat.com/" target="_blank" rel="noopener">
+       <div class="tile-thumb tile-thumb-placeholder"></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">POD · customcat.com</span><span class="diff-badge intermediate">Intermediate</span></div>
+         <h3>CustomCat</h3>
+         <p>Very fast US shipping and some of the lowest base prices in POD — good when you're ready to scale up volume.</p>
+       </div>
+     </a>
+
+   </div>
+
+   <h2 class="resource-category-heading">Tools</h2>
+   <div class="resource-grid resource-grid--two">
+
+     <a class="resource-tile" data-type="tool" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.amazon.com/Apple-2022-10-9-inch-iPad-Wi-Fi/dp/B0BJLCWFNM" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/ipadwwomen.jpg" alt="iPad" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Device · amazon.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>iPad</h3>
+         <p>The best device for digital drawing, designing your merch, and building games on the go.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="tool" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.amazon.com/Apple-MUWA3AM-A-Pencil-USB-C/dp/B0CL7J12YK" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/ipencil-usbc.jpg" alt="Apple Pencil USB-C" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Accessory · amazon.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Apple Pencil (USB-C)</h3>
+         <p>Draw directly on your iPad with precision — essential for creating original artwork for your merch.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="tool" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.amazon.com/JAMJAKE-2018-2025-Sensitivity-Rejection-Compatible/dp/B0BY7SMR4W" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/alternateipencil.jpg" alt="JAMJAKE Stylus" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Accessory · amazon.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>JAMJAKE Stylus (Budget Pick)</h3>
+         <p>A great cheaper alternative to the Apple Pencil — palm rejection, tilt sensitivity, charges in 10 minutes.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="tool" data-tab="lets-make" data-difficulty="intermediate"
+        href="https://www.amazon.com/Cricut-2008334-Maker-3/dp/B0942SQ5BD" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/cricutcutter.jpg" alt="Cricut Maker 3" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Machine · amazon.com</span><span class="diff-badge intermediate">Intermediate</span></div>
+         <h3>Cricut Maker 3</h3>
+         <p>Cut vinyl, iron-on, and cardstock for stickers, decals, and custom apparel designs.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="tool" data-tab="lets-make" data-difficulty="intermediate"
+        href="https://www.amazon.com/HTVRONT-Auto-Press-Machine-Shirts/dp/B0B6GTVZFH" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/htv-heatpress.jpg" alt="Heat Press" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Machine · amazon.com</span><span class="diff-badge intermediate">Intermediate</span></div>
+         <h3>Heat Press</h3>
+         <p>Press DTF transfers or iron-on vinyl onto shirts, hats, and bags. A must if you're making your own merch.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="tool" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.amazon.com/Cricut-EasyPress-Mini-Heat-Press/dp/B0FRNK3TWT" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/cricutmini.jpg" alt="Cricut EasyPress Mini" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Machine · amazon.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Cricut EasyPress Mini</h3>
+         <p>Perfect for smaller projects — hats, pockets, sleeves, and patches. Compact and easy to use.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="tool" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.amazon.com/Teflon-Transfer-Resistant-Protector-Sublimation/dp/B08HRR2TK1" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/teflongsheet.jpg" alt="Teflon Sheets" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Supply · amazon.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Teflon Sheets</h3>
+         <p>Protect your transfers and heat press from scorching. Always use one when pressing.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="tool" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.amazon.com/Heat-Tape-Press-Sublimation/dp/B09WY7J93S" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/heatresistenttape.jpg" alt="Heat Resistant Tape" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Supply · amazon.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Heat Resistant Tape</h3>
+         <p>Keep your transfers in place while pressing so nothing shifts or wrinkles.</p>
+       </div>
+     </a>
+
+     <a class="resource-tile" data-type="tool" data-tab="lets-make" data-difficulty="beginner"
+        href="https://www.amazon.com/Cricut-2004233-Tools-Weeding-Kit/dp/B071KMBGCR" target="_blank" rel="noopener">
+       <div class="tile-thumb"><img src="Assets/weeedingtools.jpg" alt="Weeding Tools" /></div>
+       <div class="tile-info">
+         <div class="tile-meta"><span class="tile-tag">Supply · amazon.com</span><span class="diff-badge beginner">Beginner</span></div>
+         <h3>Weeding Tools</h3>
+         <p>Pick out excess vinyl from your Cricut cuts cleanly and easily.</p>
+       </div>
+     </a>
+
+   </div>
+
+  <h2 class="resource-category-heading">Game Boy Cartridges</h2>
+  <div class="resource-grid resource-grid--two">
+
+    <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="advanced"
+    href="https://shop.insidegadgets.com/product/custom-gameboy-flash-cart/" target="_blank" rel="noopener">
+      <div class="tile-thumb tile-thumb-placeholder"></div>
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">PCB · shop.insidegadgets.com</span><span class="diff-badge advanced">Advanced</span></div>
+        <h3>insideGadgets</h3>
+        <p>The go-to for custom GBC flash carts. Upload your ROM, pick your PCB colour, minimum 25 carts. Tested before shipping.</p>
+      </div>
+    </a>
+
+    <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="intermediate"
+    href="https://handheldlegend.com/products/game-boy-game-cartridge-shells-cloud-game-store" target="_blank" rel="noopener">
+      <div class="tile-thumb tile-thumb-placeholder"></div>
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">Shells · handheldlegend.com</span><span class="diff-badge intermediate">Intermediate</span></div>
+        <h3>Hand Held Legend</h3>
+        <p>Empty GBC cartridge shells in many colours — the housing that holds your PCB and makes it look like a real game.</p>
+      </div>
+    </a>
+
+    <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="intermediate"
+    href="https://retrogamerepairshop.com/products/high-quality-game-boy-color-replacement-cartridges" target="_blank" rel="noopener">
+      <div class="tile-thumb tile-thumb-placeholder"></div>
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">Shells · retrogamerepairshop.com</span><span class="diff-badge intermediate">Intermediate</span></div>
+        <h3>Retro Game Repair Shop</h3>
+        <p>High quality GBC replacement shells — great fit and finish for your custom cartridge.</p>
+      </div>
+    </a>
+
+    <a class="resource-tile" data-type="shop" data-tab="lets-make" data-difficulty="beginner"
+    href="https://www.ebay.com/b/Nintendo-Game-Boy-Color-Video-Game-Consoles/139971/bn_7116333186" target="_blank" rel="noopener">
+      <div class="tile-thumb tile-thumb-placeholder"></div>
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">Console · ebay.com</span><span class="diff-badge beginner">Beginner</span></div>
+        <h3>eBay — Game Boy Color</h3>
+        <p>Best place to find an original GBC console. Look for "tested and working" listings in whatever colour you want.</p>
+      </div>
+    </a>
+
+  </div>
+
+  <h2 class="resource-category-heading">YouTube Tutorials</h2>
+  <div class="resource-grid">
+
+    <a class="resource-tile" data-type="youtube" data-tab="lets-make" data-difficulty="beginner"
+    href="https://www.youtube.com/watch?v=Yhyd6oldR_c" target="_blank" rel="noopener">
+      <div class="tile-thumb">
+        <img src="https://img.youtube.com/vi/Yhyd6oldR_c/hqdefault.jpg" alt="How to Use a Cricut for the First Time" />
+        <span class="play-badge"></span>
+      </div>
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">YouTube · Cricut</span><span class="diff-badge beginner">Beginner</span></div>
+        <h3>How to Use a Cricut for the First Time</h3>
+        <p>Unboxing, setup, and first projects — stickers, vinyl, and heat transfer. Great starting point if you just got a Cricut.</p>
+      </div>
+    </a>
+
+    <a class="resource-tile" data-type="youtube" data-tab="lets-make" data-difficulty="beginner"
+    href="https://www.youtube.com/watch?v=bLcJGto1SnM" target="_blank" rel="noopener">
+      <div class="tile-thumb">
+        <img src="https://img.youtube.com/vi/bLcJGto1SnM/hqdefault.jpg" alt="New Cricut Setup and First Cut Guide" />
+        <span class="play-badge"></span>
+      </div>
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">YouTube · Cricut Maker &amp; Explore 4</span><span class="diff-badge beginner">Beginner</span></div>
+        <h3>New Cricut? Complete Setup &amp; First Cut Guide</h3>
+        <p>Covers the Maker and Explore 4 from box to first cut — including Design Space setup and your first project.</p>
+      </div>
+    </a>
+
+    <a class="resource-tile" data-type="youtube" data-tab="lets-make" data-difficulty="beginner"
+    href="https://www.youtube.com/watch?v=zmpjUE911P4" target="_blank" rel="noopener">
+      <div class="tile-thumb">
+        <img src="https://img.youtube.com/vi/zmpjUE911P4/hqdefault.jpg" alt="How to Press Your First DTF Transfer" />
+        <span class="play-badge"></span>
+      </div>
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">YouTube · DTF Transfers</span><span class="diff-badge beginner">Beginner</span></div>
+        <h3>How to Press Your First DTF Transfer</h3>
+        <p>Step-by-step beginner guide — upload your design, order the transfer, and press it onto a shirt with a heat press.</p>
+      </div>
+    </a>
+
+    <a class="resource-tile" data-type="youtube" data-tab="lets-make" data-difficulty="beginner"
+    href="https://www.youtube.com/watch?v=KDo5sfd4HP8" target="_blank" rel="noopener">
+      <div class="tile-thumb">
+        <img src="https://img.youtube.com/vi/KDo5sfd4HP8/hqdefault.jpg" alt="DTF Transfers Tutorial" />
+        <span class="play-badge"></span>
+      </div>
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">YouTube · DTF Transfers</span><span class="diff-badge beginner">Beginner</span></div>
+        <h3>DTF Transfers — Start Making Custom Shirts</h3>
+        <p>How to apply DTF transfers to t-shirts and sweatshirts using just a heat press. No screen printing needed.</p>
+      </div>
+    </a>
+
+    <a class="resource-tile" data-type="youtube" data-tab="lets-make" data-difficulty="beginner"
+    href="https://www.youtube.com/watch?v=ed3szG8c7Zw" target="_blank" rel="noopener">
+      <div class="tile-thumb">
+        <img src="https://img.youtube.com/vi/ed3szG8c7Zw/hqdefault.jpg" alt="What are UV DTF Decals and How to Apply Them" />
+        <span class="play-badge"></span>
+      </div>
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">YouTube · UV DTF</span><span class="diff-badge beginner">Beginner</span></div>
+        <h3>What Are UV DTF Decals?</h3>
+        <p>Intro to UV DTF — what they are, what surfaces they stick to, and how to apply them. Good first watch before you order.</p>
+      </div>
+    </a>
+
+    <a class="resource-tile" data-type="youtube" data-tab="lets-make" data-difficulty="beginner"
+    href="https://www.youtube.com/watch?v=knJaRPeENqA" target="_blank" rel="noopener">
+      <div class="tile-thumb">
+        <img src="https://img.youtube.com/vi/knJaRPeENqA/hqdefault.jpg" alt="How to Use UV DTF Transfers" />
+        <span class="play-badge"></span>
+      </div>
+      <div class="tile-info">
+        <div class="tile-meta"><span class="tile-tag">YouTube · UV DTF</span><span class="diff-badge beginner">Beginner</span></div>
+        <h3>UV DTF — Small Decals &amp; Full Cup Wraps</h3>
+        <p>How to apply UV DTF transfers to cups, mugs, and hard surfaces. Covers both small decals and full wraps.</p>
+      </div>
+    </a>
+
+  </div>
+
+ </section>
+
+ <!-- Empty state -->
+ <div id="no-results" class="no-results" style="display:none">
+ <span class="no-results-icon"></span>
+ <p>No resources match your search.</p>
+ </div>
+
+ </main>
+
+ <footer>
+ <div class="footer-links">
+ <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">Instagram</a>
+ <a href="https://www.truman-cho.com/" target="_blank" rel="noopener">truman-cho.com</a>
+ <a href="https://x.com/RandomUser1081" target="_blank" rel="noopener">X</a>
+ <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
+ <a href="about.html#contact">Contact</a>
+ </div>
+ <div class="footer-copy">&copy; 2026 BeTru Media</div>
+ </footer>
+
+ <script>
+ const subtabs = document.querySelectorAll('.subtab');
+ const sections = document.querySelectorAll('.resource-section');
+ const tiles = document.querySelectorAll('.resource-tile');
+ const filterPills = document.querySelectorAll('.filter-pill');
+ const diffPills = document.querySelectorAll('.diff-pill');
+ const searchInput = document.getElementById('search-input');
+ const searchClear = document.getElementById('search-clear');
+ const noResults = document.getElementById('no-results');
+
+ let activeTab = 'making-games';
+ let activeFilter = 'all';
+ let activeDiff = 'all';
+ let searchQuery = '';
+
+ function render() {
+ const isSearching = searchQuery.length > 0;
+
+ document.querySelector('.subtab-bar').style.opacity = isSearching ? '0.4' : '1';
+ document.querySelector('.subtab-bar').style.pointerEvents = isSearching ? 'none' : '';
+ searchClear.style.display = searchQuery ? '' : 'none';
+
+ let anyVisible = false;
+
+ tiles.forEach(tile => {
+ const tabMatch = isSearching || activeFilter !== 'all' || tile.dataset.tab === activeTab;
+ const filterMatch = activeFilter === 'all' || tile.dataset.type === activeFilter;
+ const diffMatch = activeDiff === 'all' || tile.dataset.difficulty === activeDiff;
+ const searchMatch = !isSearching || tile.innerText.toLowerCase().includes(searchQuery.toLowerCase());
+
+ const visible = tabMatch && filterMatch && diffMatch && searchMatch;
+ tile.style.display = visible ? '' : 'none';
+ if (visible) anyVisible = true;
+ });
+
+ sections.forEach(section => {
+ const hasTiles = [...section.querySelectorAll('.resource-tile')].some(t => t.style.display !== 'none');
+ section.style.display = hasTiles ? '' : 'none';
+ });
+
+ noResults.style.display = anyVisible ? 'none' : '';
+ }
+
+ subtabs.forEach(btn => btn.addEventListener('click', () => {
+ activeTab = btn.dataset.tab;
+ subtabs.forEach(b => b.classList.toggle('active', b.dataset.tab === activeTab));
+ render();
+ }));
+
+ filterPills.forEach(pill => pill.addEventListener('click', () => {
+ activeFilter = pill.dataset.filter;
+ filterPills.forEach(p => p.classList.toggle('active', p.dataset.filter === activeFilter));
+ render();
+ }));
+
+ diffPills.forEach(pill => pill.addEventListener('click', () => {
+ activeDiff = pill.dataset.diff;
+ diffPills.forEach(p => p.classList.toggle('active', p.dataset.diff === activeDiff));
+ render();
+ }));
+
+ searchInput.addEventListener('input', () => {
+ searchQuery = searchInput.value.trim();
+ render();
+ });
+
+ searchClear.addEventListener('click', () => {
+ searchInput.value = '';
+ searchQuery = '';
+ searchInput.focus();
+ render();
+ });
+
+ render();
+ </script>
 
 </body>
 </html>
