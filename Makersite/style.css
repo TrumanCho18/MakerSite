@@ -1299,6 +1299,19 @@ footer {
 }
 
 /* ── Student Work page ── */
+.sw-header-photo {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 0 1.5rem;
+}
+.sw-header-photo img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  max-height: 480px;
+  display: block;
+}
+
 .sw-filter-bar {
   display: flex;
   flex-wrap: wrap;
