@@ -212,6 +212,7 @@ header {
   color: #fff;
   text-decoration: none;
   letter-spacing: -0.01em;
+  text-transform: uppercase;
   display: flex;
   flex-direction: column;
   line-height: 1.2;
