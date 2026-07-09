@@ -1316,6 +1316,9 @@ footer {
   object-position: center;
   display: block;
 }
+.sw-header-photos img:nth-child(4) {
+  object-position: center 40%;
+}
 
 .sw-filter-bar {
   display: flex;
