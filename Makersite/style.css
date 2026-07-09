@@ -1305,7 +1305,7 @@ footer {
   margin: 0 auto 2.5rem;
   padding: 0 1.5rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 0.75rem;
 }
 .sw-header-photos img {
