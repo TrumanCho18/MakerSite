@@ -1300,17 +1300,20 @@ footer {
 }
 
 /* ── Student Work page ── */
-.sw-header-photo {
+.sw-header-photos {
   max-width: 860px;
   margin: 0 auto 2.5rem;
   padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
 }
-.sw-header-photo img {
+.sw-header-photos img {
   width: 100%;
-  height: 260px;
-  border-radius: 16px;
+  height: 200px;
+  border-radius: 12px;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center;
   display: block;
 }
 
