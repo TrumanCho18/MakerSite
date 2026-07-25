@@ -1402,18 +1402,25 @@ footer {
 }
 
 .sw-carousel-track {
-  display: flex;
+  position: relative;
+  width: 100%;
   height: 100%;
-  transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
 }
 
 .sw-carousel-slide {
-  flex: 0 0 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  display: block;
+  transform-origin: center center;
+  translate: -50% 0;
+  transition: transform 0.45s cubic-bezier(0.4,0,0.2,1),
+              opacity  0.45s ease,
+              z-index  0s;
+  border-radius: 0.75rem;
 }
 
 .sw-carousel-btn {
