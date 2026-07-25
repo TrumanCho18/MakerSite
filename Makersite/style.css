@@ -1389,6 +1389,84 @@ footer {
   font-size: 0.82rem;
 }
 
+/* ── Student Work carousel ── */
+.sw-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto 1.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: rgba(0,0,0,0.3);
+}
+
+.sw-carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+
+.sw-carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.sw-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s;
+  z-index: 2;
+}
+
+.sw-carousel-btn:hover { background: rgba(0,0,0,0.65); }
+.sw-carousel-prev { left: 0.75rem; }
+.sw-carousel-next { right: 0.75rem; }
+
+.sw-carousel-dots {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.sw-carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.sw-carousel-dot.active {
+  background: #fff;
+  transform: scale(1.3);
+}
+
 /* ── Made by Tru ── */
 .mbt-grid {
   display: grid;

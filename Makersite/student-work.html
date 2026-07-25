@@ -42,12 +42,17 @@
     <p>Games made by real students in BeTru Maker workshops. Click any game to play it.</p>
   </div>
 
-  <div class="sw-header-photos">
-    <img src="Assets/workshop/mw1-p1-animation-drawing.jpeg" alt="Students drawing animation worksheets" />
-    <img src="Assets/workshop/mw1-p2-procreate-ipads.jpeg" alt="Students drawing characters in Procreate" />
-    <img src="Assets/workshop/mw1-p3-group-tshirts.jpeg" alt="All students in their custom t-shirts" />
-    <img src="Assets/workshop/mw1-p4-tshirt-assembly.jpeg" alt="Students assembling t-shirt prints" />
-    <img src="Assets/workshop/mw1-p5-tv-student-work.jpeg" alt="Students watching their games on the TV" />
+  <div class="sw-carousel" id="sw-carousel">
+    <div class="sw-carousel-track" id="sw-carousel-track">
+      <img class="sw-carousel-slide" src="Assets/workshop/mw1-p1-animation-drawing.jpeg" alt="Students drawing animation worksheets" />
+      <img class="sw-carousel-slide" src="Assets/workshop/mw1-p2-procreate-ipads.jpeg" alt="Students drawing characters in Procreate" />
+      <img class="sw-carousel-slide" src="Assets/workshop/mw1-p3-group-tshirts.jpeg" alt="All students in their custom t-shirts" />
+      <img class="sw-carousel-slide" src="Assets/workshop/mw1-p4-tshirt-assembly.jpeg" alt="Students assembling t-shirt prints" />
+      <img class="sw-carousel-slide" src="Assets/workshop/mw1-p5-tv-student-work.jpeg" alt="Students watching their games on the TV" />
+    </div>
+    <button class="sw-carousel-btn sw-carousel-prev" id="sw-prev" aria-label="Previous">&#8249;</button>
+    <button class="sw-carousel-btn sw-carousel-next" id="sw-next" aria-label="Next">&#8250;</button>
+    <div class="sw-carousel-dots" id="sw-dots"></div>
   </div>
 
   <main>
@@ -220,6 +225,45 @@
     closeBtn.addEventListener('click', closeModal);
     backdrop.addEventListener('click', closeModal);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // ── Carousel ─────────────────────────────────────────────────────
+    (function () {
+      const track  = document.getElementById('sw-carousel-track');
+      const slides = track.querySelectorAll('.sw-carousel-slide');
+      const dotsEl = document.getElementById('sw-dots');
+      const total  = slides.length;
+      let cur = 0, timer;
+
+      const dots = Array.from({ length: total }, (_, i) => {
+        const d = document.createElement('button');
+        d.className = 'sw-carousel-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Slide ' + (i + 1));
+        d.addEventListener('click', () => go(i));
+        dotsEl.appendChild(d);
+        return d;
+      });
+
+      function go(n) {
+        cur = (n + total) % total;
+        track.style.transform = `translateX(-${cur * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === cur));
+        resetTimer();
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => go(cur + 1), 4000);
+      }
+
+      document.getElementById('sw-prev').addEventListener('click', () => go(cur - 1));
+      document.getElementById('sw-next').addEventListener('click', () => go(cur + 1));
+
+      const carousel = document.getElementById('sw-carousel');
+      carousel.addEventListener('mouseenter', () => clearInterval(timer));
+      carousel.addEventListener('mouseleave', resetTimer);
+
+      resetTimer();
+    })();
 
     // ── Workshop filter pills ────────────────────────────────────────
     // Auto-generates pills from unique data-workshop values on cards
