@@ -1396,13 +1396,16 @@ footer {
   max-width: 860px;
   margin: 0 auto 1.5rem;
   border-radius: 1rem;
-  aspect-ratio: 16 / 9;
+  overflow: hidden;
   background: rgba(0,0,0,0.3);
 }
 
+/* padding-bottom establishes the 16:9 height for absolute children */
 .sw-carousel-track {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
   overflow: hidden;
   border-radius: 1rem;
 }
