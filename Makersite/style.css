@@ -382,6 +382,34 @@ main {
   padding: 0 1.5rem 5rem;
 }
 
+.mobile-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #e8f7fb;
+  border: 2px solid #5bbfd6;
+  border-radius: 8px;
+  padding: 14px 20px;
+  margin: 0 auto 2rem;
+  max-width: 900px;
+  font-size: 0.9rem;
+  color: #1a1a2e;
+}
+.mobile-banner-icon { font-size: 1.4rem; flex-shrink: 0; }
+.mobile-banner > div { flex: 1; }
+.mobile-banner-btn {
+  flex-shrink: 0;
+  background: #5bbfd6;
+  color: white;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.mobile-banner-btn:hover { background: #3aaac4; }
+
 .games-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
