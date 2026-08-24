@@ -1380,13 +1380,14 @@ footer {
   color: #1a1a2e;
 }
 
-/* ── Student card: photo hero + game cover badge ── */
-.sw-student-cover {
+/* ── Student row: 3 tiles per student ── */
+
+/* photo tile */
+.sw-tile-photo {
   position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 4;
   overflow: hidden;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 1rem;
+  aspect-ratio: 3 / 4;
 }
 
 .sw-student-photo {
@@ -1400,18 +1401,50 @@ footer {
 
 .sw-card:hover .sw-student-photo { transform: scale(1.04); }
 
-/* game cover badge — small thumbnail in top-right corner */
-.sw-game-cover-wrap {
-  position: absolute;
-  top: 0.65rem;
-  right: 0.65rem;
-  width: 38%;
-  aspect-ratio: 1 / 1;
-  border-radius: 0.5rem;
+/* bio + testimonial tile */
+.sw-tile-bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.4rem 1.3rem;
+  gap: 0.75rem;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.sw-bio-name  { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.1rem; }
+.sw-bio-grade { font-size: 0.78rem; opacity: 0.6; }
+.sw-bio-game  { font-size: 0.78rem; color: var(--accent); font-weight: 500; margin-top: 0.15rem; }
+
+.sw-tile-bio blockquote {
+  margin: 0;
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.55;
+  opacity: 0.85;
+  border-left: 2px solid var(--accent);
+  padding-left: 0.75rem;
+}
+
+.sw-tile-bio cite {
+  font-size: 0.68rem;
+  font-style: normal;
+  opacity: 0.5;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* game cover tile */
+.sw-tile-game {
+  position: relative;
   overflow: hidden;
+  border-radius: 1rem;
   background: #1a1a1a;
-  border: 2px solid rgba(255,255,255,0.25);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sw-game-cover {
@@ -1419,7 +1452,10 @@ footer {
   height: 100%;
   object-fit: contain;
   display: block;
+  transition: transform 0.35s ease;
 }
+
+.sw-card:hover .sw-game-cover { transform: scale(1.04); }
 
 .sw-play-hint {
   position: absolute;
@@ -1430,53 +1466,12 @@ footer {
   background: rgba(0,0,0,0.4);
   color: #fff;
   font-size: 2rem;
-  font-family: 'Poppins', sans-serif;
   opacity: 0;
   transition: opacity 0.2s;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 1rem;
 }
 
 .sw-card:hover .sw-play-hint { opacity: 1; }
-
-.sw-student-bio {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 2.5rem 1rem 0.9rem;
-  background: linear-gradient(transparent, rgba(10,8,40,0.9));
-  display: flex;
-  flex-direction: column;
-  gap: 0.12rem;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-}
-
-.sw-bio-name  { font-size: 1rem; font-weight: 700; }
-.sw-bio-grade { font-size: 0.75rem; opacity: 0.7; }
-.sw-bio-game  { font-size: 0.73rem; color: var(--accent); font-weight: 500; }
-
-.sw-testimonial {
-  padding: 0.85rem 1rem 0.9rem;
-  font-family: 'Poppins', sans-serif;
-  color: rgba(255,255,255,0.85);
-  font-size: 0.78rem;
-  line-height: 1.5;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.04);
-}
-
-.sw-testimonial blockquote {
-  margin: 0 0 0.4rem;
-  font-style: italic;
-}
-
-.sw-testimonial cite {
-  font-size: 0.7rem;
-  font-style: normal;
-  opacity: 0.6;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
 
 .sw-card .sw-meta {
   display: flex;
