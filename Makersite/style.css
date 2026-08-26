@@ -1490,16 +1490,7 @@ footer {
   margin-top: 0.4rem;
 }
 
-/* Kavi: smaller and uncropped, so both his face and the iPad show */
-.sw-testi-photo.sw-testi-photo--natural {
-  width: 58%;
-  flex: 0 0 auto;
-  align-self: flex-start;
-  height: auto;
-  object-fit: initial;
-}
-
-/* Beckham: keep as a small fixed thumbnail */
+/* Beckham & Kavi: small fixed thumbnails, sized to never grow the row */
 .sw-testi-photo.sw-testi-photo--sm {
   width: 25%;
   flex: 0 0 auto;
