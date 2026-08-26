@@ -1479,11 +1479,13 @@ footer {
 .sw-testi-photo,
 .sw-testi-video {
   display: block;
-  width: 25%;
+  width: 50%;
   height: auto;
   border-radius: 0.6rem;
   margin-top: 0.4rem;
 }
+
+.sw-testi-photo.sw-testi-photo--sm { width: 25%; }
 
 .sw-testi-video { background: #000; }
 
