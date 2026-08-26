@@ -1490,6 +1490,9 @@ footer {
   margin-top: 0.4rem;
 }
 
+/* Kavi: crop keeps his face up top but the iPad is at the bottom of the shot */
+.sw-testi-photo.sw-testi-photo--low { object-position: center bottom; }
+
 /* Beckham: keep as a small fixed thumbnail */
 .sw-testi-photo.sw-testi-photo--sm {
   width: 25%;
