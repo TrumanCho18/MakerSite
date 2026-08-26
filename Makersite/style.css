@@ -1405,11 +1405,13 @@ footer {
 .sw-tile-bio {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 1.4rem 1.3rem;
   gap: 0.75rem;
   font-family: 'Poppins', sans-serif;
   color: #fff;
+  height: 100%;
+  overflow: hidden;
 }
 
 .sw-bio-name  { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.1rem; }
@@ -1476,16 +1478,25 @@ footer {
 .sw-tile-images img:first-child { grid-column: 1 / -1; }
 
 /* small snapshot / clip tucked into a testimonial */
+/* fill the leftover height in the testimonial column, capped by the row */
 .sw-testi-photo,
 .sw-testi-video {
   display: block;
-  width: 50%;
-  height: auto;
+  width: 100%;
+  flex: 1 1 0;
+  min-height: 0;
+  object-fit: cover;
   border-radius: 0.6rem;
   margin-top: 0.4rem;
 }
 
-.sw-testi-photo.sw-testi-photo--sm { width: 25%; }
+/* Beckham: keep as a small fixed thumbnail */
+.sw-testi-photo.sw-testi-photo--sm {
+  width: 25%;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  height: auto;
+}
 
 .sw-testi-video { background: #000; }
 
