@@ -1387,7 +1387,7 @@ footer {
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
 }
 
 .sw-student-photo {
@@ -1435,13 +1435,118 @@ footer {
   letter-spacing: 0.05em;
 }
 
+/* kid's own takeaway */
+.sw-learned {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.sw-learned-label {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 0.3rem;
+}
+
+/* extra-images tile (students with no game) */
+.sw-tile-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.35rem;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.sw-tile-images img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: cover;
+  display: block;
+}
+
+/* first image runs full width, the rest share the row below */
+.sw-tile-images img:first-child { grid-column: 1 / -1; }
+
+/* small snapshot / clip tucked into a testimonial */
+.sw-testi-photo,
+.sw-testi-video {
+  display: block;
+  width: 40%;
+  height: auto;
+  border-radius: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.sw-testi-video { background: #000; }
+
+/* ── Workshop recap section (photo gallery, no games) ── */
+.sw-workshop {
+  margin-top: 3.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-workshop-head {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1.75rem;
+}
+
+.sw-workshop-head h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.6rem;
+}
+
+.sw-workshop-head p {
+  max-width: 62ch;
+  margin: 0 auto;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  opacity: 0.82;
+}
+
+.sw-workshop-hero {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 1rem;
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.sw-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+
+.sw-photo-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.9rem;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .sw-photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .sw-workshop-hero { aspect-ratio: 4 / 3; }
+}
+
 /* game cover tile */
 .sw-tile-game {
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
   background: #1a1a1a;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   display: flex;
   align-items: center;
   justify-content: center;
