@@ -1498,6 +1498,16 @@ footer {
   height: auto;
 }
 
+/* Kavi: show the whole crop as-is — object-fit:cover was re-cropping it
+   down to a thin strip whenever the flex-filled box came out short and wide */
+.sw-testi-photo.sw-testi-photo--whole {
+  width: 42%;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  height: auto;
+  object-fit: initial;
+}
+
 .sw-testi-video { background: #000; }
 
 /* ── Workshop recap section (photo gallery, no games) ── */
