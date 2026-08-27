@@ -1490,7 +1490,7 @@ footer {
   margin-top: 0.4rem;
 }
 
-/* Beckham & Kavi: small fixed thumbnails, sized to never grow the row */
+/* Beckham: small fixed thumbnail, sized to never grow the row */
 .sw-testi-photo.sw-testi-photo--sm {
   width: 25%;
   flex: 0 0 auto;
@@ -3010,6 +3010,16 @@ input[type="date"] {
   /* Games: 3 → 1 col */
   .games-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Cards stack independently here, so there's no row height to fill —
+     show the testimonial photo/video at a natural, legible size instead */
+  .sw-testi-photo,
+  .sw-testi-video {
+    flex: 0 0 auto;
+    width: 55%;
+    height: auto;
+    object-fit: initial;
   }
 
   /* Workshop days: 5 → 2 col */
