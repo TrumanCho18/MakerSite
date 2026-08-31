@@ -1387,7 +1387,7 @@ footer {
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
 }
 
 .sw-student-photo {
@@ -1405,11 +1405,13 @@ footer {
 .sw-tile-bio {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 1.4rem 1.3rem;
   gap: 0.75rem;
   font-family: 'Poppins', sans-serif;
   color: #fff;
+  height: 100%;
+  overflow: hidden;
 }
 
 .sw-bio-name  { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.1rem; }
@@ -1435,13 +1437,139 @@ footer {
   letter-spacing: 0.05em;
 }
 
+/* kid's own takeaway */
+.sw-learned {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.sw-learned-label {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 0.3rem;
+}
+
+/* extra-images tile (students with no game) */
+.sw-tile-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.35rem;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.sw-tile-images img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: cover;
+  display: block;
+}
+
+/* first image runs full width, the rest share the row below */
+.sw-tile-images img:first-child { grid-column: 1 / -1; }
+
+/* small snapshot / clip tucked into a testimonial */
+/* fill the leftover height in the testimonial column, capped by the row */
+.sw-testi-photo,
+.sw-testi-video {
+  display: block;
+  width: 100%;
+  flex: 1 1 0;
+  min-height: 55px;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+/* Beckham: small fixed thumbnail, sized to never grow the row */
+.sw-testi-photo.sw-testi-photo--sm {
+  width: 25%;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  height: auto;
+}
+
+/* Kavi: show the whole crop as-is — object-fit:cover was re-cropping it
+   down to a thin strip whenever the flex-filled box came out short and wide */
+.sw-testi-photo.sw-testi-photo--whole {
+  width: 42%;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  height: auto;
+  object-fit: initial;
+}
+
+.sw-testi-video { background: #000; }
+
+/* ── Workshop recap section (photo gallery, no games) ── */
+.sw-workshop {
+  margin-top: 3.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-workshop-head {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0.9rem;
+}
+
+.sw-workshop-head h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.6rem;
+}
+
+.sw-workshop-head p {
+  max-width: 62ch;
+  margin: 0 auto;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  opacity: 0.82;
+}
+
+.sw-workshop-hero {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 1rem;
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.sw-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+
+.sw-photo-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.9rem;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .sw-photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .sw-workshop-hero { aspect-ratio: 4 / 3; }
+}
+
 /* game cover tile */
 .sw-tile-game {
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
   background: #1a1a1a;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2892,6 +3020,16 @@ input[type="date"] {
   /* Games: 3 → 1 col */
   .games-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Cards stack independently here, so there's no row height to fill —
+     show the testimonial photo/video at a natural, legible size instead */
+  .sw-testi-photo,
+  .sw-testi-video {
+    flex: 0 0 auto;
+    width: 55%;
+    height: auto;
+    object-fit: initial;
   }
 
   /* Workshop days: 5 → 2 col */
