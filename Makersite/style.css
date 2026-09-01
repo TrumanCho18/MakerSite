@@ -604,13 +604,15 @@ main {
   margin-bottom: 0.75rem;
 }
 
-.about-hero-timeline {
+.resources-hero p.about-hero-timeline {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
+  font-size: clamp(0.65rem, 2.3vw, 0.95rem);
   font-weight: 600;
   color: var(--accent);
   letter-spacing: 0.03em;
   margin: 0 auto 0.75rem;
+  white-space: nowrap;
+  max-width: none;
 }
 
 .resources-hero p {
