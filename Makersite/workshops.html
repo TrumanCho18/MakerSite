@@ -39,6 +39,7 @@
 
  <div class="sw-carousel" id="sw-carousel">
    <div class="sw-carousel-track" id="sw-carousel-track">
+     <img class="sw-carousel-slide" src="Assets/workshop/mw1-p0-group-with-tru.jpg" alt="Truman with the workshop group and their finished t-shirts" />
      <img class="sw-carousel-slide" src="Assets/workshop/mw1-p1-animation-drawing.jpeg" alt="Students drawing animation worksheets" />
      <img class="sw-carousel-slide" src="Assets/workshop/mw1-p2-procreate-ipads.jpeg" alt="Students drawing characters in Procreate" />
      <img class="sw-carousel-slide" src="Assets/workshop/mw1-p3-group-tshirts.jpeg" alt="All students in their custom t-shirts" />
@@ -54,7 +55,7 @@
 
  <!-- Intro -->
  <div class="workshop-intro">
- <p>Hi, I'm Truman. I'm a rising senior at Brooklyn Tech, and I've been teaching myself game design, digital art, and coding for years. I make games you can play and objects you can hold, and I built betrumaker.com as a free resource site for kids who want to make their own things. In my maker workshops I take a small group through my whole process: we start with a sketch, make it digital in Procreate, drop it into a real game, and finish the week with your character printed on something you can take home. It's real, hands-on making, built for kids going into 4th to 6th grade.</p>
+ <p>Hi, I'm Truman. I'm a rising senior at Brooklyn Tech, and I've been teaching myself game design, digital art, and coding for years. I offer small in-person and online/self-led workshops where I share my creative loop process. We start with an idea/sketch, make it digital, drop it into a real game, and finish with your character printed on actual products. It's real, hands-on making, built for kids going into 4th to 6th grade.</p>
  </div>
 
  <!-- Formats -->
@@ -184,7 +185,7 @@
    const slides = document.querySelectorAll('.sw-carousel-slide');
    const dotsEl = document.getElementById('sw-dots');
    const total  = slides.length;
-   let cur = 0, timer;
+   let cur = 0;
 
    const dots = Array.from({ length: total }, (_, i) => {
      const d = document.createElement('button');
@@ -221,20 +222,10 @@
        }
      });
      dots.forEach((d, i) => d.classList.toggle('active', i === cur));
-     resetTimer();
-   }
-
-   function resetTimer() {
-     clearInterval(timer);
-     timer = setInterval(() => go(cur + 1), 2000);
    }
 
    document.getElementById('sw-prev').addEventListener('click', () => go(cur - 1));
    document.getElementById('sw-next').addEventListener('click', () => go(cur + 1));
-
-   const carousel = document.getElementById('sw-carousel');
-   carousel.addEventListener('mouseenter', () => clearInterval(timer));
-   carousel.addEventListener('mouseleave', resetTimer);
 
    go(0);
  })();
