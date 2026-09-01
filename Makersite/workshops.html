@@ -21,7 +21,7 @@
  <a href="index.html" class="logo">BETRU MAKER</a>
  <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav id="main-nav">
  <div class="nav-dropdown"><span class="nav-drop-toggle">Play</span><div class="nav-drop-menu"><a href="play.html">Desktop</a><a href="play-mobile.html">Mobile &#128241;</a></div></div>
- <div class="nav-dropdown"><span class="nav-drop-toggle active">Learn</span><div class="nav-drop-menu"><a href="resources.html">Resources</a><a href="workshops.html" class="active">Workshops</a><a href="survey.html">Survey</a><a href="student-work.html">Student Work</a></div></div>
+ <div class="nav-dropdown"><span class="nav-drop-toggle active">Learn</span><div class="nav-drop-menu"><a href="workshops.html" class="active">Workshops</a><a href="survey.html">Survey</a><a href="student-work.html">Student Work</a><a href="resources.html">Resources</a></div></div>
  <a href="make.html">Make</a>
  <a href="inthewild.html">In the Wild</a>
  <a href="about.html">About</a>
@@ -61,12 +61,27 @@
  <!-- Formats -->
  <div class="workshop-section">
  <h2 class="workshop-section-title">The Formats</h2>
- <div class="workshop-details-grid">
- <div class="workshop-detail-card">
+ <div class="workshop-details-grid" id="format-tabs">
+ <div class="workshop-detail-card format-tab active" data-format="in-person" role="button" tabindex="0">
  <p>In-person</p>
  </div>
- <div class="workshop-detail-card">
+ <div class="workshop-detail-card format-tab" data-format="virtual" role="button" tabindex="0">
  <p>Virtual/self-led</p>
+ </div>
+ </div>
+
+ <div class="workshop-details-grid format-panel" id="panel-in-person">
+ <div class="workshop-detail-card">
+ <p>2 hours a day, Monday to Friday</p>
+ <p class="detail-sub">Typical time: 10am to 12pm</p>
+ </div>
+ <div class="workshop-detail-card">
+ <p>Small groups</p>
+ <p class="detail-sub">Lots of individual attention</p>
+ </div>
+ <div class="workshop-detail-card">
+ <p>Kids going into 4th to 6th grade</p>
+ <p class="detail-sub">Bring an iPad with Procreate and a laptop</p>
  </div>
  </div>
  </div>
@@ -74,6 +89,7 @@
  <!-- Day by day -->
  <div class="workshop-section">
  <h2 class="workshop-section-title">The Lessons</h2>
+ <p class="format-note" id="format-note">This workshop is a mirror to the in-person format with adjustments.</p>
  <div class="workshop-days">
  <div class="day-card">
  <img src="Assets/makerloop/loop-1.png" alt="Create" class="day-img" />
@@ -118,7 +134,7 @@
  <ul class="day-bullets">
  <li>Play test each other's games</li>
  <li>Practice coding and make improvements</li>
- <li>Decide what product to make in Lesson 5</li>
+ <li>Decide what product to make at the end</li>
  </ul>
  </div>
  <div class="day-card">
@@ -129,7 +145,7 @@
  <ul class="day-bullets">
  <li>Make a custom product featuring their own character</li>
  <li>Shirt, tote, sticker — something real to keep</li>
- <li>Show-and-tell to wrap up the week</li>
+ <li>Show-and-tell to wrap up</li>
  </ul>
  </div>
  </div>
@@ -180,6 +196,33 @@
  </main>
 
  <script>
+ // ── Format tabs: in-person vs virtual/self-led ───────────────────
+ (function () {
+   const tabs      = document.querySelectorAll('.format-tab');
+   const panel     = document.getElementById('panel-in-person');
+   const note      = document.getElementById('format-note');
+   const dayLabels = document.querySelectorAll('.day-label');
+
+   function setFormat(format) {
+     const inPerson = format === 'in-person';
+     tabs.forEach(t => t.classList.toggle('active', t.dataset.format === format));
+     panel.style.display = inPerson ? '' : 'none';
+     note.style.display  = inPerson ? 'none' : '';
+     dayLabels.forEach((el, i) => {
+       el.textContent = (inPerson ? 'Day ' : 'Lesson ') + (i + 1);
+     });
+   }
+
+   tabs.forEach(t => {
+     t.addEventListener('click', () => setFormat(t.dataset.format));
+     t.addEventListener('keydown', e => {
+       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFormat(t.dataset.format); }
+     });
+   });
+
+   setFormat('in-person');
+ })();
+
  // ── Carousel (coverflow) ─────────────────────────────────────────
  (function () {
    const slides = document.querySelectorAll('.sw-carousel-slide');
