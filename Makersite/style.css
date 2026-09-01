@@ -2806,11 +2806,16 @@ input[type="date"] {
 }
 
 .format-list li {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 400;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.55;
-  margin-bottom: 0.3rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+}
+
+/* Format box titles match the lesson card headings */
+.workshop-detail-card > p:first-child {
+  font-size: 0.9rem;
 }
 
 .format-list li::marker { color: rgba(255,255,255,0.4); }
