@@ -3628,35 +3628,3 @@ input[type="date"] {
 .wild-event-info p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.55; margin: 0; }
 @media (max-width: 600px) { .wild-event { flex-direction: column; gap: 0.6rem; } }
 
-/* ── Homepage "next event" strip ── */
-.next-event {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  max-width: 640px;
-  margin: 0 auto 1.5rem;
-  padding: 0.7rem 1.1rem;
-  background: rgba(255,107,43,0.16);
-  border: 1px solid rgba(255,107,43,0.5);
-  border-radius: 2rem;
-  text-decoration: none;
-  transition: background 0.15s;
-}
-.next-event:hover { background: rgba(255,107,43,0.28); }
-.next-event-label {
-  flex-shrink: 0;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #fff;
-  background: #ff6b2b;
-  padding: 0.25rem 0.6rem;
-  border-radius: 1rem;
-}
-.next-event-text { flex: 1; font-size: 0.88rem; color: rgba(255,255,255,0.9); }
-.next-event-go { color: #ff8c50; font-weight: 700; }
-@media (max-width: 560px) {
-  .next-event { flex-wrap: wrap; border-radius: 1rem; }
-  .next-event-text { flex-basis: 100%; }
-}
