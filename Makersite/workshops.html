@@ -1,352 +1,185 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>Maker Workshops — Be Tru Maker</title>
- <link rel="stylesheet" href="style.css" />
- <script src="sky.js" defer></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Workshops &mdash; Be Tru Maker</title>
+<link rel="stylesheet" href="mono.css" />
 </head>
 <body>
 
- <div class="sky">
- <div class="cloud cloud-1"></div>
- <div class="cloud cloud-2"></div>
- <div class="cloud cloud-3"></div>
- <div class="cloud cloud-4"></div>
- <div class="cloud cloud-5"></div>
- </div>
+<header class="nav">
+  <a href="index.html" class="nav-logo">BETRU MAKER</a>
+  <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav-links" id="navlinks">
+    <a href="shop.html">Shop</a>
+    <a href="games.html">Games</a>
+    <a href="workshops.html">Workshops</a>
+    <a href="makers.html">Makers</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
 
- <header>
- <a href="index.html" class="logo">BETRU MAKER</a>
- <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav id="main-nav">
- <a href="play.html">Play</a>
- <div class="nav-dropdown"><span class="nav-drop-toggle active">Learn</span><div class="nav-drop-menu"><a href="workshops.html" class="active">Workshops</a><a href="workshops.html#signup">Sign Up</a><a href="student-work.html">BeTru Makers</a><a href="resources.html">Resources</a></div></div>
- <a href="make.html">Make</a>
- <a href="inthewild.html">Events</a>
- <a href="about.html">About</a>
- <a href="booking.html" class="nav-book">Book Tru</a>
- 
- 
- </nav>
- </header>
+<section class="page-head">
+  <p class="eyebrow">Free &middot; Going into 4th to 6th grade</p>
+  <h1>Workshops</h1>
+  <p class="page-lede">Turn your drawings into games you can play and objects you can hold. Start with a sketch, make it digital, drop it into a real game, and finish with your character printed on something you keep.</p>
+</section>
 
- <!-- Hero -->
- <div class="resources-hero sky-text">
- <h1>Maker Workshops</h1>
- <p>Turn your drawings into games you can play and objects you can hold.</p>
- </div>
+<!-- IMAGE SLOT — documentary photography, 3:4 portrait crops. -->
+<div class="ws-grid">
+  <div class="ws-cell"><img class="ph-doc" src="Assets/workshop2/ws2-hero.jpg" alt="Workshop group" /></div>
+  <div class="ws-cell"><img class="ph-doc" src="Assets/workshop/KNOLLWOOD-31-two-boys-at-laptop-library.jpg" alt="Two students at a laptop" /></div>
+  <div class="ws-cell"><img class="ph-doc" src="Assets/inthewild/ps38-kidsattable.jpg" alt="Charm bar" /></div>
+  <div class="ws-cell"><img class="ph-doc" src="Assets/workshop/KNOLLWOOD-11-wide-shot-truman-talking-to-kids.jpg" alt="Truman presenting" /></div>
+</div>
 
- <div class="sw-carousel" id="sw-carousel">
-   <div class="sw-carousel-track" id="sw-carousel-track">
-     <img class="sw-carousel-slide" src="Assets/workshop/mw1-p0-group-with-tru.jpg" alt="Truman with the workshop group and their finished t-shirts" />
-     <img class="sw-carousel-slide" src="Assets/workshop/mw1-p1-animation-drawing.jpeg" alt="Students drawing animation worksheets" />
-     <img class="sw-carousel-slide" src="Assets/workshop/mw1-p2-procreate-ipads.jpeg" alt="Students drawing characters in Procreate" />
-     <img class="sw-carousel-slide" src="Assets/workshop/mw1-p3-group-tshirts.jpeg" alt="All students in their custom t-shirts" />
-     <img class="sw-carousel-slide" src="Assets/workshop/mw1-p4-tshirt-assembly.jpeg" alt="Students assembling t-shirt prints" />
-     <img class="sw-carousel-slide" src="Assets/workshop/mw1-p5-tv-student-work.jpeg" alt="Students watching their games on the TV" />
-   </div>
-   <button class="sw-carousel-btn sw-carousel-prev" id="sw-prev" aria-label="Previous">&#8249;</button>
-   <button class="sw-carousel-btn sw-carousel-next" id="sw-next" aria-label="Next">&#8250;</button>
-   <div class="sw-carousel-dots" id="sw-dots"></div>
- </div>
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2 class="section-title">The Formats</h2>
+    <p class="section-note">Two ways in. Both follow the same five lessons.</p>
+  </div>
+  <div class="formats">
+    <div class="format">
+      <h3>In Person</h3>
+      <p class="format-tag">Brooklyn, small groups</p>
+      <ul>
+        <li>2 hours a day, Monday to Friday</li>
+        <li>Typical time 10am to 12pm</li>
+        <li>Small groups with lots of individual attention</li>
+        <li>Kids going into 4th to 6th grade</li>
+        <li>Bring an iPad, Procreate and a digital pencil</li>
+      </ul>
+    </div>
+    <div class="format">
+      <h3>Virtual &amp; Self-Led</h3>
+      <p class="format-tag">Anywhere, at your own pace</p>
+      <ul>
+        <li>Mirrored lessons from in person</li>
+        <li>Short tutorials from Tru</li>
+        <li>Downloadable files for each lesson</li>
+        <li>Upload your artwork and sprites</li>
+        <li>Free decals sent to your home to DIY</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
- <main class="workshops-main sky-text">
+<section class="section" style="padding-top:0;">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <h2 class="section-title">The Lessons</h2>
+    <p class="section-note">Five steps, the same loop Truman uses on his own work.</p>
+  </div>
+  <div class="lessons">
+    <div class="lesson">
+      <span class="lesson-num">Lesson 1</span>
+      <h3>Create</h3>
+      <p class="lesson-sub">Develop an idea</p>
+      <ul>
+        <li>Overview of the maker process</li>
+        <li>Play test Tru's games together</li>
+        <li>Sketch your own character</li>
+      </ul>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">Lesson 2</span>
+      <h3>Digitize</h3>
+      <p class="lesson-sub">Bring it to life</p>
+      <ul>
+        <li>Continue character development</li>
+        <li>Basics of Procreate tools</li>
+        <li>Animation intro</li>
+        <li>Digitize your character</li>
+      </ul>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">Lesson 3</span>
+      <h3>Code</h3>
+      <p class="lesson-sub">See yourself in the game</p>
+      <ul>
+        <li>How Tru's games are built</li>
+        <li>Swap your character in</li>
+        <li>Make it move</li>
+      </ul>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">Lesson 4</span>
+      <h3>Play</h3>
+      <p class="lesson-sub">Test it and fix it</p>
+      <ul>
+        <li>Play your own game</li>
+        <li>Change what does not feel right</li>
+        <li>Share it with the group</li>
+      </ul>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">Lesson 5</span>
+      <h3>Make</h3>
+      <p class="lesson-sub">Take it home</p>
+      <ul>
+        <li>Print your character as a decal</li>
+        <li>Press it onto a shirt</li>
+        <li>Keep the thing you made</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
- <!-- Intro -->
- <div class="workshop-intro">
- <p>Hi, I'm Truman. I'm a senior at Brooklyn Tech, and I've been teaching myself game design, digital art, and coding for years. I offer small in-person and online/self-led workshops where I share my creative loop process. We start with an idea/sketch, make it digital, drop it into a real game, and finish with your character printed on actual products. It's real, hands-on making, built for kids going into 4th to 6th grade.</p>
- </div>
+<div class="quote">
+  <p>&ldquo;You and Tru have unlocked something, and if you do a version 2.0, I'm sure Kavi would enthusiastically join.&rdquo;</p>
+  <cite>Priya &mdash; Kavi's mom</cite>
+</div>
 
- <!-- Formats -->
- <div class="workshop-section">
- <h2 class="workshop-section-title">The Formats</h2>
- <div class="workshop-details-grid">
- <div class="workshop-detail-card">
- <p>In-person</p>
- <ul class="format-list">
- <li>2 hours a day, Monday to Friday</li>
- <li>Typical time: 10am to 12pm</li>
- <li>Small groups with lots of individual attention</li>
- <li>Kids going into 4th to 6th grade</li>
- <li>Bring an iPad, Procreate, and a digital pencil</li>
- </ul>
- </div>
- <div class="workshop-detail-card">
- <p>Virtual/self-led</p>
- <ul class="format-list">
- <li>Mirrored lessons from in person</li>
- <li>Short tutorials from Tru</li>
- <li>Downloadable files for each lesson</li>
- <li>Upload artwork and sprites</li>
- <li>Free decals sent to your home to DIY</li>
- <li>Needs an iPad, Procreate, and a digital pencil</li>
- </ul>
- </div>
- </div>
- </div>
+<div class="feature">
+  <img class="feature-img ph-doc" src="Assets/students/beckham-ws.jpg" alt="Student at work" />
+  <div class="feature-body">
+    <h3>Sign up</h3>
+    <p>The programme is free. Tell us which format suits you and Truman will be in touch.</p>
+    <a class="btn" href="signup.html#signup">Start here</a>
+  </div>
+</div>
 
- <!-- Day by day -->
- <div class="workshop-section">
- <h2 class="workshop-section-title">The Lessons</h2>
- <div class="workshop-days">
- <div class="day-card">
- <img src="Assets/makerloop/loop-1.png" alt="Create" class="day-img" />
- <div class="day-label">Lesson 1</div>
- <div class="day-loop-tag">CREATE</div>
- <h3>Develop an idea</h3>
- <ul class="day-bullets">
- <li>Presentation overview of the maker process</li>
- <li>Play test Tru's games together</li>
- <li>Brainstorm session — sketch your own character</li>
- </ul>
- </div>
- <div class="day-card">
- <img src="Assets/makerloop/loop-2.png" alt="Digitize" class="day-img" />
- <div class="day-label">Lesson 2</div>
- <div class="day-loop-tag">DIGITIZE</div>
- <h3>Bring it to life</h3>
- <ul class="day-bullets">
- <li>Continue character development</li>
- <li>Learn the basics of Procreate tools</li>
- <li>Animation intro</li>
- <li>Digitize your character</li>
- </ul>
- </div>
- <div class="day-card">
- <img src="Assets/makerloop/loop-3.png" alt="Code" class="day-img" />
- <div class="day-label">Lesson 3</div>
- <div class="day-loop-tag">CODE</div>
- <h3>See yourself in the game</h3>
- <ul class="day-bullets">
- <li>Learn the basics of how Tru's games are built</li>
- <li>Swap your character into a real game</li>
- <li>Play it yourself</li>
- <li>See what's possible — no coding experience needed</li>
- </ul>
- </div>
- <div class="day-card">
- <img src="Assets/makerloop/loop-4.png" alt="Play" class="day-img" />
- <div class="day-label">Lesson 4</div>
- <div class="day-loop-tag">PLAY</div>
- <h3>Test and Plan</h3>
- <ul class="day-bullets">
- <li>Play test each other's games</li>
- <li>Practice coding and make improvements</li>
- <li>Decide what product to make at the end</li>
- </ul>
- </div>
- <div class="day-card">
- <img src="Assets/workshop/makeit.png" alt="Make" class="day-img" />
- <div class="day-label">Lesson 5</div>
- <div class="day-loop-tag">MAKE</div>
- <h3>Take it home</h3>
- <ul class="day-bullets">
- <li>Make a custom product featuring their own character</li>
- <li>Shirt, tote, sticker — something real to keep</li>
- <li>Show-and-tell to wrap up</li>
- </ul>
- </div>
- </div>
- </div>
+<footer class="footer">
+  <div class="footer-top">
+    <h2 class="footer-word">Be Tru<br />Maker</h2>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">Made by Tru</a>
+        <a href="wholesale.html">Wholesale</a>
+      </div>
+      <div class="footer-col">
+        <h4>Play</h4>
+        <a href="games.html">Games</a>
+        <a href="https://idk1801.itch.io">itch.io</a>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="workshops.html">Workshops</a>
+        <a href="makers.html">BeTru Makers</a>
+        <a href="resources.html">Resources</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://www.instagram.com">Instagram</a>
+        <a href="https://www.youtube.com">YouTube</a>
+        <a href="https://truman-cho.com">truman-cho.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span>&copy; 2026 BeTru Maker</span>
+    <span>Brooklyn, New York</span>
+  </div>
+</footer>
 
- <!-- Social proof -->
- <div class="workshop-quote">
- <div class="workshop-quote-inner">
- <div class="workshop-quote-text">
- <blockquote>"Truman is talented, kind, and a natural with kids. He left my students more excited about building and creating than when they walked in, and that is really the whole point."</blockquote>
- <cite>Heather Prince, Library Media Specialist at Knollwood School</cite>
- </div>
- <div class="workshop-quote-photo-wrap">
- <img src="Assets/workshop/KNOLLWOOD-heather-teacher.jpeg" alt="Heather Prince with Truman" />
- </div>
- </div>
- </div>
-
- <!-- Sign up -->
- <div class="workshop-section" id="signup">
- <h2 class="workshop-section-title">Sign Up</h2>
-
- <div class="ws-full-banner">
-   <p>The workshops are free. Add your name and we'll let you know as soon as the next one opens.</p>
- </div>
-
- <div id="signup-success" style="display:none; text-align:center; padding:2rem 0;">
-   <p style="font-size:1.1rem; font-weight:600;">You're in!</p>
-   <p style="opacity:0.75;">Tru will reach out as soon as the next session opens up.</p>
- </div>
-
- <div class="signup-reqs">
-   <strong>What you'll need</strong>
-   This class requires an iPad, the Procreate app, and a digital pencil. A computer is helpful but not required.
- </div>
-
- <form id="signup-form" class="contact-form">
-   <div class="form-row">
-     <div class="form-group">
-       <label for="s-name">Your first name</label>
-       <input type="text" id="s-name" name="name" placeholder="First name" required />
-     </div>
-     <div class="form-group">
-       <label for="s-grade">Your age / grade</label>
-       <select id="s-grade" name="grade" required>
-         <option value="" disabled selected>Pick one</option>
-         <option>Kindergarten</option>
-         <option>1st grade</option>
-         <option>2nd grade</option>
-         <option>3rd grade</option>
-         <option>4th grade</option>
-         <option>5th grade</option>
-         <option>6th grade</option>
-         <option>7th grade</option>
-         <option>8th grade</option>
-         <option>9th grade</option>
-         <option>10th grade</option>
-         <option>11th grade</option>
-         <option>12th grade</option>
-       </select>
-     </div>
-   </div>
-
-   <div class="form-group">
-     <label for="s-email">Email <em style="font-weight:400;">(yours or a parent's is fine)</em></label>
-     <input type="email" id="s-email" name="email" placeholder="email@example.com" required />
-   </div>
-
-   <div class="form-group">
-     <label>Which format are you interested in?</label>
-     <p class="signup-hint">Nothing is scheduled yet. This tells Tru what to run first.</p>
-     <div class="radio-list">
-       <label class="radio-opt"><input type="radio" name="program-format" value="In person" required /><span>In person</span></label>
-       <label class="radio-opt"><input type="radio" name="program-format" value="Virtual/self-led" /><span>Virtual / self-led</span></label>
-     </div>
-   </div>
-
-   <div class="form-group">
-     <label>Have you used Procreate before?</label>
-     <div class="radio-list">
-       <label class="radio-opt"><input type="radio" name="procreate" value="Yes" required /><span>Yes</span></label>
-       <label class="radio-opt"><input type="radio" name="procreate" value="No" /><span>No</span></label>
-     </div>
-   </div>
-
-   <div class="form-group">
-     <label>Have you coded before?</label>
-     <div class="radio-list">
-       <label class="radio-opt"><input type="radio" name="coded" value="Yes" required /><span>Yes</span></label>
-       <label class="radio-opt"><input type="radio" name="coded" value="No" /><span>No</span></label>
-     </div>
-   </div>
-
-   <div class="form-group">
-     <div class="check-list">
-       <label class="check-opt"><input type="checkbox" name="gear-confirmed" value="Yes" required /><span>I understand I need an iPad, Procreate, and a digital pencil.</span></label>
-     </div>
-   </div>
-
-   <div class="form-group">
-     <label for="s-notes">Anything Tru should know? <em style="font-weight:400;">(optional)</em></label>
-     <textarea id="s-notes" name="notes" rows="2" placeholder="Totally optional."></textarea>
-   </div>
-
-   <div class="form-group">
-     <label for="s-heard">How did you hear about BeTru?</label>
-     <input type="text" id="s-heard" name="heard-about" placeholder="A friend, school, Instagram, a pop-up…" />
-   </div>
-
-   <input type="hidden" name="form-type" value="student-signup" />
-   <button type="submit" class="contact-btn" id="s-submit">Sign me up →</button>
- </form>
- </div>
-
- </main>
-
- <script>
- // ── Carousel (coverflow) ─────────────────────────────────────────
- (function () {
-   const slides = document.querySelectorAll('.sw-carousel-slide');
-   const dotsEl = document.getElementById('sw-dots');
-   const total  = slides.length;
-   let cur = 0;
-
-   const dots = Array.from({ length: total }, (_, i) => {
-     const d = document.createElement('button');
-     d.className = 'sw-carousel-dot' + (i === 0 ? ' active' : '');
-     d.setAttribute('aria-label', 'Slide ' + (i + 1));
-     d.addEventListener('click', () => go(i));
-     dotsEl.appendChild(d);
-     return d;
-   });
-
-   function go(n) {
-     cur = (n + total) % total;
-     slides.forEach((s, i) => {
-       let offset = i - cur;
-       if (offset > total / 2)  offset -= total;
-       if (offset < -total / 2) offset += total;
-       const abs = Math.abs(offset);
-       if (abs > 2) {
-         s.style.opacity   = '0';
-         s.style.zIndex    = '0';
-         s.style.transform = `translateX(${offset * 55}%) scale(0.55)`;
-       } else if (offset === 0) {
-         s.style.opacity   = '1';
-         s.style.zIndex    = '3';
-         s.style.transform = 'translateX(0%) scale(1)';
-       } else if (abs === 1) {
-         s.style.opacity   = '0.45';
-         s.style.zIndex    = '2';
-         s.style.transform = `translateX(${offset * 62}%) scale(0.72)`;
-       } else {
-         s.style.opacity   = '0.18';
-         s.style.zIndex    = '1';
-         s.style.transform = `translateX(${offset * 60}%) scale(0.58)`;
-       }
-     });
-     dots.forEach((d, i) => d.classList.toggle('active', i === cur));
-   }
-
-   document.getElementById('sw-prev').addEventListener('click', () => go(cur - 1));
-   document.getElementById('sw-next').addEventListener('click', () => go(cur + 1));
-
-   go(0);
- })();
-
-
- document.getElementById('signup-form').addEventListener('submit', async (e) => {
-   e.preventDefault();
-   const form = e.target;
-   const btn = document.getElementById('s-submit');
-   btn.textContent = 'Sending…';
-   btn.disabled = true;
-   try {
-     const res = await fetch('https://formspree.io/f/mykalynl', {
-       method: 'POST',
-       headers: { 'Accept': 'application/json' },
-       body: new FormData(form),
-     });
-     if (res.ok) {
-       form.style.display = 'none';
-       document.querySelector('.signup-reqs').style.display = 'none';
-       document.getElementById('signup-success').style.display = '';
-     } else { throw new Error(); }
-   } catch {
-     btn.textContent = 'Sign me up →';
-     btn.disabled = false;
-   }
- });
- </script>
-
- <footer>
- <div class="footer-links">
- <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">Instagram</a>
- <a href="https://www.truman-cho.com/" target="_blank" rel="noopener">truman-cho.com</a>
- <a href="https://x.com/RandomUser1081" target="_blank" rel="noopener">X</a>
- <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
- <a href="about.html#contact">Contact</a>
- </div>
- <div class="footer-copy">&copy; 2026 BeTru Maker</div>
- </footer>
+<script>
+  var b = document.getElementById("burger");
+  var n = document.getElementById("navlinks");
+  b.addEventListener("click", function(){ n.classList.toggle("open"); });
+</script>
 
 </body>
 </html>
