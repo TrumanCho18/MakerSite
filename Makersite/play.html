@@ -436,14 +436,26 @@
 
     function pressButton(btn) {
       btn.classList.add('pressed');
+      pressedAt.set(btn, Date.now());
       dispatch('keydown', btn.dataset.key, btn.dataset.code);
       startFootsteps();
     }
 
+    // Scratch polls "key pressed?" once per frame, so a quick tap whose
+    // press and release land in the same frame is never seen. Hold every
+    // press for at least a couple of frames before releasing it.
+    const MIN_HOLD_MS = 120;
+    const pressedAt = new WeakMap();
+
     function releaseButton(btn) {
-      btn.classList.remove('pressed');
-      dispatch('keyup', btn.dataset.key, btn.dataset.code);
-      if (activePointers.size === 0) stopFootsteps();
+      const held = Date.now() - (pressedAt.get(btn) || 0);
+      const finish = () => {
+        btn.classList.remove('pressed');
+        dispatch('keyup', btn.dataset.key, btn.dataset.code);
+        if (activePointers.size === 0) stopFootsteps();
+      };
+      if (held < MIN_HOLD_MS) setTimeout(finish, MIN_HOLD_MS - held);
+      else finish();
     }
 
     document.querySelectorAll('.ctrl-btn').forEach(btn => {

@@ -1688,10 +1688,12 @@ footer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
-  border: none;
+  background: rgba(255,255,255,0.14);
+  border: 1.5px solid rgba(255,255,255,0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 1;
   width: 2.5rem;
   height: 2.5rem;
@@ -1702,10 +1704,10 @@ footer {
   justify-content: center;
   backdrop-filter: blur(4px);
   transition: background 0.2s;
-  z-index: 2;
+  z-index: 5;
 }
 
-.sw-carousel-btn:hover { background: rgba(0,0,0,0.65); }
+.sw-carousel-btn:hover { background: #ff6b2b; border-color: #ff6b2b; }
 .sw-carousel-prev { left: 0.75rem; }
 .sw-carousel-next { right: 0.75rem; }
 
