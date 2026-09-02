@@ -3392,3 +3392,30 @@ input[type="date"] {
   color: rgba(255,255,255,0.5);
   margin: -0.2rem 0 0.5rem;
 }
+
+/* ── In the Wild tabs ── */
+.wild-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0 0 2.25rem;
+}
+.wild-tab {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.75);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.wild-tab:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.wild-tab.active {
+  background: #ff6b2b;
+  border-color: #ff6b2b;
+  color: #fff;
+  font-weight: 600;
+}

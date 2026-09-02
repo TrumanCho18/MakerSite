@@ -38,6 +38,13 @@
 
   <main class="wild-main sky-text">
 
+    <!-- ── Tabs ── -->
+    <div class="wild-tabs" id="wild-tabs">
+      <button class="wild-tab active" data-panel="makers">Makers</button>
+      <button class="wild-tab" data-panel="events">Pop-ups &amp; Events</button>
+    </div>
+
+    <div class="wild-panel" id="panel-makers">
     <!-- RR Popup -->
     <div class="wild-story">
       <div class="wild-story-header">
@@ -52,7 +59,9 @@
         <img src="Assets/inthewild/RR-pricelist.jpeg" alt="RR Popup price list" />
       </div>
     </div>
+    </div>
 
+    <div class="wild-panel" id="panel-events" hidden>
     <!-- Nat Azarow -->
     <div class="wild-story">
       <div class="wild-story-header">
@@ -99,6 +108,7 @@
         <img src="Assets/making-with-kiah.jpg" alt="Making shirts with Kiah" />
       </div>
     </div>
+    </div>
 
   </main>
 
@@ -112,6 +122,20 @@
     </div>
     <div class="footer-copy">&copy; 2026 BeTru Maker</div>
   </footer>
+
+  <script>
+    const wildTabs = document.getElementById('wild-tabs');
+    wildTabs.addEventListener('click', e => {
+      const tab = e.target.closest('.wild-tab');
+      if (!tab) return;
+      wildTabs.querySelectorAll('.wild-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-makers').hidden = tab.dataset.panel !== 'makers';
+      document.getElementById('panel-events').hidden = tab.dataset.panel !== 'events';
+      history.replaceState(null, '', '#' + tab.dataset.panel);
+    });
+    if (location.hash === '#events') wildTabs.querySelector('[data-panel="events"]').click();
+  </script>
 
 </body>
 </html>
