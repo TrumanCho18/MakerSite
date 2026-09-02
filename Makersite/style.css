@@ -3336,3 +3336,38 @@ input[type="date"] {
 .game-pick-opt input:checked ~ .game-pick-all {
   border-color: var(--accent);
 }
+
+/* ── Signup form (workshops page) ── */
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.check-opt {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+}
+.check-opt input { width: auto; accent-color: #ff6b2b; flex-shrink: 0; }
+.radio-opt input { accent-color: #ff6b2b; }
+.signup-reqs {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-left: 3px solid #ff6b2b;
+  border-radius: 0.6rem;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.8);
+}
+.signup-reqs strong { color: #fff; display: block; margin-bottom: 0.2rem; }
+.signup-hint {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin: -0.2rem 0 0.5rem;
+}

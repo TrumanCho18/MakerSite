@@ -21,7 +21,7 @@
  <a href="index.html" class="logo">BETRU MAKER</a>
  <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav id="main-nav">
  <div class="nav-dropdown"><span class="nav-drop-toggle">Play</span><div class="nav-drop-menu"><a href="play.html">Desktop</a><a href="play-mobile.html">Mobile &#128241;</a></div></div>
- <div class="nav-dropdown"><span class="nav-drop-toggle active">Learn</span><div class="nav-drop-menu"><a href="workshops.html" class="active">Workshops</a><a href="survey.html">Sign Up</a><a href="student-work.html">Student Work</a><a href="resources.html">Resources</a></div></div>
+ <div class="nav-dropdown"><span class="nav-drop-toggle active">Learn</span><div class="nav-drop-menu"><a href="workshops.html" class="active">Workshops</a><a href="workshops.html#signup">Sign Up</a><a href="student-work.html">Student Work</a><a href="resources.html">Resources</a></div></div>
  <a href="make.html">Make</a>
  <a href="inthewild.html">In the Wild</a>
  <a href="about.html">About</a>
@@ -55,7 +55,7 @@
 
  <!-- Intro -->
  <div class="workshop-intro">
- <p>Hi, I'm Truman. I'm a rising senior at Brooklyn Tech, and I've been teaching myself game design, digital art, and coding for years. I offer small in-person and online/self-led workshops where I share my creative loop process. We start with an idea/sketch, make it digital, drop it into a real game, and finish with your character printed on actual products. It's real, hands-on making, built for kids going into 4th to 6th grade.</p>
+ <p>Hi, I'm Truman. I'm a senior at Brooklyn Tech, and I've been teaching myself game design, digital art, and coding for years. I offer small in-person and online/self-led workshops where I share my creative loop process. We start with an idea/sketch, make it digital, drop it into a real game, and finish with your character printed on actual products. It's real, hands-on making, built for kids going into 4th to 6th grade.</p>
  </div>
 
  <!-- Formats -->
@@ -168,12 +168,91 @@
  <h2 class="workshop-section-title">Sign Up</h2>
 
  <div class="ws-full-banner">
-   <p>The workshops are free. Answer five quick questions and we'll let you know as soon as the next one opens.</p>
+   <p>The workshops are free. Add your name and we'll let you know as soon as the next one opens.</p>
  </div>
 
- <div class="mbt-cta">
-   <a class="mbt-btn" href="survey.html">Sign me up &rarr;</a>
+ <div id="signup-success" style="display:none; text-align:center; padding:2rem 0;">
+   <p style="font-size:1.1rem; font-weight:600;">You're in!</p>
+   <p style="opacity:0.75;">Tru will reach out as soon as the next session opens up.</p>
  </div>
+
+ <div class="signup-reqs">
+   <strong>What you'll need</strong>
+   This class requires an iPad, the Procreate app, and a digital pencil. A computer is helpful but not required.
+ </div>
+
+ <form id="signup-form" class="contact-form" style="max-width:480px;">
+   <div class="form-row">
+     <div class="form-group">
+       <label for="s-name">Your first name</label>
+       <input type="text" id="s-name" name="name" placeholder="First name" required />
+     </div>
+     <div class="form-group">
+       <label for="s-grade">Grade you're going into</label>
+       <select id="s-grade" name="grade" required>
+         <option value="" disabled selected>Pick one</option>
+         <option>Kindergarten</option>
+         <option>1st grade</option>
+         <option>2nd grade</option>
+         <option>3rd grade</option>
+         <option>4th grade</option>
+         <option>5th grade</option>
+         <option>6th grade</option>
+         <option>7th grade</option>
+         <option>8th grade</option>
+         <option>9th grade</option>
+         <option>10th grade</option>
+         <option>11th grade</option>
+         <option>12th grade</option>
+       </select>
+     </div>
+   </div>
+
+   <div class="form-group">
+     <label for="s-email">Email <em style="font-weight:400;">(yours or a parent's is fine)</em></label>
+     <input type="email" id="s-email" name="email" placeholder="email@example.com" required />
+   </div>
+
+   <div class="form-group">
+     <label>Which format are you interested in?</label>
+     <p class="signup-hint">Nothing is scheduled yet. This tells Tru what to run first.</p>
+     <div class="radio-list">
+       <label class="radio-opt"><input type="radio" name="program-format" value="In person" required /><span>In person</span></label>
+       <label class="radio-opt"><input type="radio" name="program-format" value="Virtual/self-led" /><span>Virtual / self-led</span></label>
+       <label class="radio-opt"><input type="radio" name="program-format" value="Either works" /><span>Either one works</span></label>
+     </div>
+   </div>
+
+   <div class="form-group">
+     <label>Have you used Procreate before?</label>
+     <div class="radio-list">
+       <label class="radio-opt"><input type="radio" name="procreate" value="Yes" required /><span>Yes</span></label>
+       <label class="radio-opt"><input type="radio" name="procreate" value="No" /><span>No</span></label>
+     </div>
+   </div>
+
+   <div class="form-group">
+     <label>Have you coded before?</label>
+     <div class="radio-list">
+       <label class="radio-opt"><input type="radio" name="coded" value="Yes" required /><span>Yes</span></label>
+       <label class="radio-opt"><input type="radio" name="coded" value="No" /><span>No</span></label>
+     </div>
+   </div>
+
+   <div class="form-group">
+     <div class="check-list">
+       <label class="check-opt"><input type="checkbox" name="gear-confirmed" value="Yes" required /><span>I understand I need an iPad, Procreate, and a digital pencil.</span></label>
+     </div>
+   </div>
+
+   <div class="form-group">
+     <label for="s-notes">Anything Tru should know? <em style="font-weight:400;">(optional)</em></label>
+     <textarea id="s-notes" name="notes" rows="2" placeholder="Totally optional."></textarea>
+   </div>
+
+   <input type="hidden" name="form-type" value="student-signup" />
+   <button type="submit" class="contact-btn" id="s-submit">Sign me up →</button>
+ </form>
  </div>
 
  </main>
@@ -229,6 +308,29 @@
    go(0);
  })();
 
+
+ document.getElementById('signup-form').addEventListener('submit', async (e) => {
+   e.preventDefault();
+   const form = e.target;
+   const btn = document.getElementById('s-submit');
+   btn.textContent = 'Sending…';
+   btn.disabled = true;
+   try {
+     const res = await fetch('https://formspree.io/f/mykalynl', {
+       method: 'POST',
+       headers: { 'Accept': 'application/json' },
+       body: new FormData(form),
+     });
+     if (res.ok) {
+       form.style.display = 'none';
+       document.querySelector('.signup-reqs').style.display = 'none';
+       document.getElementById('signup-success').style.display = '';
+     } else { throw new Error(); }
+   } catch {
+     btn.textContent = 'Sign me up →';
+     btn.disabled = false;
+   }
+ });
  </script>
 
  <footer>
