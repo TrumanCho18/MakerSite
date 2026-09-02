@@ -21,7 +21,7 @@
  <a href="index.html" class="logo">BETRU MAKER</a>
  <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav id="main-nav">
  <div class="nav-dropdown"><span class="nav-drop-toggle">Play</span><div class="nav-drop-menu"><a href="play.html">Desktop</a><a href="play-mobile.html">Mobile &#128241;</a></div></div>
- <div class="nav-dropdown"><span class="nav-drop-toggle active">Learn</span><div class="nav-drop-menu"><a href="workshops.html" class="active">Workshops</a><a href="survey.html">Survey</a><a href="student-work.html">Student Work</a><a href="resources.html">Resources</a></div></div>
+ <div class="nav-dropdown"><span class="nav-drop-toggle active">Learn</span><div class="nav-drop-menu"><a href="workshops.html" class="active">Workshops</a><a href="survey.html">Sign Up</a><a href="student-work.html">Student Work</a><a href="resources.html">Resources</a></div></div>
  <a href="make.html">Make</a>
  <a href="inthewild.html">In the Wild</a>
  <a href="about.html">About</a>
@@ -162,42 +162,17 @@
  </div>
  </div>
 
- <!-- Waitlist -->
+ <!-- Sign up -->
  <div class="workshop-section" id="signup">
  <h2 class="workshop-section-title">Sign Up</h2>
 
  <div class="ws-full-banner">
-   <p>The workshops are free. Add your name and we'll let you know as soon as the next one opens.</p>
+   <p>The workshops are free. Answer five quick questions and we'll let you know as soon as the next one opens.</p>
  </div>
 
- <div id="waitlist-success" style="display:none; text-align:center; padding:2rem 0;">
-   <p style="font-size:1.1rem; font-weight:600;">You're on the list!</p>
-   <p style="opacity:0.75;">We'll reach out as soon as the next session opens up.</p>
+ <div class="mbt-cta">
+   <a class="mbt-btn" href="survey.html">Sign me up &rarr;</a>
  </div>
-
- <form id="waitlist-form" class="contact-form" style="max-width:480px;">
-   <div class="form-row">
-     <div class="form-group">
-       <label for="wl-name">Your name</label>
-       <input type="text" id="wl-name" name="name" placeholder="First and last name" required />
-     </div>
-     <div class="form-group">
-       <label for="wl-email">Email</label>
-       <input type="email" id="wl-email" name="email" placeholder="your@email.com" required />
-     </div>
-   </div>
-   <div class="form-group">
-     <label for="wl-format">Which format?</label>
-     <select id="wl-format" name="format" required>
-       <option value="" disabled selected>Pick one</option>
-       <option value="In-person">In-person</option>
-       <option value="Virtual/self-led">Virtual/self-led</option>
-       <option value="Either">Either one works</option>
-     </select>
-   </div>
-   <input type="hidden" name="form-type" value="workshop-waitlist" />
-   <button type="submit" class="contact-btn" id="wl-submit">Sign me up →</button>
- </form>
  </div>
 
  </main>
@@ -253,27 +228,6 @@
    go(0);
  })();
 
- document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
-   e.preventDefault();
-   const form = e.target;
-   const btn = document.getElementById('wl-submit');
-   btn.textContent = 'Sending…';
-   btn.disabled = true;
-   try {
-     const res = await fetch('https://formspree.io/f/mykalynl', {
-       method: 'POST',
-       headers: { 'Accept': 'application/json' },
-       body: new FormData(form),
-     });
-     if (res.ok) {
-       form.style.display = 'none';
-       document.getElementById('waitlist-success').style.display = '';
-     } else { throw new Error(); }
-   } catch {
-     btn.textContent = 'Sign me up →';
-     btn.disabled = false;
-   }
- });
  </script>
 
  <footer>
