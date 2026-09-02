@@ -3536,9 +3536,10 @@ input[type="date"] {
 .pm-stage #game-frame { display: block; width: 100%; aspect-ratio: 3 / 4; border: none; }
 .pm-stage #controls {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1rem 1rem 1.25rem;
+  gap: 0.9rem;
+  padding: 0.9rem 1.25rem 1.25rem;
   background: rgba(0,0,0,0.35);
   border-top: 1px solid rgba(255,255,255,0.12);
 }
@@ -3564,6 +3565,15 @@ input[type="date"] {
 #btn-up { width: 62px; height: 62px; font-size: 26px; }
 #dpad { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 #dpad-row { display: flex; gap: 8px; }
+.ctrl-space {
+  width: 100%;
+  height: 46px;
+  border-radius: 0.6rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
 .pm-full {
   display: block;
   width: 100%;

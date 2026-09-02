@@ -97,6 +97,7 @@
        <div class="pm-stage" id="pm-stage">
          <iframe id="game-frame" src="HotDogRun.html" allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
          <div id="controls">
+           <button class="ctrl-btn ctrl-space" id="btn-space" data-key=" " data-code="Space" aria-label="Space">SPACE</button>
            <div id="dpad">
              <button class="ctrl-btn" id="btn-up"    data-key="ArrowUp"    data-code="ArrowUp">&uarr;</button>
              <div id="dpad-row">
@@ -399,11 +400,37 @@
     function dispatch(type, key, code) {
       const win = frame.contentWindow;
       if (!win) return;
-      const map = { ArrowUp:38, ArrowDown:40, ArrowLeft:37, ArrowRight:39, Space:32 };
-      win.document.dispatchEvent(new KeyboardEvent(type, {
-        key, code, keyCode: map[code] || 0, bubbles: true, cancelable: true
-      }));
+      const isDown = type === 'keydown';
+
+      // These games are Scratch/TurboWarp exports. Scratch reads the keyboard
+      // through the VM, so send input there; also fire a real KeyboardEvent so
+      // anything listening on the DOM still works.
+      try {
+        if (win.vm && typeof win.vm.postIOData === 'function') {
+          win.vm.postIOData('keyboard', { key, isDown });
+        }
+      } catch (e) { /* VM not ready yet */ }
+
+      try {
+        const map = { ArrowUp:38, ArrowDown:40, ArrowLeft:37, ArrowRight:39, Space:32 };
+        win.document.dispatchEvent(new KeyboardEvent(type, {
+          key, code, keyCode: map[code] || 0, which: map[code] || 0,
+          bubbles: true, cancelable: true
+        }));
+      } catch (e) { /* ignore */ }
     }
+
+    // Never leave a key stuck down if a touch is interrupted or the tab is hidden.
+    function releaseAllKeys() {
+      document.querySelectorAll('.ctrl-btn').forEach(b => {
+        if (b.classList.contains('pressed')) {
+          b.classList.remove('pressed');
+          dispatch('keyup', b.dataset.key, b.dataset.code);
+        }
+      });
+    }
+    window.addEventListener('blur', releaseAllKeys);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) releaseAllKeys(); });
 
     const activePointers = new Map();
 
