@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Games &mdash; Be Tru Maker</title>
+<link rel="stylesheet" href="mono.css" />
+</head>
+<body>
+
+<header class="nav">
+  <a href="index-mono.html" class="nav-logo">BETRU MAKER</a>
+  <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav-links" id="navlinks">
+    <a href="shop-mono.html">Shop</a>
+    <a href="games-mono.html">Games</a>
+    <a href="workshops-mono.html">Workshops</a>
+    <a href="makers-mono.html">Makers</a>
+    <a href="about-mono.html">About</a>
+  </nav>
+</header>
+
+<section class="page-head">
+  <p class="eyebrow">Built in Scratch and GB Studio</p>
+  <h1>Games</h1>
+  <p class="page-lede">Playing games was never enough. Play them right here in the browser, no download.</p>
+</section>
+
+<section class="section section-dark" style="padding-top:clamp(40px,6vw,80px);">
+  <div class="games">
+    <div class="game">
+      <div class="game-bar"><h3>Wild West</h3><span class="game-play">Play</span></div>
+      <div class="game-frame"><iframe src="WildWest.html" title="Wild West" loading="lazy" allowfullscreen></iframe></div>
+    </div>
+    <div class="game">
+      <div class="game-bar"><h3>Hot Dog Run</h3><span class="game-play">Play</span></div>
+      <div class="game-frame"><iframe src="HotDogRun.html" title="Hot Dog Run" loading="lazy" allowfullscreen></iframe></div>
+    </div>
+    <div class="game">
+      <div class="game-bar"><h3>Rise</h3><span class="game-play">Play</span></div>
+      <div class="game-frame"><iframe src="Rise.html" title="Rise" loading="lazy" allowfullscreen></iframe></div>
+    </div>
+  </div>
+  <div style="padding:clamp(28px,4vw,48px) var(--pad) 0;">
+    <a class="btn btn-invert" href="https://idk1801.itch.io">More on itch.io</a>
+  </div>
+</section>
+
+<div class="feature">
+  <img class="feature-img ph-work" src="Assets/make/mountrock-cartridge-closeup.png" alt="Mount Rock on a handheld" />
+  <div class="feature-body">
+    <h3>Game Boy games,<br />pressed to cartridge</h3>
+    <p>Some of the games are built for the original Game Boy in GB Studio, then pressed onto real cartridges that run on real hardware.</p>
+    <a class="btn" href="https://idk1801.itch.io">Play them</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-top">
+    <h2 class="footer-word">Be Tru<br />Maker</h2>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop-mono.html">Made by Tru</a>
+        <a href="wholesale.html">Wholesale</a>
+      </div>
+      <div class="footer-col">
+        <h4>Play</h4>
+        <a href="games-mono.html">Games</a>
+        <a href="https://idk1801.itch.io">itch.io</a>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="workshops-mono.html">Workshops</a>
+        <a href="makers-mono.html">BeTru Makers</a>
+        <a href="resources.html">Resources</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://www.instagram.com">Instagram</a>
+        <a href="https://www.youtube.com">YouTube</a>
+        <a href="https://truman-cho.com">truman-cho.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span>&copy; 2026 BeTru Maker</span>
+    <span>Brooklyn, New York</span>
+  </div>
+</footer>
+
+<script>
+  var b = document.getElementById("burger");
+  var n = document.getElementById("navlinks");
+  b.addEventListener("click", function(){ n.classList.toggle("open"); });
+</script>
+
+</body>
+</html>

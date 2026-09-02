@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BeTru Makers &mdash; Be Tru Maker</title>
+<link rel="stylesheet" href="mono.css" />
+</head>
+<body>
+
+<header class="nav">
+  <a href="index-mono.html" class="nav-logo">BETRU MAKER</a>
+  <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav-links" id="navlinks">
+    <a href="shop-mono.html">Shop</a>
+    <a href="games-mono.html">Games</a>
+    <a href="workshops-mono.html">Workshops</a>
+    <a href="makers-mono.html">Makers</a>
+    <a href="about-mono.html">About</a>
+  </nav>
+</header>
+
+<section class="page-head">
+  <p class="eyebrow">Workshop 1 &mdash; Draw It, Code It, Wear It</p>
+  <h1>BeTru<br />Makers</h1>
+  <p class="page-lede">Art and games made by real kids in BeTru Maker workshops. Five days of making. Each kid sketched a character, drew it in Procreate, swapped it into one of Tru's games, and printed it on a t-shirt to take home. Every game below is playable.</p>
+</section>
+
+<div class="maker-grid">
+  <article class="maker">
+    <div class="maker-frame" data-src="StudentGames/ManusWildWest.html"><img class="cover ph-work" src="Assets/students/manu-cover.png" alt="Manu's Wild West" /><button class="cover-btn" aria-label="Play Manu's Wild West"><span>Play</span></button></div>
+    <div class="maker-body">
+      <h3 class="maker-name">Manu</h3>
+      <p class="maker-meta">Grade 5 &middot; Modified Wild West</p>
+      <p class="maker-learn"><strong>What I learned</strong>I learned how to animate using layers, and how to use the animate tool to help me see all the layers.</p>
+    </div>
+  </article>
+  <article class="maker">
+    <div class="maker-frame" data-src="StudentGames/KavisWildWest.html"><img class="cover ph-work" src="Assets/students/kavi-cover.png" alt="Kavi's Wild West" /><button class="cover-btn" aria-label="Play Kavi's Wild West"><span>Play</span></button></div>
+    <div class="maker-body">
+      <h3 class="maker-name">Kavi</h3>
+      <p class="maker-meta">Grade 4 &middot; Modified Wild West</p>
+      <p class="maker-learn"><strong>What I learned</strong>I learned how to use Scratch MIT, which teaches you how to code characters using blocks.</p>
+    </div>
+  </article>
+  <article class="maker">
+    <div class="maker-frame" data-src="StudentGames/GriffinsRise.html"><img class="cover ph-work" src="Assets/students/griffin-cover.png" alt="Griffin's Rise" /><button class="cover-btn" aria-label="Play Griffin's Rise"><span>Play</span></button></div>
+    <div class="maker-body">
+      <h3 class="maker-name">Griffin</h3>
+      <p class="maker-meta">Grade 5 &middot; Modified Rise</p>
+      <p class="maker-learn"><strong>From Griffin's mom</strong>&ldquo;Thank you Tru for an outstanding workshop. He will be super successful in what he chooses to do.&rdquo;</p>
+    </div>
+  </article>
+  <article class="maker">
+    <div class="maker-frame" data-src="StudentGames/BeckhamsHotdogRun.html"><img class="cover ph-work" src="Assets/students/beckham-cover.png" alt="Beckham's Hot Dog Run" /><button class="cover-btn" aria-label="Play Beckham's Hot Dog Run"><span>Play</span></button></div>
+    <div class="maker-body">
+      <h3 class="maker-name">Beckham</h3>
+      <p class="maker-meta">Grade 1 &middot; Modified Hot Dog Run</p>
+      <p class="maker-learn"><strong>What I learned</strong>I learned there's a faster way to color, using click and drag in Procreate.</p>
+    </div>
+  </article>
+  <article class="maker">
+    <div class="maker-frame" data-src="StudentGames/JuliansWildWest.html"><img class="cover ph-work" src="Assets/students/julian-cover.png" alt="Julian's Wild West" /><button class="cover-btn" aria-label="Play Julian's Wild West"><span>Play</span></button></div>
+    <div class="maker-body">
+      <h3 class="maker-name">Julian</h3>
+      <p class="maker-meta">Modified Wild West</p>
+      <p class="maker-learn"><strong>What I made</strong>A new character drawn from scratch, dropped into Wild West.</p>
+    </div>
+  </article>
+</div>
+
+<section class="section">
+  <div style="padding:0 var(--pad);">
+    <a class="btn" href="workshops-mono.html">Join the next workshop</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <h2 class="footer-word">Be Tru<br />Maker</h2>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop-mono.html">Made by Tru</a>
+        <a href="wholesale.html">Wholesale</a>
+      </div>
+      <div class="footer-col">
+        <h4>Play</h4>
+        <a href="games-mono.html">Games</a>
+        <a href="https://idk1801.itch.io">itch.io</a>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="workshops-mono.html">Workshops</a>
+        <a href="makers-mono.html">BeTru Makers</a>
+        <a href="resources.html">Resources</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://www.instagram.com">Instagram</a>
+        <a href="https://www.youtube.com">YouTube</a>
+        <a href="https://truman-cho.com">truman-cho.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span>&copy; 2026 BeTru Maker</span>
+    <span>Brooklyn, New York</span>
+  </div>
+</footer>
+
+<script>
+  var b = document.getElementById("burger");
+  var n = document.getElementById("navlinks");
+  b.addEventListener("click", function(){ n.classList.toggle("open"); });
+</script>
+
+<script>
+  document.querySelectorAll('.maker-frame .cover-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var frame = btn.closest('.maker-frame');
+      var f = document.createElement('iframe');
+      f.src = frame.dataset.src;
+      f.setAttribute('allowfullscreen','');
+      frame.innerHTML = '';
+      frame.appendChild(f);
+    });
+  });
+</script>
+
+</body>
+</html>
