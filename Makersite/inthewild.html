@@ -22,7 +22,7 @@
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav id="main-nav">
       <div class="nav-dropdown"><span class="nav-drop-toggle">Play</span><div class="nav-drop-menu"><a href="play.html">Desktop</a><a href="play-mobile.html">Mobile &#128241;</a></div></div>
       <div class="nav-dropdown"><span class="nav-drop-toggle">Learn</span><div class="nav-drop-menu"><a href="workshops.html">Workshops</a><a href="workshops.html#signup">Sign Up</a><a href="student-work.html">Student Work</a><a href="resources.html">Resources</a></div></div>
-      <a href="make.html">Make</a>
+      <a href="make.html">Shop</a>
       <a href="inthewild.html" class="active">In the Wild</a>
       <a href="about.html">About</a>
       <a href="booking.html" class="nav-book">Book an Event</a>
@@ -41,8 +41,39 @@
     <!-- ── Tabs ── -->
     <div class="wild-tabs" id="wild-tabs">
       <button class="wild-tab active" data-cat="all">All</button>
+      <button class="wild-tab" data-cat="Upcoming">Upcoming</button>
       <button class="wild-tab" data-cat="Makers">Makers</button>
       <button class="wild-tab" data-cat="Pop-ups &amp; Events">Pop-ups &amp; Events</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         UPCOMING EVENTS
+
+         To add one, copy an <article class="wild-event"> block below and
+         fill in the date, title, place and blurb. Delete the
+         "wild-event-empty" paragraph once there is at least one event.
+         Move an event down into the story sections after it happens.
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="wild-story" data-cat="Upcoming">
+      <div class="wild-story-header">
+        <span class="wild-tag">Upcoming</span>
+        <h2>Where Tru will be next</h2>
+      </div>
+
+      <p class="wild-event-empty">Nothing on the calendar right now. Check back, or follow <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">@thetrumancho</a> for the next one.</p>
+
+      <!--
+      <div class="wild-event-list">
+        <article class="wild-event">
+          <div class="wild-event-date"><span class="wild-event-mon">SEP</span><span class="wild-event-day">14</span></div>
+          <div class="wild-event-info">
+            <h3>Event name</h3>
+            <p class="wild-event-where">Place · Neighborhood, City</p>
+            <p>One line about what people can make or do there.</p>
+          </div>
+        </article>
+      </div>
+      -->
     </div>
 
     <!-- RR Popup -->
