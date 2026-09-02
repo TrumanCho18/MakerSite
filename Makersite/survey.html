@@ -102,6 +102,18 @@
       accent-color: #ff6b2b;
       flex-shrink: 0;
     }
+    .survey-reqs {
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.2);
+      border-left: 3px solid #ff6b2b;
+      border-radius: 0.75rem;
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.75rem;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.85);
+    }
+    .survey-reqs strong { color: #fff; display: block; margin-bottom: 0.25rem; }
     .survey-submit {
       display: inline-block;
       margin-top: 1.5rem;
@@ -154,6 +166,11 @@
     <div class="survey-intro">
       <h1>SIGN UP</h1>
       <p>The workshops are free. Tell Tru a little about yourself so he can build the right program for you.</p>
+    </div>
+
+    <div class="survey-reqs">
+      <strong>What you'll need</strong>
+      This class requires an iPad, the Procreate app, and a digital pencil. A computer is helpful but not required.
     </div>
 
     <form id="survey-form" class="survey-form">
@@ -211,6 +228,12 @@
         <div class="radio-list">
           <label class="radio-opt"><input type="radio" name="coded" value="Yes" required /><span>Yes</span></label>
           <label class="radio-opt"><input type="radio" name="coded" value="No" /><span>No</span></label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="check-list">
+          <label class="check-opt"><input type="checkbox" name="gear-confirmed" value="Yes" required /><span>I understand I need an iPad, Procreate, and a digital pencil.</span></label>
         </div>
       </div>
 
