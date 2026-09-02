@@ -163,11 +163,11 @@
  </div>
 
  <!-- Waitlist -->
- <div class="workshop-section">
- <h2 class="workshop-section-title">Join the Waitlist</h2>
+ <div class="workshop-section" id="signup">
+ <h2 class="workshop-section-title">Sign Up</h2>
 
  <div class="ws-full-banner">
-   <p>Be the first to know when the next session opens.</p>
+   <p>The workshops are free. Add your name and we'll let you know as soon as the next one opens.</p>
  </div>
 
  <div id="waitlist-success" style="display:none; text-align:center; padding:2rem 0;">
@@ -186,8 +186,17 @@
        <input type="email" id="wl-email" name="email" placeholder="your@email.com" required />
      </div>
    </div>
+   <div class="form-group">
+     <label for="wl-format">Which format?</label>
+     <select id="wl-format" name="format" required>
+       <option value="" disabled selected>Pick one</option>
+       <option value="In-person">In-person</option>
+       <option value="Virtual/self-led">Virtual/self-led</option>
+       <option value="Either">Either one works</option>
+     </select>
+   </div>
    <input type="hidden" name="form-type" value="workshop-waitlist" />
-   <button type="submit" class="contact-btn" id="wl-submit">Join the waitlist →</button>
+   <button type="submit" class="contact-btn" id="wl-submit">Sign me up →</button>
  </form>
  </div>
 
@@ -261,7 +270,7 @@
        document.getElementById('waitlist-success').style.display = '';
      } else { throw new Error(); }
    } catch {
-     btn.textContent = 'Join the waitlist →';
+     btn.textContent = 'Sign me up →';
      btn.disabled = false;
    }
  });
