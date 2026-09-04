@@ -20,8 +20,8 @@
   <header>
     <a href="index.html" class="logo">BETRU MAKER</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav id="main-nav">
-      <div class="nav-dropdown"><span class="nav-drop-toggle">Play</span><div class="nav-drop-menu"><a href="play.html">Desktop</a><a href="play-mobile.html">Mobile &#128241;</a></div></div>
-      <div class="nav-dropdown"><span class="nav-drop-toggle">Learn</span><div class="nav-drop-menu"><a href="resources.html">Resources</a><a href="workshops.html">Workshops</a><a href="survey.html">Survey</a><a href="student-work.html">Student Work</a></div></div>
+      <a href="play.html">Play</a>
+      <div class="nav-dropdown"><span class="nav-drop-toggle">Learn</span><div class="nav-drop-menu"><a href="workshops.html">Workshops</a><a href="workshops.html#signup">Sign Up</a><a href="student-work.html">Student Work</a><a href="resources.html">Resources</a></div></div>
       <a href="make.html">Make</a>
       <a href="inthewild.html" class="active">In the Wild</a>
       <a href="about.html">About</a>
@@ -38,8 +38,46 @@
 
   <main class="wild-main sky-text">
 
+    <!-- ── Tabs ── -->
+    <div class="wild-tabs" id="wild-tabs">
+      <button class="wild-tab active" data-cat="all">All</button>
+      <button class="wild-tab" data-cat="Upcoming">Upcoming</button>
+      <button class="wild-tab" data-cat="Makers">Makers</button>
+      <button class="wild-tab" data-cat="Pop-ups &amp; Events">Pop-ups &amp; Events</button>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         UPCOMING EVENTS
+
+         To add one, copy an <article class="wild-event"> block below and
+         fill in the date, title, place and blurb. Delete the
+         "wild-event-empty" paragraph once there is at least one event.
+         Move an event down into the story sections after it happens.
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="wild-story" data-cat="Upcoming">
+      <div class="wild-story-header">
+        <span class="wild-tag">Upcoming</span>
+        <h2>Where Tru will be next</h2>
+      </div>
+
+      <p class="wild-event-empty">Nothing on the calendar right now. Check back, or follow <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">@thetrumancho</a> for the next one.</p>
+
+      <!--
+      <div class="wild-event-list">
+        <article class="wild-event">
+          <div class="wild-event-date"><span class="wild-event-mon">SEP</span><span class="wild-event-day">14</span></div>
+          <div class="wild-event-info">
+            <h3>Event name</h3>
+            <p class="wild-event-where">Place · Neighborhood, City</p>
+            <p>One line about what people can make or do there.</p>
+          </div>
+        </article>
+      </div>
+      -->
+    </div>
+
     <!-- RR Popup -->
-    <div class="wild-story">
+    <div class="wild-story" data-cat="Makers">
       <div class="wild-story-header">
         <span class="wild-tag">R&amp;R Pop-Up · California</span>
         <h2>Girls set up their own table</h2>
@@ -52,9 +90,8 @@
         <img src="Assets/inthewild/RR-pricelist.jpeg" alt="RR Popup price list" />
       </div>
     </div>
-
     <!-- Nat Azarow -->
-    <div class="wild-story">
+    <div class="wild-story" data-cat="Pop-ups &amp; Events">
       <div class="wild-story-header">
         <img src="Assets/inthewild/natazarow-logo.png" alt="Nat Azarow Children's Center" class="wild-org-logo" />
         <span class="wild-tag">Children's Center · Nat Azarow</span>
@@ -70,7 +107,7 @@
     </div>
 
     <!-- PS38 -->
-    <div class="wild-story">
+    <div class="wild-story" data-cat="Pop-ups &amp; Events">
       <div class="wild-story-header">
         <img src="Assets/inthewild/ps38-logo.png" alt="PS38" class="wild-org-logo" />
         <span class="wild-tag">Pop-Up · PS38 · 5th Grade</span>
@@ -86,7 +123,7 @@
     </div>
 
     <!-- Events / Customers -->
-    <div class="wild-story">
+    <div class="wild-story" data-cat="Pop-ups &amp; Events">
       <div class="wild-story-header">
         <span class="wild-tag">Events · Customers Making Their Own</span>
         <h2>People making at events</h2>
@@ -99,7 +136,6 @@
         <img src="Assets/making-with-kiah.jpg" alt="Making shirts with Kiah" />
       </div>
     </div>
-
   </main>
 
   <footer>
@@ -110,8 +146,21 @@
       <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
       <a href="about.html#contact">Contact</a>
     </div>
-    <div class="footer-copy">&copy; 2026 BeTru Media</div>
+    <div class="footer-copy">&copy; 2026 BeTru Maker</div>
   </footer>
+
+  <script>
+    const wildTabs = document.getElementById('wild-tabs');
+    const stories  = document.querySelectorAll('.wild-story');
+    wildTabs.addEventListener('click', e => {
+      const tab = e.target.closest('.wild-tab');
+      if (!tab) return;
+      wildTabs.querySelectorAll('.wild-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const sel = tab.dataset.cat;
+      stories.forEach(st => { st.hidden = !(sel === 'all' || st.dataset.cat === sel); });
+    });
+  </script>
 
 </body>
 </html>

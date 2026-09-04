@@ -20,8 +20,8 @@
  <header>
  <a href="index.html" class="logo">BETRU MAKER</a>
  <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav id="main-nav">
- <div class="nav-dropdown active"><span class="nav-drop-toggle">Play</span><div class="nav-drop-menu"><a href="play.html" class="active">Desktop</a><a href="play-mobile.html">Mobile &#128241;</a></div></div>
- <div class="nav-dropdown"><span class="nav-drop-toggle">Learn</span><div class="nav-drop-menu"><a href="resources.html">Resources</a><a href="workshops.html">Workshops</a><a href="survey.html">Survey</a><a href="student-work.html">Student Work</a></div></div>
+ <a href="play.html" class="active">Play</a>
+ <div class="nav-dropdown"><span class="nav-drop-toggle">Learn</span><div class="nav-drop-menu"><a href="workshops.html">Workshops</a><a href="workshops.html#signup">Sign Up</a><a href="student-work.html">Student Work</a><a href="resources.html">Resources</a></div></div>
  <a href="make.html">Make</a>
  <a href="inthewild.html">In the Wild</a>
  <a href="about.html">About</a>
@@ -37,6 +37,13 @@
  </div>
 
  <main>
+
+ <div class="pill-tabs" id="play-tabs">
+   <button class="pill-tab active" data-panel="desktop">Desktop</button>
+   <button class="pill-tab" data-panel="mobile">Mobile</button>
+ </div>
+
+ <div id="panel-desktop">
  <div class="games-grid">
 
  <div class="game-card" data-title="Wild West" data-src="WildWest.html">
@@ -76,6 +83,35 @@
  </div>
 
  </div>
+
+   </div><!-- /panel-desktop -->
+
+   <div id="panel-mobile" hidden>
+     <div class="pm-wrap">
+       <div class="pm-picker" id="pm-picker">
+         <button class="pm-pill" data-src="WildWest.html">Wild West</button>
+         <button class="pm-pill active" data-src="HotDogRun.html">Hot Dog Run</button>
+         <button class="pm-pill" data-src="Rise.html">Rise</button>
+       </div>
+
+       <div class="pm-stage" id="pm-stage">
+         <iframe id="game-frame" src="HotDogRun.html" allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
+         <div id="controls">
+           <button class="ctrl-btn ctrl-space" id="btn-space" data-key=" " data-code="Space" aria-label="Space">SPACE</button>
+           <div id="dpad">
+             <button class="ctrl-btn" id="btn-up"    data-key="ArrowUp"    data-code="ArrowUp">&uarr;</button>
+             <div id="dpad-row">
+               <button class="ctrl-btn" id="btn-left"  data-key="ArrowLeft"  data-code="ArrowLeft">&larr;</button>
+               <button class="ctrl-btn" id="btn-down"  data-key="ArrowDown"  data-code="ArrowDown">&darr;</button>
+               <button class="ctrl-btn" id="btn-right" data-key="ArrowRight" data-code="ArrowRight">&rarr;</button>
+             </div>
+           </div>
+         </div>
+       </div>
+
+       <button class="pm-full" id="pm-full">Play fullscreen &#8599;</button>
+     </div>
+   </div><!-- /panel-mobile -->
  </main>
 
  <!-- Tell Tru Survey -->
@@ -249,7 +285,7 @@
  <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
  <a href="about.html#contact">Contact</a>
  </div>
- <div class="footer-copy">&copy; 2026 BeTru Media</div>
+ <div class="footer-copy">&copy; 2026 BeTru Maker</div>
  </footer>
 
  <!-- Modal overlay -->
@@ -295,6 +331,171 @@
  closeBtn.addEventListener('click', closeModal);
  backdrop.addEventListener('click', closeModal);
  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+ </script>
+
+  <script>
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let ctx = null;
+
+    function getAudioContext() {
+      if (!ctx) ctx = new AudioContext();
+      if (ctx.state === 'suspended') ctx.resume();
+      return ctx;
+    }
+
+    function playTone({ type='square', freq=440, freq2=null, duration=0.12, vol=0.18, attack=0.005 } = {}) {
+      try {
+        const ac = getAudioContext();
+        const osc = ac.createOscillator();
+        const gain = ac.createGain();
+        osc.connect(gain); gain.connect(ac.destination);
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, ac.currentTime);
+        if (freq2) osc.frequency.linearRampToValueAtTime(freq2, ac.currentTime + duration);
+        gain.gain.setValueAtTime(0, ac.currentTime);
+        gain.gain.linearRampToValueAtTime(vol, ac.currentTime + attack);
+        gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + duration);
+        osc.start(ac.currentTime); osc.stop(ac.currentTime + duration + 0.01);
+      } catch(e) {}
+    }
+
+    let stepInterval = null, stepPhase = 0;
+    const stepFreqs = [280, 220];
+
+    function startFootsteps() {
+      if (stepInterval) return;
+      stepInterval = setInterval(() => {
+        playTone({ type:'square', freq: stepFreqs[stepPhase % 2], duration: 0.07, vol: 0.13, attack: 0.002 });
+        stepPhase++;
+      }, 150);
+    }
+
+    function stopFootsteps() { clearInterval(stepInterval); stepInterval = null; }
+
+    const melody = [
+      [523,0.15],[587,0.15],[659,0.15],[784,0.3],
+      [740,0.15],[659,0.15],[587,0.15],[523,0.3],
+      [440,0.15],[494,0.15],[523,0.15],[659,0.3],
+      [587,0.15],[523,0.15],[494,0.15],[440,0.45],
+      [392,0.15],[440,0.15],[494,0.15],[523,0.3],
+      [587,0.15],[659,0.15],[784,0.15],[880,0.3],
+      [784,0.15],[659,0.15],[587,0.15],[523,0.3],
+      [494,0.15],[440,0.15],[392,0.15],[330,0.45],
+    ];
+
+    let musicPlaying = false, musicTimeoutId = null;
+
+    function playMelody(i = 0) {
+      if (!musicPlaying) return;
+      const [freq, dur] = melody[i % melody.length];
+      playTone({ type:'square', freq, duration: dur*0.85, vol: 0.12, attack: 0.01 });
+      musicTimeoutId = setTimeout(() => playMelody(i + 1), dur * 1000);
+    }
+
+    function startMusic() { if (musicPlaying) return; musicPlaying = true; playMelody(0); }
+    function stopMusic() { musicPlaying = false; clearTimeout(musicTimeoutId); }
+
+    const frame = document.getElementById('game-frame');
+
+    function dispatch(type, key, code) {
+      const win = frame.contentWindow;
+      if (!win) return;
+      const isDown = type === 'keydown';
+
+      // These games are Scratch/TurboWarp exports. Scratch reads the keyboard
+      // through the VM, so send input there; also fire a real KeyboardEvent so
+      // anything listening on the DOM still works.
+      try {
+        if (win.vm && typeof win.vm.postIOData === 'function') {
+          win.vm.postIOData('keyboard', { key, isDown });
+        }
+      } catch (e) { /* VM not ready yet */ }
+
+      try {
+        const map = { ArrowUp:38, ArrowDown:40, ArrowLeft:37, ArrowRight:39, Space:32 };
+        win.document.dispatchEvent(new KeyboardEvent(type, {
+          key, code, keyCode: map[code] || 0, which: map[code] || 0,
+          bubbles: true, cancelable: true
+        }));
+      } catch (e) { /* ignore */ }
+    }
+
+    // Never leave a key stuck down if a touch is interrupted or the tab is hidden.
+    function releaseAllKeys() {
+      document.querySelectorAll('.ctrl-btn').forEach(b => {
+        if (b.classList.contains('pressed')) {
+          b.classList.remove('pressed');
+          dispatch('keyup', b.dataset.key, b.dataset.code);
+        }
+      });
+    }
+    window.addEventListener('blur', releaseAllKeys);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) releaseAllKeys(); });
+
+    const activePointers = new Map();
+
+    function pressButton(btn) {
+      btn.classList.add('pressed');
+      dispatch('keydown', btn.dataset.key, btn.dataset.code);
+      startFootsteps();
+    }
+
+    function releaseButton(btn) {
+      btn.classList.remove('pressed');
+      dispatch('keyup', btn.dataset.key, btn.dataset.code);
+      if (activePointers.size === 0) stopFootsteps();
+    }
+
+    document.querySelectorAll('.ctrl-btn').forEach(btn => {
+      btn.addEventListener('pointerdown', e => {
+        e.preventDefault();
+        btn.setPointerCapture(e.pointerId);
+        activePointers.set(e.pointerId, btn);
+        pressButton(btn);
+      });
+      btn.addEventListener('pointerup', e => {
+        e.preventDefault();
+        const b = activePointers.get(e.pointerId);
+        if (b) { releaseButton(b); activePointers.delete(e.pointerId); }
+      });
+      btn.addEventListener('pointercancel', e => {
+        const b = activePointers.get(e.pointerId);
+        if (b) { releaseButton(b); activePointers.delete(e.pointerId); }
+      });
+    });
+
+    document.addEventListener('pointerdown', () => {
+      getAudioContext(); startMusic();
+    }, { once: true });
+  </script>
+
+ <script>
+ const playTabs = document.getElementById('play-tabs');
+ playTabs.addEventListener('click', e => {
+   const tab = e.target.closest('.pill-tab');
+   if (!tab) return;
+   playTabs.querySelectorAll('.pill-tab').forEach(t => t.classList.remove('active'));
+   tab.classList.add('active');
+   document.getElementById('panel-desktop').hidden = tab.dataset.panel !== 'desktop';
+   document.getElementById('panel-mobile').hidden  = tab.dataset.panel !== 'mobile';
+   history.replaceState(null, '', '#' + tab.dataset.panel);
+ });
+ if (location.hash === '#mobile') playTabs.querySelector('[data-panel="mobile"]').click();
+
+ const picker = document.getElementById('pm-picker');
+ picker.addEventListener('click', e => {
+   const pill = e.target.closest('.pm-pill');
+   if (!pill) return;
+   picker.querySelectorAll('.pm-pill').forEach(p => p.classList.remove('active'));
+   pill.classList.add('active');
+   document.getElementById('game-frame').src = pill.dataset.src;
+ });
+
+ document.getElementById('pm-full').addEventListener('click', () => {
+   const stage = document.getElementById('pm-stage');
+   if (stage.requestFullscreen) stage.requestFullscreen();
+   else if (stage.webkitRequestFullscreen) stage.webkitRequestFullscreen();
+ });
  </script>
 
 </body>
