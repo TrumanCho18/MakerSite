@@ -3855,9 +3855,9 @@ input[type="date"] {
 .itch-cart img {
   display: block;
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/3;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center;
   border-radius: 0.9rem;
   border: 1px solid rgba(255,255,255,0.18);
 }
