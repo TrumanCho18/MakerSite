@@ -81,51 +81,6 @@
   </figure>
  </section>
 
- <main>
- <div class="home-games-head sky-text">
-  <h2>Play Tru's Games</h2>
-  <p>Click any game to play it. These are the ones makers customize in the workshops.</p>
- </div>
- <div class="games-grid">
-
- <div class="game-card" data-title="Wild West" data-src="WildWest.html">
- <div class="card-header">
- <div class="card-dot"></div>
- <h2>Wild West</h2>
- <span class="expand-hint">Click to play</span>
- </div>
- <div class="embed-wrapper">
- <iframe class="game-embed" src="WildWest.html" allowfullscreen></iframe>
- <div class="embed-shield"></div>
- </div>
- </div>
-
- <div class="game-card" data-title="Hot Dog Run" data-src="HotDogRun.html">
- <div class="card-header">
- <div class="card-dot"></div>
- <h2>Hot Dog Run</h2>
- <span class="expand-hint">Click to play</span>
- </div>
- <div class="embed-wrapper">
- <iframe class="game-embed" src="HotDogRun.html" allowfullscreen></iframe>
- <div class="embed-shield"></div>
- </div>
- </div>
-
- <div class="game-card" data-title="Rise" data-src="Rise.html">
- <div class="card-header">
- <div class="card-dot"></div>
- <h2>Rise</h2>
- <span class="expand-hint">Click to play</span>
- </div>
- <div class="embed-wrapper">
- <iframe class="game-embed" src="Rise.html" allowfullscreen></iframe>
- <div class="embed-shield"></div>
- </div>
- </div>
-
- </div>
- </main>
 
  <!-- Learn + Make teasers -->
  <section class="home-teasers">
@@ -140,6 +95,16 @@
  <h2>Make</h2>
  <p>Turn your art into something real. Transfers, prints, cartridges and more.</p>
  <span class="teaser-cta">Let's Make →</span>
+ </a>
+ <a href="play.html" class="home-teaser">
+  <div class="teaser-img teaser-carousel" id="play-carousel">
+   <img class="pc-slide is-on" src="Assets/tlc-cowboy.png" alt="Wild West" />
+   <img class="pc-slide" src="Assets/hotdog.png" alt="Hot Dog Run" />
+   <img class="pc-slide" src="Assets/tlc-balloon-boy-1.png" alt="Rise" />
+  </div>
+ <h2>Play</h2>
+ <p>Micro-games Tru made, and the ones makers customize in the workshops.</p>
+ <span class="teaser-cta">Let's Play →</span>
  </a>
  </section>
 
@@ -198,6 +163,17 @@
  </div>
 
  <script>
+ (function () {
+   const slides = document.querySelectorAll('#play-carousel .pc-slide');
+   if (slides.length < 2) return;
+   let i = 0;
+   setInterval(() => {
+     slides[i].classList.remove('is-on');
+     i = (i + 1) % slides.length;
+     slides[i].classList.add('is-on');
+   }, 2200);
+ })();
+
  const modal = document.getElementById('modal');
  const modalIframe = document.getElementById('modal-iframe');
  const modalTitle = document.getElementById('modal-title');
