@@ -116,156 +116,36 @@
  </main>
 
  <!-- Tell Tru Survey -->
- <section class="tell-tru sky-text">
- <div class="tell-tru-inner">
- <div class="thank-you-icon"></div>
- <h2 class="thank-you-heading">I NEED U!</h2>
- <p class="tell-tru-sub">Your thoughts and feedback really help so much. Will you help me make better games? To say thank you, I'll send you some stickers!</p>
-
- <form id="tell-tru-form" class="tell-tru-form">
- <input type="hidden" name="form-name" value="tell-tru" />
-
- <div class="form-row">
- <div class="form-group">
- <label for="kid-name">Your name</label>
- <input type="text" id="kid-name" name="kid-name" placeholder="First name is fine" required />
- </div>
- <div class="form-group">
- <label for="kid-grade">What grade are you in?</label>
- <select id="kid-grade" name="kid-grade" required>
- <option value="" disabled selected>Pick one</option>
- <option>Kindergarten</option>
- <option>1st grade</option>
- <option>2nd grade</option>
- <option>3rd grade</option>
- <option>4th grade</option>
- <option>5th grade</option>
- <option>6th grade</option>
- <option>7th grade</option>
- <option>8th grade</option>
- <option>9th grade</option>
- <option>10th grade</option>
- <option>11th grade</option>
- <option>12th grade</option>
- </select>
- </div>
- </div>
-
- <div class="form-row">
- <div class="form-group">
- <label>Which game was your favorite?</label>
- <div class="game-pick">
- <label class="game-pick-opt">
- <input type="radio" name="game-played" value="Wild West" required />
- <img src="Assets/tlc-cowboy.png" alt="Wild West" />
- <span>Wild West</span>
- </label>
- <label class="game-pick-opt">
- <input type="radio" name="game-played" value="Hot Dog Run" />
- <img src="Assets/hotdog.png" alt="Hot Dog Run" />
- <span>Hot Dog Run</span>
- </label>
- <label class="game-pick-opt">
- <input type="radio" name="game-played" value="Rise" />
- <img src="Assets/tlc-balloon-boy-1.png" alt="Rise" />
- <span>Rise</span>
- </label>
- <label class="game-pick-opt">
- <input type="radio" name="game-played" value="More than one" />
- <img src="Assets/tlc-stars.png" alt="All of them" />
- <span>All of them!</span>
- </label>
- </div>
- </div>
- </div>
-
- <div class="form-group">
- <label>How fun was it?</label>
- <div class="rating-row">
- <label class="rating-opt"><input type="radio" name="rating" value="1" required /><span> Meh</span></label>
- <label class="rating-opt"><input type="radio" name="rating" value="2" /><span> Pretty fun</span></label>
- <label class="rating-opt"><input type="radio" name="rating" value="3" /><span> So good</span></label>
- </div>
- </div>
-
-
- <div class="form-group">
- <label for="inspired">After playing, how inspired are you to make something of your own?</label>
- <div class="slider-wrap">
- <span class="slider-label">Not at all</span>
- <input type="range" id="inspired" name="inspired" min="1" max="5" step="1" value="3" class="inspired-slider" />
- <span class="slider-label">Very inspired</span>
- </div>
- </div>
-
- <div class="form-group">
- <label>Do you wish the games had sound?</label>
- <div class="radio-list">
- <label class="radio-opt"><input type="radio" name="wants-sound" value="Yes" /><span>Yes, definitely</span></label>
- <label class="radio-opt"><input type="radio" name="wants-sound" value="Maybe" /><span>Maybe</span></label>
- <label class="radio-opt"><input type="radio" name="wants-sound" value="No" /><span>No, it&rsquo;s good without</span></label>
- </div>
- </div>
-
- <div class="form-group">
- <label>If you were to make something, what would it be?</label>
- <div class="radio-list">
- <label class="radio-opt"><input type="radio" name="make-what" value="Art or your own characters" /><span>Art or your own characters</span></label>
- <label class="radio-opt"><input type="radio" name="make-what" value="Your own products (stickers, shirts, etc.)" /><span>Your own products (stickers, shirts, etc.)</span></label>
- <label class="radio-opt"><input type="radio" name="make-what" value="A video game" /><span>A video game</span></label>
- <label class="radio-opt"><input type="radio" name="make-what" value="Other" /><span>Other</span></label>
- </div>
- </div>
-
-
- <div class="form-group">
- <label for="anything-else">Anything else on your mind?</label>
- <textarea id="anything-else" name="anything-else" rows="2" placeholder="Say whatever you want!"></textarea>
- </div>
-
- <div class="form-section-label" style="margin-top:1.5rem;">Where to send your stickers</div>
-
- <div class="form-row">
- <div class="form-group">
- <label for="mailing-address">Mailing address</label>
- <textarea id="mailing-address" name="mailing-address" rows="3" placeholder="Name, street, city, state, zip"></textarea>
- </div>
- <div class="form-group">
- <label for="kid-email">Email — want to keep in touch?</label>
- <input type="email" id="kid-email" name="kid-email" placeholder="your@email.com" />
- </div>
- </div>
-
- <button type="submit" class="tell-tru-submit">Send it to Tru →</button>
- </form>
-
- <div class="tell-tru-thanks" id="tell-tru-thanks" style="display:none;">
- <p class="thank-you-heading" style="font-family:'TLC',sans-serif;">THANK U SO MUCH!</p>
- <p class="tell-tru-sub">You helped me become a better creator.</p>
- </div>
- </div>
- </section>
 
  <script>
- document.getElementById('tell-tru-form').addEventListener('submit', async function(e) {
- e.preventDefault();
- const form = this;
- try {
- const res = await fetch('https://formspree.io/f/mykalynl', {
- method: 'POST',
- headers: { 'Accept': 'application/json' },
- body: new FormData(form)
- });
- if (res.ok) {
- form.style.display = 'none';
- document.getElementById('tell-tru-thanks').style.display = 'block';
- }
- } catch {
- form.style.display = 'none';
- document.getElementById('tell-tru-thanks').style.display = 'block';
- }
- });
- </script>
+</script>
+
+ <!-- ── itch.io games + devlog ── -->
+ <section class="itch-section sky-text">
+  <h2 class="section-subheading">More Games on itch.io</h2>
+  <p class="itch-sub">Retro Game Boy games Tru builds in GB Studio and publishes as idk1801.</p>
+
+  <div class="itch-grid">
+   <a class="itch-card" href="https://idk1801.itch.io/archaea" target="_blank" rel="noopener">
+    <div class="itch-img"><img src="Assets/games/archaea.jpg" alt="ARCHAEA cover art" loading="lazy" /></div>
+    <p>ARCHAEA <span class="itch-year">2025</span></p>
+   </a>
+   <a class="itch-card" href="https://idk1801.itch.io/mountrock" target="_blank" rel="noopener">
+    <div class="itch-img"><img src="Assets/games/mountrock.jpg" alt="MountRock cover art" loading="lazy" /></div>
+    <p>MountRock <span class="itch-year">2024</span></p>
+   </a>
+   <a class="itch-card" href="https://idk1801.itch.io/overdose" target="_blank" rel="noopener">
+    <div class="itch-img"><img src="Assets/games/overdose.jpg" alt="OverDose cover art" loading="lazy" /></div>
+    <p>OverDose <span class="itch-year">2025</span></p>
+   </a>
+  </div>
+
+  <h2 class="section-subheading">How it gets made</h2>
+  <p class="itch-sub">Tru posts build devlogs on YouTube.</p>
+  <div class="itch-video">
+   <iframe src="https://www.youtube.com/embed/S-4ASV5tQos" title="The Making of Archaea" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+ </section>
 
  <footer>
  <div class="footer-links">
