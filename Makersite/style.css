@@ -3841,3 +3841,29 @@ input[type="date"] {
   border: 1px solid rgba(255,255,255,0.18);
 }
 .itch-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.section-subheading a { color: #ff8c50; text-decoration: none; }
+.section-subheading a:hover { text-decoration: underline; }
+.itch-make {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+@media (max-width: 700px) { .itch-make { grid-template-columns: 1fr; } }
+.itch-cart { margin: 0; }
+.itch-cart img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+.itch-cart figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.55);
+}
