@@ -3589,3 +3589,215 @@ input[type="date"] {
   cursor: pointer;
 }
 .pm-full:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+/* ── Polish ─────────────────────────────────────────────────────────
+   The favourite-game picker wrapped "All of them!" onto its own row.
+   Four across keeps the whole choice on one line. */
+.game-pick{
+  grid-template-columns:repeat(4, 1fr) !important;
+}
+@media (max-width: 560px){
+  .game-pick{ grid-template-columns:repeat(2, 1fr) !important; }
+}
+
+/* Even out the picker tiles so the four sit on one clean line. */
+.game-pick-opt{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+}
+.game-pick-opt img{
+  height:56px;
+  width:auto;
+  object-fit:contain;
+  margin-bottom:8px;
+}
+
+/* ── Question bubbles ───────────────────────────────────────────────
+   Each question sits in its own card so the form reads as a series of
+   small asks rather than one long wall. Matches the card treatment
+   already used elsewhere on the site. */
+.tell-tru-form .form-group{
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  border-radius:1rem;
+  padding:18px 20px 20px;
+}
+.tell-tru-form .form-group > label:first-child{
+  display:block;
+  margin-bottom:12px;
+  font-weight:600;
+}
+.tell-tru-form .form-row{
+  display:grid;
+  gap:14px;
+}
+.tell-tru-form .form-row .form-group{ margin:0; }
+
+/* the address block keeps its own heading outside the bubbles */
+.tell-tru-form .form-group input[type="text"],
+.tell-tru-form .form-group input[type="email"],
+.tell-tru-form .form-group select,
+.tell-tru-form .form-group textarea{
+  background:rgba(0,0,0,.18);
+}
+
+/* The favourite-game picker needs the full row to fit four across;
+   inside a half-width column it collapses to a 2x2 block. */
+.tell-tru-form .form-group:has(.game-pick){
+  grid-column:1 / -1;
+}
+.tell-tru-form .game-pick{
+  grid-template-columns:repeat(4, 1fr) !important;
+  gap:12px;
+}
+
+.tell-tru-form .form-group:has(.game-pick){
+  margin-bottom:26px;
+}
+.tell-tru-form .game-pick{
+  margin-top:4px;
+  padding-bottom:6px;
+}
+
+/* ── Even spacing across the whole form ─────────────────────────────
+   The form mixes two-column rows with standalone questions, so
+   per-element margins came out uneven. One gap on the form itself
+   spaces every block identically, rows and single questions alike. */
+.tell-tru-form{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.tell-tru-form .form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin:0;
+}
+.tell-tru-form .form-group{
+  margin:0;
+}
+@media (max-width:640px){
+  .tell-tru-form .form-row{ grid-template-columns:1fr; }
+}
+
+/* The "where to send your stickers" label carried its own margins, which
+   broke the even rhythm at the bottom of the form. */
+.tell-tru-form .form-section-label{
+  margin:0;
+  padding-top:8px;
+}
+.tell-tru-form > *{ margin-block:0 !important; }
+
+
+/* ── Homepage photo band ────────────────────────────────────────────
+   Sits between the wordmark and the games so a real child appears on the
+   first screen. The wordmark hero above it is untouched. */
+.home-hero-band{
+  position:relative;
+  display:block;
+  width:100vw;
+  margin:2.25rem calc(50% - 50vw) 2.75rem;
+  height:clamp(300px,42vh,440px);
+  overflow:hidden;
+  text-decoration:none;
+  border-top:1px solid var(--card-border);
+  border-bottom:1px solid var(--card-border);
+}
+.home-hero-band img{
+  width:100%; height:100%;
+  object-fit:cover; object-position:center 42%;
+  transition:transform .8s ease;
+}
+.home-hero-band:hover img{ transform:scale(1.03); }
+.home-hero-band::after{
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(180deg,rgba(10,10,40,.18) 0%,rgba(10,10,40,.10) 40%,rgba(10,10,40,.78) 100%);
+}
+.home-hero-band-in{
+  position:absolute; left:0; right:0; bottom:0;
+  z-index:2;
+  padding:1.6rem clamp(1.2rem,5vw,3.4rem) 1.9rem;
+  max-width:1200px; margin:0 auto;
+}
+.home-hero-band-eyebrow{
+  margin:0 0 .5rem;
+  font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(255,255,255,.82);
+}
+.home-hero-band-line{
+  margin:0 0 .85rem;
+  max-width:34ch;
+  font-size:clamp(1.05rem,2vw,1.5rem);
+  line-height:1.3;
+  color:#fff;
+}
+.home-hero-band-cta{
+  font-size:.78rem; letter-spacing:.14em; text-transform:uppercase;
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.7);
+  padding-bottom:2px;
+}
+
+/* The photo now opens the page, so it loses its top margin and sits flush
+   under the header. */
+.home-hero-band{
+  margin-top:0;
+  border-top:0;
+  height:clamp(340px,52vh,540px);
+}
+
+.wild-event-photo {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: center 52%;
+  border-radius: 0.75rem;
+  margin-top: 1rem;
+}
+.wild-cta { text-align: center; margin: 1rem auto 3rem; }
+
+.wild-upcoming-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+.wild-upcoming-row .wild-event-list { margin-top: 0; }
+.wild-upcoming-row .wild-event-photo { margin-top: 0; max-width: 100%; }
+@media (max-width: 700px) {
+  .wild-upcoming-row { grid-template-columns: 1fr; }
+}
+.wild-event-figure { margin: 0; }
+.wild-event-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.wild-event-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+@media (max-width: 700px) { .wild-event-grid { grid-template-columns: repeat(2, 1fr); } }
+.wild-event-grid figure { margin: 0; }
+.wild-event-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 0.6rem;
+}
+.wild-event-grid figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+}

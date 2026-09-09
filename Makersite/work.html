@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Work — Be Tru Maker</title>
+ <link rel="stylesheet" href="style.css" />
+ <script src="sky.js" defer></script>
+ <style>
+/* ── Work page ── */
+.work-hero-img {
+  display: block;
+  width: 100%;
+  max-width: 1040px;
+  height: auto;
+  background: #fff;
+  border-radius: 1rem;
+  margin: 0 auto 2.5rem;
+}
+.work-intro {
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.75);
+}
+.work-sub {
+  max-width: 620px;
+  margin: -1rem auto 1.75rem;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.65);
+}
+.work-grid.mbt-grid { grid-template-columns: repeat(3, 1fr); max-width: 760px; margin-bottom: 3rem; }
+
+/* Collections row */
+.cm-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.9rem;
+  max-width: 1040px;
+  margin: 0 auto 4rem;
+  padding: 0;
+}
+@media (max-width: 900px) { .cm-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .cm-grid { grid-template-columns: repeat(2, 1fr); } }
+.cm-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.cm-img { background: #fff; }
+.cm-img img { display: block; width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+.cm-card p {
+  margin: 0;
+  padding: 0.55rem 0.6rem 0.65rem;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: rgba(255,255,255,0.85);
+}
+@media (max-width: 640px) {
+  .work-grid.mbt-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.mbt-card--static { cursor: default; }
+.work-shopline {
+  max-width: 1040px;
+  margin: -0.5rem auto 1.4rem;
+  text-align: left;
+}
+.work-shopline a { color: #ff8c50; text-decoration: none; font-weight: 600; }
+.work-shopline a:hover { text-decoration: underline; }
+
+/* Client work / Events, side by side */
+.cw-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1040px;
+  margin: 0 auto 2.5rem;
+}
+@media (max-width: 700px) { .cw-grid { grid-template-columns: 1fr; } }
+.cw-head {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 0.35rem;
+}
+.cw-copy {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 0.9rem;
+}
+.cw-card {
+  display: block;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.cw-img { background: #fff; }
+.cw-img img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.cw-img img.cw-img--top { object-position: center 34%; }
+.cw-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem 0.85rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+}
+.cw-go { color: #ff8c50; }
+.work-year {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  margin-left: 0.35rem;
+}
+ </style>
+</head>
+<body>
+
+ <div class="sky">
+ <div class="cloud cloud-1"></div>
+ <div class="cloud cloud-2"></div>
+ <div class="cloud cloud-3"></div>
+ <div class="cloud cloud-4"></div>
+ <div class="cloud cloud-5"></div>
+ </div>
+
+ <header>
+ <a href="index.html" class="logo">BETRU MAKER</a>
+ <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav id="main-nav">
+ <a href="play.html">Play</a>
+ <div class="nav-dropdown"><span class="nav-drop-toggle">Learn</span><div class="nav-drop-menu"><a href="workshops.html">Workshops</a><a href="workshops.html#signup">Sign Up</a><a href="student-work.html">Student Work</a><a href="resources.html">Resources</a></div></div>
+ <a href="make.html">Make</a>
+ <a href="work.html" class="active">Work</a>
+ <a href="inthewild.html">In the Wild</a>
+ <a href="about.html">About</a>
+ <a href="booking.html" class="nav-book">Book an Event</a>
+ </nav>
+ </header>
+
+ <div class="resources-hero sky-text">
+ <h1>Work</h1>
+ <p>My merch and design work.</p>
+ </div>
+
+ <main class="resources-main">
+
+ <img class="work-hero-img" src="Assets/make/be-tru-collection-header-2023.png" alt="Be Tru, a little TLC made in NYC" />
+
+ <p class="work-intro">I launched Be Tru in 2023 with 10 original characters for making shirts, hoodies and accessories. Since then I grew my brand to offer more products and live activations for special events.</p>
+
+ <!-- ── Collections ── -->
+ <h2 class="section-subheading">Collections</h2>
+ <p class="work-sub work-shopline">My products can be found at <a href="https://www.papercupdesign.com/collections/be-tru" target="_blank" rel="noopener">PAPER+CUP</a>.</p>
+
+
+ <div class="cm-grid">
+   <div class="cm-card">
+    <div class="cm-img"><img src="https://www.papercupdesign.com/cdn/shop/collections/Front-9.jpg?width=533" alt="Ninja Boy t-shirt" loading="lazy" /></div>
+    <p>Shirts</p>
+   </div>
+   <div class="cm-card">
+    <div class="cm-img"><img src="https://www.papercupdesign.com/cdn/shop/collections/Front_1.jpg?width=533" alt="Tru Boys hoodie" loading="lazy" /></div>
+    <p>Hoodies</p>
+   </div>
+   <div class="cm-card">
+    <div class="cm-img"><img src="https://www.papercupdesign.com/cdn/shop/collections/433239355_18425059087017687_3979851804375093167_n_39278851-388a-4278-97c6-70dc52b5379d.jpg?width=533" alt="Tru Grandpa sweatshirt" loading="lazy" /></div>
+    <p>Sweatshirts</p>
+   </div>
+   <div class="cm-card">
+    <div class="cm-img"><img src="Assets/make/betru-ninja-mug.jpg" alt="Be Tru ninja mug" loading="lazy" /></div>
+    <p>Mugs &amp; Drinkware</p>
+   </div>
+   <div class="cm-card">
+    <div class="cm-img"><img src="https://www.papercupdesign.com/cdn/shop/collections/IMG_6344.jpg?width=533" alt="Be Tru charms and keyrings" loading="lazy" /></div>
+    <p>Charms &amp; Keyrings</p>
+   </div>
+   <div class="cm-card">
+    <div class="cm-img"><img src="https://www.papercupdesign.com/cdn/shop/files/IMG_02972.jpg?width=533" alt="Be Tru collage accessory pouch" loading="lazy" /></div>
+    <p>Pouches</p>
+   </div>
+ </div>
+
+ <!-- ── Custom work ── -->
+ <div class="cw-grid">
+
+  <div class="cw-col">
+   <h3 class="cw-head">Client Work</h3>
+   <p class="cw-copy">Custom commission artwork and design projects.</p>
+   <div class="cw-card">
+    <div class="cw-img"><img src="Assets/work/client-friday-harbor-collection.jpg" alt="The Friday Harbor collection on display in the hotel general store" loading="lazy" /></div>
+   </div>
+  </div>
+
+  <div class="cw-col">
+   <h3 class="cw-head">Events</h3>
+   <p class="cw-copy">Custom activations and popups.</p>
+   <div class="cw-card">
+    <div class="cw-img"><img class="cw-img--top" src="Assets/work/event-charm-bar-booth.jpg" alt="Truman at his charm bar booth" loading="lazy" /></div>
+   </div>
+  </div>
+
+ </div>
+
+ <div class="mbt-cta">
+ <a class="mbt-btn" href="https://www.truman-cho.com/be-tru" target="_blank" rel="noopener">See more of my work &rarr;</a>
+ </div>
+
+ </main>
+
+ <footer>
+ <div class="footer-links">
+ <a href="https://www.instagram.com/thetrumancho/" target="_blank" rel="noopener">Instagram</a>
+ <a href="https://www.truman-cho.com/" target="_blank" rel="noopener">truman-cho.com</a>
+ <a href="https://x.com/RandomUser1081" target="_blank" rel="noopener">X</a>
+ <a href="https://idk1801.itch.io/" target="_blank" rel="noopener">itch.io</a>
+ <a href="about.html#contact">Contact</a>
+ </div>
+ <div class="footer-copy">&copy; 2026 BeTru Maker</div>
+ </footer>
+
+ <script>
+ document.getElementById('nav-toggle').addEventListener('click', function () {
+   document.getElementById('main-nav').classList.toggle('open');
+ });
+ </script>
+
+</body>
+</html>
