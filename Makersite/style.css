@@ -3846,22 +3846,33 @@ input[type="date"] {
 .section-subheading a:hover { text-decoration: underline; }
 .itch-make {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 1.25rem;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+  padding-bottom: 3rem;
 }
 @media (max-width: 700px) { .itch-make { grid-template-columns: 1fr; } }
-.itch-cart { margin: 0; }
+.itch-cart { margin: 0; position: relative; }
 .itch-cart img {
   display: block;
   width: 100%;
-  aspect-ratio: 4/3;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 0.9rem;
   border: 1px solid rgba(255,255,255,0.18);
 }
+@media (max-width: 700px) {
+  .itch-make { grid-template-columns: 1fr; padding-bottom: 0; }
+  .itch-cart { position: static; }
+  .itch-cart img { height: auto; aspect-ratio: 16/9; }
+  .itch-cart figcaption { position: static; }
+}
 .itch-cart figcaption {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   margin-top: 0.5rem;
   font-size: 0.78rem;
   line-height: 1.45;
